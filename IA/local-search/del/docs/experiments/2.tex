@@ -1,0 +1,73 @@
+\subsection{Experimento 2}
+
+\paragraph{Enunciado}
+
+Determinar qué estrategia de generación de la solución inicial da mejores resultados para la función heurística usada en el apartado anterior, con el escenario del apartado anterior y usando el algoritmo de Hill Climbing.
+
+A partir de estos resultados deberéis fijar también la estrategia de generación de la solución inicial para el resto de experimentos.
+
+\paragraph{Planteamiento}
+Disponemos de dos maneras de generar el estado inicial. Haremos 10 pruebas con el algoritmo de Hill Climbing en cada uan y valoraremos cual da mejores resultados en funcion del heuristico y del coste de la solución.
+
+\paragraph{Resulatdos}
+\begin{table}[htb]
+\centering
+\begin{tabular}{l|r}
+Heuristic & Cost  \\\hline
+97033 & 61312 \\
+108773 & 72673 \\
+111896 & 77300 \\
+116329 & 77125 \\
+119721 & 89792 \\
+115509 & 82020 \\
+112056 & 75575 \\
+108945 & 78320 \\
+112639 & 75003 \\
+101969 & 72040 \\
+
+\end{tabular}
+\caption{\label{tab:widgets}Estado inicial completo.}
+\end{table}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{l|r}
+Media heuristico & Media coste  \\\hline
+110487 & 76116 \\
+\end{tabular}
+\caption{\label{tab:widgets}Valores medios de los heuristicos y costes de solución para estado inicial completo.}
+\end{table}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{l|r}
+Heuristico & Coste  \\\hline
+97033 & 61312 \\
+108773 & 72673 \\
+111896 & 77300 \\
+116329 & 77125 \\
+119721 & 89792 \\
+115509 & 82020 \\
+112056 & 75575 \\
+108945 & 78320 \\
+112639 & 75003 \\
+101969 & 72040 \\
+
+\end{tabular}
+\caption{\label{tab:widgets}Estado inicial aleatorio.}
+\end{table}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{l|r}
+Media heuristico & Media coste \\\hline
+113819.5 & 81621.5\\
+\end{tabular}
+\caption{\label{tab:widgets}Valores medios de los heuristicos y costes de solución para estado inicial aleatorio.}
+\end{table}
+
+
+\paragraph{Conclusiones} Podemos observar que tanto el valor medio del heuristico como el valor medio del coste de la solución es más bajo cuando emezamos con un estado completo (Cuadros 2 y 4).\\
+Esto podría ser debido a que le damos más datos al algoritmo sobre los que trabajar. El estado inicial aleatorio puede omitir algunas conexiones importantes para esa disposición concreta de sensores y centros de datos.
+
+

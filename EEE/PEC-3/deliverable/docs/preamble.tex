@@ -1,0 +1,37 @@
+\documentclass[12pt, a4paper]{article}
+% For inserting images
+\usepackage{graphicx}
+% Setting the path for images
+\graphicspath{ {figs/} }
+% For adding url links
+\usepackage{hyperref}
+	\hypersetup{colorlinks=false,pdfborder=0 0 0}
+% Codification in utf8 for spanish characters, inputenc for special
+% characters too
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% For the euro symbol
+\usepackage{lmodern,textcomp}
+\usepackage[catalan]{babel}
+% For code listings
+\usepackage{listings}
+% For enumerate*
+% \usepackage{mdwlist}
+% Save the amazon jungle!
+% \usepackage[edges]{forest}
+% Diagrams
+% \usetikzlibrary{fit}
+% For centering fixed length columns
+\usepackage{array}
+\makeatletter
+\renewcommand\section{
+	\@startsection {section}{1}{\z@}%
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus.2ex}%
+	{\normalfont\bfseries}}% from \Large
+\renewcommand\subsection{
+	\@startsection{subsection}{2}{\z@}%
+	{-3.25ex\@plus -1ex \@minus -.2ex}%
+	{1.5ex \@plus .2ex}%
+	{\normalfont\bfseries}}% from \large
+\makeatother

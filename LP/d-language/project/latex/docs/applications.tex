@@ -1,0 +1,47 @@
+\section{Applications} \label{sec:applications}
+
+D is not very popular amongst developers in general, despite some large companies actively using D for its products.\footcite{orgs_using_d}
+
+Although it is better than C++ in mantainability and functionality, many companies refuse to adopt D as their language of choice.
+
+The requirement of training for their employees and the need of integration of legacy code as a requirement for using D instead of other compiled language is often a major seatback for companies to finally take the step of switching.
+
+There is also the perception amongst developers that D is "not worth the effort of learning" if the developer already knows C++, because of its percieved similarities in syntax and functionalities.
+
+On top of it all, and partly motivated by the previous factors, there exists the problem of D's community being rather small compared to other communities. This generates a lot of problems, such as lack of documentation and learning material.
+
+All of this being said, and despite D's small community, there are some brave developers and companies who use the language frequently and consistently on their projects. D's main areas of usage are listed and explained below.
+
+\subsection{Industry}
+
+Companies usually need to deal with huge codebases, and its principal concern besides a correctness is code mantainability. D offers elegant code and native unit testing environments, which makes it a very reasonable choice for working in huge projects. \footcite{areas_of_d_usage}
+
+Given all of its perks, D faces an integration problem when trying to use it in projects of such big scope. Companies usually deal with a lot of legacy code, and for a switch to happen, legacy code integration must be seamless. It is also costly to retrain employees to learn a new language. For this reasons and others, big companies have largely dismissed D as a solution to their problems.
+
+\subsection{Video Games}
+
+D is an interesting solution to applications that require binary compatibility with libraries and are critical in performance. Given D's inline assembler code \footcite{iasm} and explicit memory management, graphics applications and performance-critical systems work well with it.\footcite{areas_of_d_usage}
+
+Video Games are software applications that are largely built on top of the idea that they have to be fast, and coded by large teams, often using TDD strategies to deploy bug-free applications on release.
+
+D is currently being used by the video games industry. Although compatibility and training are still an issue, in 2016 the first AAA game to ever use D was released. \footcite{watson_ethan_d} There are also several tools for D game development such as the Dash\footnote{http://dash.circularstudios.com/} game engine and the gfm\footnote{https://github.com/d-gamedev-team/gfm} game development toolkit, both written in D.
+
+\subsection{Research} \label{subsec:research}
+
+D is useful for research because of its accessibility and performance. In the real world, researchers don't usually work with much legacy code, as each one of their projects is usually done entirely from scratch, which eliminates the problem of code integration, a big concern when switching to a new language.
+
+\subsection{Web services} \label{subsec:web_services}
+
+Web services often need the performance of a compiled language, but as services they are often independent and self-contained, which means the problem of legacy code integration is minimised. It is also attractive to web developers because of its implementation of Berkeley sockets, which makes it very useful for multi-platform deployment.
+
+There is a framework for web applications development called vibe.d\footnote{http://vibed.org/}, which handles all network and asynchronous event handling needed for web projects.
+
+\subsection{GUI Applications}
+
+D's capabilities of communication with a vast collection of GUI libraries make it a fair choice for developing GUI Applications\footcite{gui_libraries}. An example of application is the DLangIDE\footnote{https://github.com/buggins/dlangide}, which is itself based on the cross-platform D library dlangui\footnote{https://github.com/buggins/dlangui}.
+
+\subsection{Teaching}
+
+D's multi-paradigm (imperative, structured, object oriented, generic, functional programming purity, and even assembly) approach allows teaching in one language and gradually explaining new features without needing to switch to a different language. \footcite{areas_of_d_usage} Also, its clear and elegant syntax makes for a very transparent learning experience. This is very useful for teachers in universities.
+
+Speaking from experience, our faculty almost chose D as its language of choice for teaching programming instead of C++. It was finally dismissed because of its reduced presence in the industry (which may have been avoided if D was taught in universities instead of C++).

@@ -1,0 +1,22 @@
+INFO SOBRE L'EXAMEN
+
+No es garanteix entorn grafic
+No es por portar suport electronic
+Es recomana portar les practiques
+El examen es com una practica de lab, hem de escriure als quadres grisos
+Es recomana saber com operar amb particions i fdisk
+
+1. Instalació del sistema al disc
+
+2. Restauració de backups i usuaris
+
+    Tindrem un backup al disc de ASO
+    Pot passar de que no hi ha espai al disc    
+    Pot passar que no funcioni la comanda de restauració del backup
+
+========== You have obtained a 7 / 10 on this exam ==========
+
+3. Instal·lació i compilació de software
+
+4. Fer un script amb l'aplicació de la comanda 3
+

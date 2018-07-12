@@ -1,0 +1,39 @@
+\textbf{La respuesta a Q2 empieza aquí} 
+\\
+\textbf{La respuesta a Q2 empieza aquí}
+En los casos en los que $j \notin S_i$, $\tilde{y}_{ij} = 0$, y eso siempre es menor o igual.
+Para el resto de casos, podemos sustiuir $\tilde{y}_{ij}$ por el valor indicado y la demostración se transforma de la siguiente manera:
+\begin{equation}
+ \frac{y^*_{ij}}{\Sigma_{j \in S_i} y^*_{ij}} \leq 2y^*_{ij}
+\end{equation}
+
+\begin{equation}
+ \frac{y^*_{ij}}{2y^*_{ij}} \leq \Sigma_{j \in S_i} y^*_{ij}
+\end{equation}
+
+\begin{equation}
+ 0.5 \leq \Sigma_{j \in S_i} y^*_{ij}
+\end{equation}
+
+\begin{equation}
+ 0.5 > \Sigma_{j \notin S_i} y^*_{ij}
+\end{equation}
+
+El ultimo paso es valido porque $\Sigma_{j} y^*_{ij} = 1$. Ahora, vamos a demonstrar que la última relación es cierta. Primero, es verdad que:
+
+\begin{equation}
+ \Sigma_{j \notin S_i} c(i,j) y^*_{ij} \leq \Sigma_{j \in M} c(i,j) y^*_{ij} = \tilde{c_i}
+\end{equation}
+\\
+Pero también tenemos que $\Sigma_{j \notin S_i} c(i,j) y^*_{ij} > \Sigma_{j \notin S_i} 2 \tilde{c_i} y^*_{ij}$ . Entonces:
+\\
+\begin{equation}
+ 2* \tilde{c_i} * \Sigma_{j \notin S_i} y^*_{ij}  < \tilde{c_i}
+\end{equation}
+
+\begin{equation}
+ \Sigma_{j \notin S_i} y^*_{ij} < \frac{1}{2}
+\end{equation}
+
+\textbf{La respuesta a Q2 termina aquí}
+

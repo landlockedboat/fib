@@ -1,0 +1,705 @@
+\documentclass[12pt]{article}
+\include{pmlong}
+%\usepackage{psfig}
+%\usepackage{latexsym}
+%\usepackage{amsfonts}
+%\usepackage{amsmath}
+
+\setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.0in}
+\setlength{\headheight}{0in}
+%\addtolength{\topmargin}{-.5in}
+\addtolength{\oddsidemargin}{-.5in}
+
+
+\def\O{\mathcal{O}}
+\def\bool{\{0,1\}}
+\def\poly{{\sf poly}}
+\def\cross{\times}
+\def\ith{i^{\rm th}}
+\def\dspace{\mbox{{\sc dspace}}}
+\def\dtime{\mbox{{\sc dtime}}}
+\def\ntime{\mbox{{\sc ntime}}}
+\def\nspace{\mbox{{\sc nspace}}}
+\def\size{\mbox{{\sc size}}}
+\def\depth{\mbox{{\sc depth}}}
+\def\timedspace{\mbox{{\sc TimeSpc}}}
+\newcommand{\xor}{\oplus}
+\newcommand{\Xor}{\bigoplus}
+\newcommand{\ignore}[1]{}
+\newcommand{\integers}[1]{{\mathbb Z}_{#1}}
+\newcommand{\bydef}{\stackrel{\rm def}{=}}
+\newcommand{\isequal}{\stackrel{\rm ?}{=}}
+\newcommand{\compeq}{\stackrel{\rm c}{\equiv}} % computationally indistinguishable
+
+\newcommand{\brak}[1]{\langle {#1} \rangle}
+\newcommand{\qed}{\hspace*{\fill}\rule{7pt}{7pt}}
+\newcommand{\qqed}{\hspace*{\fill}\raisebox{3pt}{\framebox[7pt]{\rule{0pt}{1pt}}}}
+
+
+
+\begin{document}
+
+\centerline{\bf P, NP, and PH }
+
+
+\section{Introduction to $\mathcal{NP}$}
+Recall the definition of the class $\mathcal{P}$: 
+
+\begin{definition}
+$A$ is in $\P$ if
+there exists a Turing machine $M$ and a polynomial $p$ such that $\forall x$
+\begin{itemize}
+\item
+If $x\in A$ then $M(x)=YES$.
+\item
+If $x\notin A$ then $M(x)=NO$.
+\item
+For all $x$ $M(x)$ runs in time $\le p(|x|)$.
+\end{itemize}
+\end{definition}
+
+The typical way of defining $\NP$ is by using 
+\emph{non-deterministic} Turing machines. 
+We will NOT be taking this approach.
+We will instead use quantifiers.
+This is equivalent to the definition using nondetermism.
+
+\begin{definition}
+$A$ is in $\NP$ if there exists a set $B\in \P$ and a polynomial $p$ such that 
+
+$$L = \{ x \mid (\exists y)[ |y|=p(|x|) \wedge (x,y)\in B ] \}.$$
+\end{definition}
+
+Here is some intution. Let $A\in\NP$.
+\begin{itemize}
+\item
+If $x\in A$ then there is a SHORT (poly in $|x|$) proof of this fact,
+namely $y$, such that $x$ can be VERIFIED in poly time.
+So if I wanted to convince you that $x\in L$, I could give you $y$.
+You can verify $(x,y)\in B$ easily and be convinced.
+\item
+If $x\notin A$ then there is NO proof that $x\in A$.
+\end{itemize}
+
+
+\section{$\NP$ Completeness}
+We first discuss the notion of \emph{reductions}.
+We first define a Cook(-Turing) reduction:
+
+\begin{definition}
+A \emph{Cook(-Turing) reduction} from a language $L$ to a language $L'$ is a polynomial-time oracle machine $M$ such that,
+if $M'$ is any machine that decides $L'$, then $M^{M'}$ decides $L$. We express the above by writing $L \leq_T^P L'$.
+\end{definition}
+
+\noindent
+Another important, yet immediate, result is that (1)~if there is a Cook
+reduction from $L$ to $L'$ and (2)~$L' \in \P$, then
+$L \in \P$ as well.
+Note, however, that this is not believed to be the case for languages in $\NP$.
+For example, every co$\NP$ language is Cook-reducible to an $\NP$ language, but it is not believed that co$\NP \subseteq \NP$.
+
+A more restricted notion of a reduction is given next:
+
+\begin{definition}
+A \emph{Karp reduction} (also called a \emph{many-to-one reduction}) from a language $L$ to a language $L'$ is a polynomial-time computable function $f$ such that $x \in L$ iff $f(x) \in L'$. We express this by writing $L \plem L'$.
+\end{definition}
+
+\noindent
+Note that any Karp reduction provides an immediate Cook reduction as well.
+However, here it is true that if there is a Karp reduction from $L$ to $L'$ and $L' \in \NP$, then $L \in \NP$.
+
+\noindent 
+It may be verified that all the above reductions are transitive.
+
+\subsection{Defining $\NP$ Completeness}
+With the above in place, we define $\NP$-hardness and $\NP$-completeness:
+
+\begin{definition}
+A language $L$ is $\NP$-hard if for every language $L' \in \NP$, there is a Karp reduction from $L'$ to $L$. A language $L$ is $\NP$-complete if it is $\NP$-hard and also $L \in \NP$.
+\end{definition}
+
+\noindent We remark that one could also define $\NP$-hardness via
+\emph{Cook} reductions. However, this seems to lead to a different
+definition.  In particular, oracle access to any $\co\NP$-complete
+language is enough to decide $\NP$, meaning that any $\co\NP$-complete
+language is $\NP$-hard w.r.t.\ Cook reductions. On the other hand, if a
+$\co\NP$-complete language were $\NP$-hard w.r.t.\ Karp reductions, this would imply $\NP = \co\NP$ (which is considered to be unlikely).
+
+We show the ``obvious'' $\NP$-complete language:
+
+\begin{theorem}
+Define language $L$ via:
+\[L = \left\{ \langle M, x, 1^t \rangle \mid \begin{array}{c}\mbox{$M$ is a non-deterministic T.M.}\\
+                                                             \mbox{which accepts $x$ within $t$ steps} \end{array} \right\}.\]
+Then $L$ is $\NP$-complete.
+\end{theorem}
+
+\begin{proof}
+It is not hard to see that $L \in \NP$. Given $\langle M, x, 1^t \rangle$ as input, non-deterministically choose a legal sequence of up to $t$ moves of $M$ on input $x$, and accept if $M$ accepts. This algorithm runs in non-deterministic polynomial time and decides $L$.
+
+To see that $L$ is $\NP$-hard, let $L' \in \NP$ be arbitrary and assume that non-deterministic machine $M'_{L'}$ decides $L'$ and
+runs in time $n^c$ on inputs of size $n$.
+Define function $f$ as follows: given $x$, output $\langle M'_{L'}, x, 1^{|x|^c} \rangle$.
+Note that (1)~$f$ can be computed in polynomial time and (2)~$x \in L' \Leftrightarrow f(x) \in L$.
+We remark that this can be extended to give a Levin reduction (between $R_{L}$ and $R_{L'}$, defined in the natural ways).
+\end{proof}
+
+\section{More $\NP$-Compete Languages}
+It will be nice to find more ``natural'' $\NP$-complete languages.
+The \emph{first} problem we prove NP-complete will have
+to use details of the machine model- Turing Machines.
+All later results will be reductions using known NP-complete problems.
+
+\begin{definition}
+\begin{enumerate}
+\item
+SAT is the set of all boolean formulas that are satisfiable.
+That is, $\phi(\vec x)\in SAT$ if there exists a vector $\vec b$
+such that $\phi(\vec b)=TRUE$.
+\item
+CNFSAT is the set of all boolean formulas in SAT of the form
+$C_1 \wedge \cdots \wedge C_m$ 
+where each $C_i$ is an $\vee$ of literals.
+\item
+$k$-SAT is the set of all boolean formulas in SAT of the form
+$C_1 \wedge \cdots \wedge C_m$ 
+where each $C_i$ is an $\vee$ of exactly $k$ literals.
+\item
+DNFSAT is the set of all boolean formulas in SAT of the form
+$C_1 \vee \cdots \vee C_m$ 
+where each $C_i$ is an $\wedge$ of literals.
+\item
+$k$-DNFSAT is the set of all boolean formulas in SAT of the form
+$C_1 \vee \cdots \vee C_m$ 
+where each $C_i$ is an $\wedge$ of exactly $k$ literals.
+\end{enumerate}
+\end{definition}
+
+
+
+\begin{theorem}
+CNFSAT is $\NP$-complete.
+\end{theorem}
+
+\begin{proof}
+It is easy to see that $CNFSAT \in \NP$.
+
+Let $L\in\NP$. We show that $L\plem CNFSAT$.
+
+$M$ be a TM and $p,q$ be polynomials such that
+
+$$L= \{ x \mid (\exists y)[|y|=q(|x|) \hbox{ AND } M(x,y)=1]\}$$
+
+and $M(x,y)$ runs in time $q(|x|+|y|)$.
+
+We will actually have to deal
+with the details of the $M$. Let $M=(Q,\Sigma,\delta,\Sigma,\delta,q_0,h)$
+
+We will also need to represent what a Turing Machine is doing at every stage.
+
+The machine itself has a tape, something like
+
+$$\# a b b a \# a b @ a b \# a$$
+
+(We assume that everything to the right that is not seen is a $\#$.
+Our convention is that you CANNOT go off to the left--- from the left
+most symbol you can't go left.)
+
+is in state $q$ and the head is looking at (say) the $@$ sign.
+
+We would represent this
+
+$$\# a b b a \# a b (@,q) a $$
+
+That is our convention--- we extend the alphabet and allow symbols $\Sigma\times Q$.
+The symbol $(@,q)$ means
+the symbol is $@$, the state is $q$, and that square is where the head of
+the machine is.
+
+If $x\in L$ then there is a $y$ of length $q(|x|)$ such that 
+the Turing machine on $M$ accepts.
+
+Lets us say that with more detail.
+
+If $x\in L$ then there is a $y$ and a sequence of configurations
+$C_1, C_2, \ldots, C_t$ such that
+
+\begin{itemize}
+\item
+$C_1$ is the configuration that says
+`input is $x\#y$, and I am in the starting state.'
+\item
+For all $i$, $C_{i+1}$ follows from $C_i$ (note that $M$ is deterministic)
+using $\delta$.
+\item
+$C_t$ is the configuration that says ``END and output is 1''
+\item
+$t= p(|x|+q(|x|)$.
+\end{itemize}
+
+How to make all of this into a formula?
+
+\noindent
+{\bf KEY 1:} We will have a variable for every possible
+entry in every possible configuration.
+Hence the variables are $z_{i,j,\sigma}$
+where $1\le i,j\le t$, and $\sigma \in \Sigma \union Q$.
+The intent is that if there is an accepting sequence
+of configurations then
+
+$z_{i,j,\sigma} = T$ iff the $j$ symbol in the $i$th configuration
+is $\sigma$.
+
+To just make sure that for every $i,j$ there is a unique $\sigma$
+such that $z_{i,j,\sigma}=T$ we have, for every $1\le i\le j$,
+the following clauses.
+
+$$\bigvee_{\sigma\in\Sigma\cup Q} z_{i,j,\sigma}$$
+
+
+
+(NOTE- the actual formula would write out all of this and not be
+allowed to use $\bigvee$. With Poly time it MATTERS what
+kind of representation you use since we want computations to be
+poly time in the length of the input.)
+
+for each $\sigma\in \Sigma \cup  (\Sigma\times Q)$
+$$z_{i,j,\sigma} \rightarrow \bigvee_{\tau \in (\Sigma \cup (\Sigma\times Q) - \{\sigma\} } \neg z_{i,j,\tau}$$
+(It is an easy exercise to turn this into a set of clauses.)
+
+\noindent
+{\bf KEY 2:} The parts of the formula that say that $C_1$ is the
+starting configuration for $x\#y$ on the tape, and $C_t$ is the
+configuration for saying DONE and output is 1, are both easy.
+Note that for the $y$ part- WE DO NOT KNOW $y$.
+So we have to write that the $y$ is a squence of elements of $\Sigma$
+of length $q(|x|)$.
+
+Recall our convention for the first and last configuration:
+
+{\it 
+Intuitively we start out with $x$ and $y$ laid out on the tape,
+and the head looking at the $\#$ just to the right of $y$.
+The machine then runs, and if it gets to the $q_{accept}$ state
+then it accepts.}
+
+The following formula says that $C_1$ says `start with $x$'
+Let $x=x_1\cdots x_n$.
+
+$$z_{1,1,x_1} \wedge \cdots z_{1,n,x_n} \wedge x_{1,n+1,\#} \wedge$$
+
+$$\bigwedge_{i=n+2}^{n+q(|x|+1} \bigvee_{\sigma\in \Sigma} z_{1,i,\sigma}$$
+
+$$\wedge z_{1,q(n)+n+2,(\#,s)} \wedge \bigwedge_{i=q(n)+n+3}^{t(n)} \wedge z_{1,i,\#}$$
+
+Note that this formula is in CNF-form.
+
+The following formula says that $C_t$ says `ends with accept'
+
+$$\bigvee_{i=1}^{t(n)} \bigvee_{\sigma\in\Sigma}  z_{t,i,(\sigma,q_{accept}}$$
+
+
+
+\noindent
+{\bf KEY 3:} How do we say that going from $C_i$ you must goto $C_{i+1}$.
+We first do a thought experiment and then generalize.
+What if 
+
+$$\delta(q,a) = (p,b).$$
+
+Then if the $C_i$ says that you are in state $q$ and looking at
+an $a$ then $C_{i+1}$ must be in state $p$ and overwrite $a$ with $b$.
+Note that in both cases {\it the rest of the configuration has not changed}.
+
+How do we make this into a formula?
+The statement ``$C_i$ says that you are in state $q$ and looking at
+an $a$'' and the head is at the $j$th position is
+
+$$z_{i,j,(a,q)}$$
+
+We also have to know what else is around it. Assume that there is a $b$ on the left and a $c$ on the right.
+So we have
+
+$$(z_{i,j-1,b} \wedge (z_{i,j,(a,q)}\wedge (z_{i,j+1,c}.$$
+
+The statement that $C_{i+1}$ is 
+in state $p$ and having overwritten $a$ with $b$
+
+$$(z_{i+1,j-1,b} \wedge (z_{i+1,j,(b,p)}\wedge (z_{i+1,j+1,c}.$$
+
+This leads to the formula
+
+
+$$
+\bigwedge_{i,j=1}^t 
+(z_{i,j-1,b} \wedge (z_{i,j,(a,q)}\wedge (z_{i,j+1,c} \rightarrow
+(z_{i+1,j-1,b} \wedge (z_{i+1,j,(b,p)}\wedge (z_{i+1,j+1,c}.
+$$
+
+This formula can be put into CNF-form.
+
+For all of the $\delta$ values we need a similar formula.
+
+\noindent
+{\bf PUTTING IT ALL TOGETHER}
+
+Take the $\wedge$ of the formulas in the last three
+KEY points and you have a formula $\phi$
+
+$$x\in L \iff \phi \in CNFSAT.$$
+\end{proof}
+
+\section{Other NP-Complete Problems}
+
+Now that we have $\SAT$ is NP-Complete many other
+problems can be shown to be NP-complete.
+They come from many different areas of computer science
+and math: graph theory, scheduling, number theory, and others.
+
+{\it There are literally thousands of natural and distinct NP-complete problems!}
+
+\section{Relating Function Problems to Decision Problems}\label{se:decision}
+
+Consider the NP-complete problem
+
+$$CLIQUE = \{(G,k) \mid G \hbox{ has a clique of size $k$} \}.$$
+
+Note that while this is a nice problem, its not quite the
+one we really want to solve. We want to compute the {\it function}
+
+$SIZECLIQUE(G) = k$ such that $k$ is the size of the largest clique in $G$.
+
+Or we may want to compute
+
+$FINDCLIQUE(G) = $ the largest clique in $G$
+(Note- this is ambiguous as there could be a tie.
+This can be resolved in several ways.)
+
+How hard are these problems?
+
+\begin{theorem}
+$CLIQUE$ and $FINDCLIQUE$ are Cook-equivalent. In particular
+\begin{enumerate}
+\item
+$CLIQUE$ can be solved with one query to $FINDCLIQUE$.
+\item
+$FINDCLIQUE(G)$ can be computed with $\log n$ queries to $CLIQUE$
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+
+The first part is trivial.
+
+We give an algorithm for the second part.
+
+\begin{enumerate}
+\item
+Input $G$
+\item
+Ask $(G,n/2) \in CLIQUE$?
+If YES then ask $(G,3n/4)\in CLIQUE$.
+If NO then ask $(G,n/4)\in CLIQUE$.
+\item
+Continue using binary search until you get to the answer.
+This will take $\log n$ queries.
+\end{enumerate}
+
+\end{proof}
+
+The theorem above can be generalized to saying
+that if $L\in NP$ then the function associated
+to it (this can be done in several ways) is
+Cook Equivalent to $L$. Details will be on a HW.
+
+\section{The Polynomial Hierarchy}
+
+Recall (one of) the definitions of $\NP$.
+
+\begin{definition}
+$A\in \NP$ if there exists a polynomial $p$ and a
+polynomial predicate $B$ such that
+
+$A=\{ x \mid (\exists y)[ |y|\le p(|x|) \wedge B(x,y)] \}$.
+
+\end{definition}
+
+What if we allowed more quantifiers?
+Then what happens?
+
+\begin{notation}~
+\begin{enumerate}
+\item
+The expression
+
+$A=\{ x \mid (\exists^p y)[ B(x,y) ]\}$
+
+means that there is a polynomial $p$ such that
+
+$A=\{ x \mid (\exists y, |y|\le p(|x|)) [ B(x,y)] \}$.
+
+\item
+The expression
+
+$A=\{ x \mid (\forall^p y)[ B(x,y) ]$
+
+means that there is a polynomial $p$ such that
+
+$A=\{ x \mid (\forall y, |y|\le p(|x|))[B(x,y)] \}$.
+
+\item
+The expression
+
+$A=\{ x \mid (\forall^p y)(\exists^p z)[ B(x,y,z) ]$
+
+means that there are polynomials $p_1,p_2$ such that
+
+$A=\{ x \mid (\forall y, |y|\le p_1(|x|))(\exists z, |z|\le p_2(|x|))[ B(x,y,z)] \}$.
+
+\item
+One can define this notation for as long a string of quantifiers
+as you like.
+We leave the formal definition to the reader.
+\end{enumerate}
+
+\end{notation}
+
+In the following definition we 
+include a definition and an alternative definition.
+
+
+\begin{definition}~
+\begin{enumerate}
+\item
+$A\in \Sigma_0^p$ if $A\in \P$.
+$A\in \Pi_0^p$ if $A\in \P$.
+(We include this so we use it inductively later.)
+\item
+$A\in \Sigma_1^p$ if there exists a set $B\in\P$ such that
+
+$A=\{ x \mid (\exists^p y)[ B(x,y)] \}$.
+
+This is just $\NP$.
+\item
+$A\in \Pi_1^p$ if there exists a set $B\in\P$ such that
+
+$A=\{ x \mid (\forall^p y)[ B(x,y) ] \}$.
+
+This is just all sets $A$ such that $\overline{A}\in \NP$.
+It is often called co-$\NP$.
+
+\item
+$A\in \Sigma_2^p$ if there exists a set $B\in \P$ such that
+
+$A=\{ x \mid (\exists^p y)(\forall^p z)[ B(x,y,z)] \}$.
+
+\item
+$A\in \Sigma_2^p$ (alternative definition) if there exists a set $B\in \Pi_1^p$ such that
+
+$A=\{ x \mid (\exists^p y)[B(x,y)]\}$.
+
+\item
+$A\in \Pi_2^p$ if there exists a set $B\in \P$ such that
+
+$A=\{ x \mid (\forall^p y)(\exists^p z)[ B(x,y,z)] \}$.
+
+\item
+$A\in \Pi_2^p$ (alternative definition) 
+if $\overline{A}\in \Sigma_2^p$.
+
+\item
+Let $i\in\nat$. 
+If $i$ is even then
+$A\in \Sigma_i^p$ if there exists $B\in \P$ such that
+
+$A= \{ x \mid (\exists^p y_1)(\forall^p y_2)\cdots(\forall^p y_i)[B(x,y_1,\ldots,y_i)]$
+
+If $i$ is odd then
+$A\in \Sigma_i^p$ if there exists $B\in \P$ such that
+
+$A= \{ x \mid (\exists^p y_1)(\forall^p y_2)\cdots(\exists^p y_i)[B(x,y_1,\ldots,y_i)]$
+
+\item
+Let $i\in\nat$. 
+If $i$ is even then
+$A\in \Pi_i^p$ if there exists $B\in \P$ such that
+
+$A= \{ x \mid (\forall^p y_1)(\exists^p y_2)\cdots(\exists^p y_i)[B(x,y_1,\ldots,y_i)]$
+
+If $i$ is odd then
+$A\in \Pi_i^p$ if there exists $B\in \P$ such that
+
+$A= \{ x \mid (\forall^p y_1)(\exists^p y_2)\cdots(\forall^p y_i)[B(x,y_1,\ldots,y_i)]$
+
+\item
+Let $i\in\nat$ and $i\ge 1$.
+$A\in \Sigma_i^p$ (alternative definition) if there exists $B\in \Pi_{i-1}^p$ such that
+
+$A= \{ x \mid (\exists^p y)[B(x,y)] \}$.
+
+(Note- we use the definition of $\Sigma_0^p$, $\Pi_0^p$ here.)
+
+\item
+$A\in \Pi_i^p$ (alternative definition) 
+if $\overline{A}\in \Sigma_i^p$.
+
+\item
+The {\it polynomial hierarchy}, denoted $\PH$, is $\bigcup_{i=0}^\infty \sigp i$.
+Note that this is the same as $\bigcup_{i=0}^\infty \pip i$.
+
+
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+A set $A$ is {\it $\Sigma_i^p$-complete}
+if both of the following hold.
+\begin{enumerate}
+\item
+$A\in \Sigma_i^p$, and
+\item
+For all $B\in \Sigma_i^p$, $B\plem A$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+A set $A$ is {\it $\Pi_i^p$-complete}
+if both of the following hold.
+\begin{enumerate}
+\item
+$A\in \Pi_i^p$, and
+\item
+For all $B\in \Pi_i^p$, $B\plem A$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+A set $A$ is {\it $\Pi_i^p$-complete} (Alternative Definition)
+if $\overline{A}$ is $\Sigma_i^p$-complete.
+\end{definition}
+
+
+%QBF_i need to define i BILL
+
+\begin{example}~
+In all of the examples below $x$ and $y$ and $x_i$ are vectors of Boolean variables.
+\begin{enumerate}
+\item
+$A=\{ \phi(x,y) \mid  (\exists b)(\forall c)[\phi(b,c)]\}$.
+This set is $\Sigma_2^p$-complete.
+It is clearly in $\Sigma_2^p$.
+This is called $QBF_2$. The $QBF$ stands for Quantified Boolean Formula.
+The proof that it is $\sigp 2$-complete uses Cook's Theorem.
+\item
+One can define $QBF_i$ easily. It is $\Sigma_i^p$-complete.
+\item
+$QBF$ is the set of all $\phi(x_1,\ldots, x_n)$
+(the $x_i$'s are vectors of variables) such that
+$(\exists x_1)(\forall x_2)\cdots (Q x_n)[\phi(x_1,\ldots,x_n)]$.
+($Q$ is $\exists^p$ if $n$ is odd and is $\forall^p$ if $n$ is even.)
+This set is thought to not be in any $\Sigma_i^p$ or $\Pi_i^p$.
+\item
+Let
+$TWO = \{ \phi \mid \phi \hbox{ has exactly two satisfying assignments } \}.$
+We show that $TWO\in \Sigma_2^p$.
+
+$TWO =$
+
+$
+\{\phi\mid (\exists b,c)(\forall d)[b\ne c\wedge \phi(b)\wedge\phi(c)\wedge(\phi(d)\rightarrow 
+((d=b)\vee(d=c)))\}
+$
+
+It is not known if $TWO$ is $\Sigma_2^p$-complete; however it is thought
+to NOT be.
+
+\item
+One can define $THREE$, $FOUR$, etc. easily.
+They are all in $\Sigma_2^p$.
+
+\item
+One can define variants of $TWO$ having to do with finding TWO Hamiltonian
+cycles, TWO $k$-cliques, etc. Also $THREE$, etc.
+These are all $\Sigma_2^p$.
+
+\item
+$ODD = \{ \phi \mid \phi \hbox{ has an odd number of satisfying assignments }\}$
+is thought to NOT be in $\PH$.
+
+\end{enumerate}
+
+\end{example}
+
+Recall that
+
+{\it There are literally thousands of natural and distinct NP-complete problems!}
+
+What about $\Sigma_2^p$-complete problems? Other levels?
+Alas- there are very few of these.
+So why do we care about $\PH$ ?
+
+We think that $SAT\notin \P$ since
+
+$$SAT \in \P \rightarrow  \P=\NP.$$
+
+We tend to think that $\PH$ does not collapse to a lower level
+of the hierarchy (e.g., that $\PH=\sigp 2$).
+Hence if we have a statement XXX that we do not think is true
+but cannot prove is false, we will be happy to instead show
+
+$$XXX \rightarrow \PH \hbox{ collapses }.$$
+
+\section{Collapsing PH}
+
+\begin{theorem}
+If $\pip 1 \subseteq \sigp 1$ then $\PH  = \sigp 1 = \pip 1$.
+\end{theorem}
+
+\begin{proof}
+Assume $\sigp 1 = \pip 1$.
+We first show that $\sigp 2 = \sigp 1$.
+
+Let $L\in \sigp 2$. Hence there is a set $B\in \pip 1$ such that
+
+$$L = \{ x \mid (\exists^p y)[(x,y)\in B]\}.$$
+
+Since $B\in \pip 1$, by the premise $B\in \sigp 1$.
+Therefore there exists $C\in \P$ such that
+
+$$B = \{ (x,y) \mid (\exists^p z)[(x,y,z)\in C]\}.$$
+
+Replacing this definition of $B$ in the definition of $L$
+we obtain
+
+$$L = \{ x \mid (\exists^p y)(\exists^p z)[(x,y,z)\in C]\}.$$
+
+This is clearly in $\sigp 1$. Hence $\sigp 2 \subseteq \sigp 1$.
+Hence we have $\sigp 2 = \sigp 1$.
+By complementing both sides we get $\pip 2 = \pip 1$.
+
+
+One can now easily show that, for all $i$, $\sigp i = \sigp 1$
+by induction. One then gets $\pip i = \pip 1$.
+Hence $\PH = \pip 1 = \sigp 1$.
+\end{proof}
+
+The following theorems are proven similarly
+
+\begin{theorem}
+Let $i\in\nat$.
+If $\pip i \subseteq \sigp i$ then $\PH  = \sigp i = \pip i$.
+\end{theorem}
+
+
+\begin{theorem}
+If $\sigp i \subseteq \pip i$ then $\PH  = \sigp i = \pip i$.
+\end{theorem}
+
+
+
+
+\end{document}
+
+
+

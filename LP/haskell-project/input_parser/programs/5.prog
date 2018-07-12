@@ -1,0 +1,8 @@
+EMPTY P
+X := 3
+WHILE X > 0
+DO
+  PUSH P X
+  X := X - 1
+  PRINT X
+END

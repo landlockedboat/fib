@@ -1,0 +1,9 @@
+// start gdb on the system binary
+gdb system
+
+// On the gdb window
+target remote localhost:1234
+add-symbol-file user 0x100000
+
+// for starting bochs with gdb debugging
+bochs -f .bochsrc_gdb -q

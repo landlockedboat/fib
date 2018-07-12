@@ -1,0 +1,17 @@
+INPUT X
+EMPTY P
+WHILE X > 0 OR X = 0
+DO
+  INPUT Y
+  PUSH P Y
+  X := X - 1
+END
+S := 0
+SIZE P L
+WHILE L > 0
+DO
+  POP P Y
+  S := S + Y
+  L := L - 1
+END
+PRINT S

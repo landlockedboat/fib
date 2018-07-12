@@ -1,0 +1,55 @@
+\subsection{Experimento 7}
+\paragraph{Enunciado}
+En el escenario que habéis explorado esta prácticamente asegurado el transmitir todos los datos, eso hace que el factor de la función heurística que maximiza los datos transmitidos no tenga casi efecto durante la búsqueda (es constante la mayor parte del tiempo) y que solo se tenga en cuenta el coste de la red de distribución.
+
+Ahora cambiaremos el escenario de manera que haya dos centros de datos y 100 sensores.
+
+Para buscar soluciones en este escenario, ajustad la función heurística de manera que se puedan dar distintos pesos al factor que mide la cantidad de información enviada.
+
+Usad el algoritmo de Hill Climbing en estos experimentos y responded a las siguientes preguntas:
+\begin{itemize}
+\item ¿Se ha reducido el tiempo para hallar una solución?
+
+\item Si usamos una ponderación para el factor que mide la cantidad de información enviada igual que en los primeros escenarios,
+\begin{itemize}
+\item ¿En que proporción aumenta el coste de la red?
+\item ¿Cómo cambia el coste de la red en función de la ponderación que se da al envío de los datos?
+\item ¿Hay una ponderación a partir de la que el coste de la red ya no aumenta?
+\end{itemize}
+\end{itemize}
+\paragraph{Planteamiento}
+Vamos a realizar 12 pruebas con 10 experimentos cada una. En cada prueba aumentaremos la ponderación a la siguiente potencia de 2.
+\paragraph{Resultados}
+Hemos visto que es más rápido cuanto más pequeño es el factor.
+
+
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{l|r}
+Factor 1 & Factor 2048  \\\hline
+6509006711 & 7599199481 \\
+6162635620 & 6540049090 \\
+6256561813 & 6891732866 \\
+6353567057 & 7954852903 \\
+6129936758 & 7347605158 \\
+6811117919 & 7045859157 \\
+6614095580 & 6978463445 \\
+7049858512 & 7166562143 \\
+6818642340 & 6968649360 \\
+7282974990 & 8098969065 \\
+6598839730 & 7259194267 \\
+\end{tabular}
+\caption{\label{tab:widgets}Tiempo (en ns) para hallar la solución según el factor.}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{exp7}
+  \caption{Evolución del coste de las soluciones en función del parámetro de exponenciación}
+  \label{fig:exp7}
+\end{figure}
+\paragraph{Conclusion}
+Podemos observar que el coste aumenta de manera casi lineal. A partir del factor 1048 el coste de la red no aumenta.
+
+   

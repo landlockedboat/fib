@@ -1,0 +1,27 @@
+% Loading preamble.tex
+\input{docs/preamble}
+% Header info
+\author{ Raluca Vijulie \and Martí Rosell \and Víctor Alcázar}
+\title{Trabajo de innovación}
+\date{\today}
+% Start of the document
+\begin{document}
+% Title goes here
+\maketitle
+% Draw table of contents
+\tableofcontents
+% Draw all the remaining parts of the document
+
+
+\input{docs/ralu/descripcion_producto}
+\input{docs/victor/descripcion_tecnicas}
+\input{docs/victor/descripcion_utilizacion}
+\input{docs/ralu/explicacion_por_que_es_innovador}
+\input{docs/marti/impacto_producto_empresa}
+\input{docs/marti/impacto_producto_usuario}
+
+% Draw tha bibliograph.
+\bibliographystyle{unsrt}
+\bibliography{refs/references}
+% End of the document
+\end{document}

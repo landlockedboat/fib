@@ -1,0 +1,37 @@
+Que le podemos preguntar al usuario
+	> Que tipo de evento quiere celebrar
+	
+	> Eres vegetariano?
+	> Cuanto es lo minimo que quieres gastarte?
+	> Cuanto es lo maximo que quieres gastarte?
+	> Quieres prohibir algun ingrediente? Cuales?
+	> Vino?
+		> Vino para cada plato?
+	> Tipo de la comida?
+	> Epoca del año en la que estamos?
+
+Ampliaciones
+	> Habra niños presentes?
+
+Cosas que podemos inferir
+	> Le gustan los platos de temporada
+		> Sibarita
+	> Platos dificiles	
+		> Sibarita
+
+	> Le gusta la comida extranjera
+		> Moderno
+
+	> Podemos poner platos pesados
+		> Tradicional
+
+	> Podemos poner platos calientes?
+		> Invierno, Primavera, Otoño
+
+	> Podemos poner platos dificiles?
+		> 
+
+Associacio heuristica
+	> No ingredientes prohibidos
+	> No dos platos seguidos de la misma textura
+	> No carne si veggie

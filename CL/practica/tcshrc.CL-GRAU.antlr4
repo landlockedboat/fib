@@ -1,0 +1,11 @@
+# CL-GRAU paths for ANTLR v4
+setenv ANTLR4 /usr/share/java
+if ( $?CLASSPATH ) then
+    setenv CLASSPATH ".:$ANTLR4/antlr-4.7.1-complete.jar:$CLASSPATH"
+else
+    setenv CLASSPATH ".:$ANTLR4/antlr-4.7.1-complete.jar"
+endif
+
+alias antlr4='java -jar /usr/local/lib/antlr-4.7.1-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
+

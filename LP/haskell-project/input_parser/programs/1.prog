@@ -1,0 +1,4 @@
+X := 1
+IF X > 0 THEN
+  Z := 1
+END

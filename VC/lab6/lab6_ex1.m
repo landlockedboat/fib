@@ -1,0 +1,10 @@
+I = imread('Wheel.bmp');
+G = rgb2gray(I);
+BWu = G > 20;
+BW = imfill(BWu,'holes');
+SE = strel('disk',4);
+ER = imopen(BW, SE);
+R = BW - ER;
+C = bwconncomp(R);
+npixels = cellfun(@numel,C.PixelIdxList);
+npues = sum(npixels > 5);

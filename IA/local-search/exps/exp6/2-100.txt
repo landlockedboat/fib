@@ -1,0 +1,38 @@
+2 Centres
+100 Sensors
+
+HillClimbing
+
+Time (nanoseconds)
+
+6613992271
+6899166946
+6350516003
+6180973639
+6735233702
+
+Solution cost
+
+85129.0
+76721.0
+95500.0
+69933.0
+85011.0
+
+SimmulatedAnnealing
+
+Time (nanoseconds)
+
+2484629524
+2288374058
+2707948234
+2379193240
+2296132047
+
+Solution cost
+
+83767.0
+70312.0
+88042.0
+97417.0
+67411.0

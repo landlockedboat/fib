@@ -1,0 +1,219 @@
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+\graphicspath{ {figs/} }
+\usepackage[utf8]{inputenc}
+\setbeamertemplate{navigation symbols}{}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\title{D language}
+\author{Víctor Alcázar López}
+\institute{Programming Languages course}
+\date{2016}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Overview}
+\tableofcontents
+\end{frame}
+
+\section{Some history}
+\begin{frame}
+  \frametitle{Some history}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item<1-> Created by Walter Bright in 2001
+      \item<2-> It was originaly intended to be a better C++
+      \item<3-> Pretty obvious, the name is literally "the next thing after C"
+    \end{itemize}
+    \column{0.5\textwidth}
+    \includegraphics[scale=.05]{figs/logo.png}
+  \end{columns}
+\end{frame}
+
+\section{What is D, though?}
+\begin{frame}[fragile]
+  \frametitle{What is D, though?}
+  D is a \emph{shorter}, equally-fast and memory-safe version of C++:
+
+  \begin{verbatim}
+    import std.stdio;
+
+    int function(char c) fp;
+
+    void main() {
+      fp = function int(char c) {
+        return 6;
+      };
+
+      writefln(fp('A'));
+    }
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What is D, though?}
+
+  Paradigms that supports:
+  \begin{enumerate}
+    \item<1-> Imperative
+    \item<2-> Object-oriented (single inheritance, \texttt{mixin})
+    % Supports interfaces and mixins (mixins are like a little library that u can use without actually inheriting from them, serves the purpose of emulating real multi-inheritance which is nasty. They can also be viewed as isterfaces with implemented methods), does not tolerate multiple inheritance
+    \item<3-> Metaprogramming (\texttt{mixin}s, too)
+    \item<4-> Functional (lambdas, closures, high-order functions)
+    \item<5-> Parallel
+    \item<6-> Concurrent
+    % Sending messages between threads
+  \end{enumerate}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{What is D, though?}
+  Metaprogramming example:
+  \begin{verbatim}
+    import FooToD;
+    void main()
+    {
+      mixin(fooToD(import("example.foo")));
+    }
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{What is D, though?}
+  Closures example:
+  \begin{verbatim}
+  int bar(int a)
+  {
+    int c;
+    int foo(int b)
+    {
+        b = c;
+        return b + 1;
+    }
+  }
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{What is D, though?}
+  Parallelism example:
+  \begin{verbatim}
+    import std.stdio, std.parallelism;
+
+    auto names = [ "Adam Hawkins", "Peter Esselius" ];
+
+    foreach(name; taskPool.parallel(names)) {
+        writeln(name);
+    }
+\end{verbatim}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What is D, though?}
+  More things about D:
+  \begin{enumerate}
+    \item<1-> Compiled and garbage-collected
+    \item<2-> Static typing
+    \item<3-> Very robust standard library
+    \item<4-> Built-in TDD integration
+    \item<5-> Uniform Function Call Syntax(UFCS)
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{What is D, though?}
+  TDD integration example:
+  \begin{verbatim}
+    unittest {
+        assert("Adam Hawkins" = myName());
+    }
+
+    auto myName() {
+        return "Adam Hawkins";
+    }
+
+    $ rdmd --main -unittest
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{What is D, though?}
+  UFCS example:
+  \begin{verbatim}
+    auto isMyName(string s) {
+        return s == "Adam Hawkins";
+    }
+
+    auto name = "Adam";
+
+    isMyName("Adam");
+
+    name.isMyName()
+  \end{verbatim}
+\end{frame}
+
+\section{D in the real world}
+
+\begin{frame}
+  \frametitle{D in the real world}
+  \includegraphics[scale=.7]{figs/header.jpg}
+\end{frame}
+
+\begin{frame}
+  \frametitle{D in the real world}
+  Applications in videogames:
+  \begin{enumerate}
+    \item Quantum break
+    \item Dash engine
+    \item gfm toolkit
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{D in the real world}
+  Web \& GUI applications:
+  \begin{enumerate}
+    \item vibe.d framework
+    \item terminix
+    \item DLangIDE (based on dlangui)
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{D in the real world}
+  Other uses:
+  \begin{enumerate}
+    \item Research
+    \item Numerical computing
+    \item GPU programming
+    \item Data science
+    \item Teaching
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Some xkcd}
+  \includegraphics[scale=.7]{figs/standards.png}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    Thank you for your attention
+  \end{center}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,74 @@
+x_j -> seleccio de local j
+y_ij -> assignacio soci i local j
+l_j -> cost local j
+c_ij -> distancia de i a j
+n -> num clients
+m -> num centres
+
+Q1
+
+Formalitzacio en ILP
+
+Objectiu: min l_j * x_j + c_ij * yij
+Per a tot client i, local j.
+
+Restriccions
+  1 >= x_i >= 0;
+  1 >= y_ij >= 0;
+
+  yi1 + yi2 + ... + yim >= 1;
+  Per a tot soci i.
+
+  1-yij + xj >= 1;
+  Per a tot soci i, local j.
+
+Q2
+
+Q3
+
+Let us assume Q2 true
+
+x* and y* are feasible (optimal) solutions.
+
+By the approximation done previously we have
+
+  1. either x~_j >= 2x_i or x~_j = 1
+  
+  2. y~_ij <= 2y*_ij (By Q2)
+
+Applying transformations to 
+  1-yij + xj >= 1
+
+We have:
+  -y_ij + x_j >= 0
+  x_j >= y_ij
+
+That means that the formula implies that for a feasible solution,
+for all ij this holds true. Specifically, for the optimal solution:
+  x*_j >= y*_ij
+
+Also:
+  2x*_j >= 2y*_ij
+  
+So:
+  y~_ij <= 2y*_ij <= 2x*_j <= x~_j
+
+And, by transitivity:
+  y~_ij <= x~_j
+
+The other proof is direct. We only have to observe that
+  y~_ij <= 2y*_ij
+
+Then, for each ij holds true that
+  c_ij * y~_ij <= c_ij * 2y*_ij
+
+The other restriction
+  yi1 + yi2 + ... + yim >= 1;
+
+Can be easily proven to be true.
+Let us see that in fact this restriction
+  y~_ij = y*_ij/summ(j in S_i) of y*_ij
+
+Is dividing an element of a set between the sum of all the elements of a set
+and it is doing it so for every element in the set. This makes it so the sum
+is always going to give 1. This makes the previous restriction true.

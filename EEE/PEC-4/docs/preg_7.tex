@@ -1,0 +1,79 @@
+\section{Elegeix un model d’estructura organitzativa apropiada i dibuixa l’organigrama. Explica els teus motius per a aquesta elecció.}
+
+He escollit el model \textbf{matricial} d'estructura d'organització per a la empresa, interpretant cada punt de venda o producció com un \textit{projecte} individual amb un \textit{project manager} assignat a ell. Amb raó de complementar el gràfic he de destacar que:
+
+\begin{itemize}
+  \item El venedor encarregat és \textit{project manager} de cada botiga, per això està en negreta.
+  \item El Director de Compres, Producció i Logística és el \textit{project manager} de l'obrador i de les oficines centrals, a falta d'un \textit{middle-manager} encarregat d'això.
+  \item Cada persona dins la taula (excepte els \textit{project managers} i els directius) té dos directius als que ha de respondre: el seu \textit{project manager} i un cap de departament. Per exemple, el motorista de la botiga de Rubí té com a \textit{project manager} el venedor encarregat de la botiga i, com a cap de departament, al director de compres, producció i logística.
+\end{itemize}
+
+% For centering columns
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{center}
+\begin{tabular}{ p{3cm}  P{3cm}  P{3cm}  P{3cm} }
+  & \multicolumn{3}{c}{Directora general i de finances} \\
+  \cline{2-4}
+  & $\downarrow$ & $\downarrow$ & $\downarrow$ \\
+  % Header
+  &  Dir. Comercial & Dir. CPiL\protect\footnotemark & Dir. RRHH \\
+  & $\downarrow$ & $\downarrow$ & $\downarrow$ \\
+  % Body
+  \hline
+  \hline
+  Obrador i Oficines & & Transportistes i Administratius & Operaris i Teleoperadors \\
+  \hline
+  \hline
+  Botiga de Rubí & \textbf{Venedor encarregat} & Motorista & Venedors \\
+  \hline
+  \hline
+  Botiga de Terrassa & \textbf{Venedor encarregat} & Motorista & Venedors \\
+  \hline
+  \hline
+  Botiga de Sabadell & \textbf{Venedor encarregat} & Motorista & Venedors \\
+  \hline
+  \hline
+  Botiga de Martorell & \textbf{Venedor encarregat} & Motorista & Venedors \\
+  \hline
+  \hline
+  Botiga de St. Cugat del Vallès & \textbf{Venedor encarregat} & Motorista & Venedors \\
+  \hline
+  \hline
+\end{tabular}
+\end{center}
+\footnotetext{Compres, Producció i Logística}
+\addtocounter{footnote}{1}
+
+
+
+
+
+La organització matricial permet una descentralització de les responsabilitats (el que va bé per un model de distribució basat en botigues) i al mateix temps permet que cada departament de l'empresa pugui prendre decisions a gran escala que afecten el seu departament sense cap mena de barreres burocràtiques. El model matricial genera una organització àgil durant el dia a dia (ja que els responsables de vendes de cada botiga prenen decisions sobre el que passa a les botigues diàriament) i genera una flexibilitat per a canvis a gran escala (redistribució del personal a les botigues, manteniment dels vehicles, etc) gràcies a que cada director té accés directe als empleats que treballen als seus camps d'especialitat.
+
+El model clàssic, que es troba sota d'aquest paràgraf, genera una innecessària jerarquia que sobrecarrega les decisions d'uns directors i en relega a altres a llocs d' assessorament sense capacitat executiva directa (En aquest cas, recursos humans).
+
+\begin{forest}
+  for tree={
+    draw,
+    align=center
+  },
+  forked edges,
+  [Directora general i de finances
+    [Director comercial
+      [Venedor encarregat, l=2cm,
+      edge label={node[yshift=-5mm,midway,fill=white]{
+        Per cada botiga
+      }}
+        [Venedors]
+        [Motorista]
+      ]
+    ]
+    [{Director de compres,\\ producció i logística}
+      [Transportistes]
+      [Operaris]
+      [Administratius]
+    ]
+    [Directora de RRHH]
+  ]
+\end{forest}

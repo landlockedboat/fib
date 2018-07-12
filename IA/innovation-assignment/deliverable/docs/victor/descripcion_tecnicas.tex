@@ -1,0 +1,34 @@
+\section{Descripción de las técnicas de IA que se han utilizado} 
+\label{sec:desc_tecnica}
+
+La técnica que se ha utilizado es la de arboles decisionales 
+ \cite{10_startups}.
+
+La técnica de árboles decisionales es la mejor para un sistema que 
+requiere de aprendizaje supervisado, como seria el caso de
+\texttt{thegrid.io}, que tiene que adaptarse al feedback de los múltiples
+diseñadores web que crean y modifican las reglas que regulan el algoritmo.
+
+Un árbol decisional es una estructura de datos organizada 
+jerárquicamente como árbol donde cada uno de sus nodos internos está
+etiquetado con una variable de input y cada hoja está etiquetada por una
+clase (resultado) que es devuelta cuando el algoritmo llega a ella.
+
+Este arbol nos permite generar un algoritmo que lo recorra preguntando
+al usuario en cada nodo interno por el valor de la variable de input de
+él mismo. Según el input del usuario, el control del programa sigue por
+una rama u otra del arbol. Este sistema nos permite modelar un algoritmo
+basado en preguntas y respuestas que lo separa de los otros algoritmos
+de Inteligencia Artificial.
+
+El árbol de preguntas resultante nos sirve de lenguaje de representación, ya
+que modela el conocimiento de nuestro sistema jerárquicamente.
+
+Esta aproximacion a la resolucion de problemas tiene la ventaja de que
+es fácilmente extensible. Si quisiéramos ensanchar la capacidad de 
+resolución de nuestro algoritmo, sería muy sencillo: tan solo deberíamos 
+añadir a un nodo hoja un subárbol decisional y repetir esta operación para
+cuantos nodos hoja precisemos. De esta manera podemos expandir
+e algoritmo de manera orgánica son afectar el desarrollo correcto de otras
+ramas del mismo. Como ya he dicho antes, esto resulta extremadamente útil
+para casos como el de \texttt{thegrid.io}.

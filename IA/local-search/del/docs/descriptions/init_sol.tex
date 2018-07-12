@@ -1,0 +1,18 @@
+\subsection{Estrategias para hallar la solución inicial}
+
+
+Hemos escogido dos estrategias distintas para hallar la solución inicial:
+
+\paragraph{}
+
+La primera estrategia se basa en conectar cada sensor con el anterior
+en función de su id. Es decir, el sensor $i$ se conecta con el $i-1$ para
+todo sensor entre $[1, num\_sens]$. Esta primera aproximación genera una
+solución muy lejos de la óptima y permite al algoritmo trabajar más.
+
+\paragraph{}
+
+La segunda estrategia se basa en asignar de manera aleatoria las conexiones
+entre los sensores. Esta segunda aproximación también genera una solución
+alejada de la óptima, dejando espacio de actuación al algoritmo. Esta 
+estrategia es un poco menos eficiente en tiempo. 

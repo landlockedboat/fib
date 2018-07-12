@@ -1,0 +1,6 @@
+INPUT X
+WHILE X > 3
+DO
+  X := X - 1
+  PRINT X
+END

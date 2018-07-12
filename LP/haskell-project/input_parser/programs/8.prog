@@ -1,0 +1,4 @@
+PUSH X 3
+PUSH X 3
+POP X Y
+PRINT Y

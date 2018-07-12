@@ -1,0 +1,81 @@
+\section{Other characteristics} \label{sec:other_characteristics}
+
+D has many other characteristics not covered in detail on previous sections\footcite{excited_about_d}. Below are detailed some of the most interesting ones.
+
+\paragraph{Contract Programming and Class Invariants}
+
+D allows you to create input and output contracts for functions. The contracts are automatically checked at runtime. In figure \ref{fig:contract_code_example} there is an example. In D, a test suite should require more than one test and return at least one result.
+
+\begin{figure}
+  \caption{Contracts for functions example}
+  \label{fig:contract_code_example}
+  \begin{lstlisting}
+    enum TestResult { PASS, FAIL };
+    TestResult[] runTests(Test[] tests)
+    in
+    {
+      assert(!results.empty)
+    }
+    out(result)
+    {
+      assert(!results.empty)
+    }
+    body
+    {
+      TestResult[] results;
+      return results;
+    }
+  \end{lstlisting}
+\end{figure}
+
+\paragraph{Built in Tests}
+
+The compiler has built in support for running tests. Every file can declare a unittest block. The block is compiled into the program and will run when the program runs. If the tests fail, the program will throw an exception. This functionality makes TDD easy to implement and all the requirements are available without having to import any dependencies. Figure \ref{fig:unit_test_code_example} contains an example.
+
+\begin{figure}
+  \caption{Unit test example}
+  \label{fig:unit_test_code_example}
+  \begin{lstlisting}
+    // my_name.d
+
+    unittest {
+        assert("Adam Hawkins" = myName());
+    }
+
+    auto myName() {
+        return "Adam Hawkins";
+    }
+
+    // Now at the console
+    // note rdmd is short for "run dmd" which is "compile & run" in
+    // in a single command.
+    rdmd --main -unittest
+  \end{lstlisting}
+\end{figure}
+
+\paragraph{Universal Function Call Syntax}
+
+This allows you to write functions as being extended from other types. It gives flexibility to write code in whichever way makes sense to the programmer. There is an example of UFCS in figure \ref{fig:ufcs_code_example}.
+
+\begin{figure}
+  \caption{UFCS example}
+  \label{fig:ufcs_code_example}
+  \begin{lstlisting}
+    // Define a function taking a string as the first argument
+    auto isMyName(string s) {
+        return s == "Adam Hawkins";
+    }
+
+    auto name = "Adam";
+
+    // As expected
+    isMyName("Adam");
+
+    // Now call the same method one or two ways
+    name.isMyName()
+  \end{lstlisting}
+\end{figure}
+
+\paragraph{Built in functions}
+
+D has several useful built-in functions, some of which are: \texttt{foreach}, \texttt{map} and \texttt{filter}.

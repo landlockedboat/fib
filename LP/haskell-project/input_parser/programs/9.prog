@@ -1,0 +1,4 @@
+EMPTY X
+IF X > 3 THEN
+  PRINT X
+END

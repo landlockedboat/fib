@@ -1,0 +1,29 @@
+\section{Introduction} \label{sec:introduction}
+
+% This section will be used to create a mental image on the reader's mind about the general purpose of D, and illustrate this with examples. This will make the reading much easier for her, and augment its comprehension
+
+D, as its very name indicates, is intended to be "the next C", or, as many of its users say "the language C should have been".
+
+Through this article the reader will see that this language is, indeed, very similar to C in many of its aspects, including its syntax, which is apparent in the code snippet in figure \ref{fig:d_syntax_code_example}.
+
+\begin{figure}
+  \caption{An example of D's syntax}
+  \label{fig:d_syntax_code_example}
+  \begin{lstlisting}
+    import std.stdio;
+
+    int function(char c) fp;
+
+    void main() {
+      fp = function int(char c) {
+        return 6;
+      };
+
+      writefln(fp('A'));
+    }
+  \end{lstlisting}
+\end{figure}
+
+This language, as opposed to its more verbose and clumsy father, has a wide range of native functionality that yield a more condensed and safe code, while being comparable in speed to pure ANSI-C code.
+
+With all of this in mind, let us proceed to the rest of the article, at the end of which the reader will have a solid understanding of the basics of this language, and will be ready to delve into D programming with confidence and ease.

@@ -1,0 +1,166 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+\usepackage{algorithmic}
+\usepackage{dsfont}
+%opening
+\title{Exercicis Aritmètica Modular i RSA}
+\author{
+Albert Ribes Marzá
+\and
+Víctor Alcázar
+\and
+Kosmas Palios
+}
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+% \section{}
+\begin{enumerate}
+ \item Calculeu:
+ \begin{enumerate}
+  \item $3^{28} \textrm{ mod } 10$
+  
+  \begin{equation}
+   3^{2 \times 14} \textrm{ mod } 10
+  \end{equation}
+  
+  \begin{equation}
+   (3^2)^{14} \textrm{ mod } 10
+  \end{equation}
+  
+  \begin{equation}
+   9^{14} \textrm{ mod } 10
+  \end{equation}
+  
+  \begin{equation}
+   (-1)^{14} \textrm{ mod } 10
+  \end{equation}
+  
+  \begin{equation}
+   1 \textrm{ mod } 10
+  \end{equation}
+  
+ 
+
+  
+  
+  \item $3^{200} \textrm {mod } 15$
+  
+    
+  \begin{equation}
+  3^{200}\ \textrm{mod } 15
+  \end{equation}
+  
+    \begin{equation}
+  3^4 \times 50\ \textrm{mod } 15
+  \end{equation}
+  
+      \begin{equation}
+  81^{50}\ \textrm{mod } 15
+  \end{equation}
+  
+    \begin{equation}
+  6^{50}\ \textrm{mod } 15
+  \end{equation}
+Com que $6^2\ \textrm{mod } 15  = 6$, el resultat és:
+\begin{equation}
+  6\ \textrm{mod } 15
+  \end{equation}
+ \end{enumerate}
+\item \textbf{2EXP modular. }Doneu un algorisme de temps polinòmic que amb entrada els enters $a,b,c$ i un nombre primer $p$ computi $a^{b^c} \textrm{mod } p$
+
+We first compute $x=b^c mod \phi(p)$ \\
+Then we compute  $a^x mod p$.
+
+Why is this correct? Simply because for every p,a, as Euler tells us that$a^{\phi(p)}=1 mod p$, we have the following $ a^k = a^{k+\phi(p)*l} mod p $.
+
+Time complexity is polynomial, as modular exponention using repeated squaring is polynomial.
+
+\item \textbf{Factorial Modular. }Donats dos enters $x$ i $N$, calcula $x! \textrm{ mod }N$.
+
+ \begin{enumerate}
+  \item Demostreu que un enter $y$ és primer si i només si per tot enter $x < y$ es compleix que $gdc(x!,y) = 1$.
+  
+  Hem de demostrar que:
+  \begin{equation}
+   y \textrm{ primer } \Leftrightarrow \forall x < y : \textrm{gcd(x!,y)} = 1
+  \end{equation}
+  
+  La demostració té dos apartats:
+  \begin{itemize}
+   \item $\Rightarrow$
+   
+   EL gcd de qualsevol nombre primer sempre és 1 per un nombre primer i qualsevol altre, i es imposible que $x! == y$ ja que y no té factors. Queda demostrat
+   
+   \item $\Leftarrow$
+   
+   Ara demostrarem que: \\
+   $y \textrm{ primer } \Leftarrow \forall x < y : \textrm{gcd(x!,y)} = 1$ \\
+   
+   Ho farem amb el contrarrecíproc: \\
+   $ y \textrm{ compost } \Rightarrow \exists x < y : \textrm{gcd(x!,y)} \neq 1$ \\
+   Com que $y$ és compost, existeixen dos naturals tals que $y = ab$, i es compleix que tots dos són menors que $y$.
+   
+   Llavors ja hem trobat un nombre menor que $y$ que compleix la condició: a \\
+   $d = \textrm{gcd(a!, ab)}$ \\
+   Està clar que a divideix d i que a no és 1, per tant d no pot ser 1. Queda demostrat.
+   
+  \end{itemize}
+
+
+  
+  \item Considera l'apartat previ per demostrar que si \textbf{Factorial Modular} fos computable en temps polinòmic, aleshores el problema de \textbf{Factoritzar} també sería computable en temps polinòmic (Recordeu \textbf{Factoritzar}: Donat un nombre enter $x$, calcula els seus factors primers).
+ \end{enumerate}
+
+ \item En un sistema criptogràfic \textbf{RSA} amb $p = 7$ i $q = 11$, troba la clau pública $(N,c)$ i la clau privada $(N,d)$ apropiades.
+
+ Els passos per trobar les claus RSA amb dos primers $p$ i $q$ són:
+ \begin{itemize}
+  \item Computar $N = pq$
+  \item Computar $\phi(N) = (p - 1)(q - 1)$
+  \item Escollir $c \in \mathds{Z}_{\phi(N)}^*$
+  \item Computar d tal que $cd \equiv 1 $ mod $\phi$(N)
+  \item La clau pública és $P_B = (c,N)$ i la clau privada és $P_S = (d,N)$
+ \end{itemize}
+ 
+ Llavors els passos que fem són:
+ \begin{itemize}
+ \item $N = 7 \cdot 11 = 77$
+ \item $\phi(N) = (7 - 1)(11 - 1) = 6 \cdot 10 = 60$
+  \item Podem escollir entre moltes parelles per a $c$ i $d$. Algunes de elles son $(7,43)$, 
+  $(11,11)$, 
+  $(13,37)$, 
+  $(17,53)$, 
+  $(19,19)$, 
+  $(59,59)$, 
+  $(23,47)$, 
+  $(27,47)$, 
+  $(7,1)$. Nosaltres escollim 17 i 55
+  \item Llavors les claus són: $P_B = (17, 77)$ i $S_B = (55, 77)$
+ \end{itemize}
+
+
+ 
+ 
+ \item \textbf{Sistema criptogràfic segur?. }Suposem que en lloc d'utilitzar un nombre compost $N = pq$ com es fa en el sistema RSA, utilitzem un nombre primer $p$. Per encriptar un missatge $m \textrm{ mod } p$ farem servir un exponent $e$, de la mateixa manera que es fa en el sistema RSA. L'encriptament del missatge $m \textrm{ mod } p$ seria $m^e \textrm{ mod } p$.
+ 
+ Demostreu que aquest nou sistema no és segur donant un algorisme eficient per desencriptar. És a dir, doneu un algorisme que, amb entrada $p,e,m^c \textrm{ mod } p$, computi $m \textrm{ mod } p$ eficientment. Justifica la correctesa de l'algorisme i analitza el seu temps de computació.
+ 
+ \textbf{La resposta comença aqui}
+ 
+ In the given cryptosystem, to decrypt a ciphertext we must use the private key d, in the following way $m = c^d mod p$. The problem here is that the private key can be easily computed. We know that the relation between e and d is $ed = 1 mod \phi(p)$.
+But now $\phi(p)=p-1$, because p is prime! 
+
+So all we have to do is compute the multiplicative inverse of e modulo p-1. This can be easily done using the Extented Euclidean Algorithm, which takes $O(log(e)2)$ time. Then it is only a matter of exponentiation of c to the power of d modulo p. This in itself takes log(d) steps if done with repeated squaring. 
+
+In total we have $O(log(e)2+log(d))$ time.
+\end{enumerate}
+
+\end{document}
+

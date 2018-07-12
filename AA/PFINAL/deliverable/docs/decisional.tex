@@ -1,0 +1,18 @@
+\section{Decisional Problem}
+Given a graph $G = (V, E)$ and $k \in N$, say if there exists
+one ordering of the vertexs
+so that the maximum number of cut edges 
+in any integer point is less than or equal $k$, i.e.
+
+\[
+\exists f : V \rightarrow [1..|V| ]  |
+\max_{i \in 1..|V|}
+  |
+  \left \{
+    \left \{
+      u, v
+    \right \} 
+    \in E : f (u) \leq i < f (v)
+  \right \}
+  | \leq k
+\]

@@ -1,0 +1,96 @@
+\subsection{Experimento 6}
+
+\paragraph{Enunciado}
+
+Suponiendo que los centros de datos no sean costosos, podríamos estimar como
+afecta el añadir más centros al coste de la red. Fijando el numero de sensores
+en 100, realizad experimentos aumentando el
+número de centros de datos de dos en dos hasta 10 y medid el coste de la 
+red de conexión, el número de centros de datos usados y el coste temporal 
+para hallar la solución. Usad el algoritmo de Hill Climbing y el
+de Simulated Annealing.
+
+\paragraph{Condiciones del experimento}
+
+Para realizar este experimento necesitamos generar los datos correspondientes
+a un total de 5 ejecuciones bajo diferentes criterios: 2 centros, 100 sensores;
+4 centros, 100 sensores; 6 centros, 100 sensores; 8 centros, 100 sensores;
+10 centros, 100 sensores;
+
+Para garantizar que nuestra solucion es correcta, realizaremos 10 ejecuciones
+por cada caso y recogeremos varios datos, sobre los cuales trataremos con
+su mediana aritmetica. A parte, para obtener una
+muestra representativa, generaremos las semillas para cada ejecución de manera
+aleatoria.
+
+Podemos resumir las características del experimento en la siguiente tabla:
+
+\begin{tabular}{ | p{0.4\textwidth} | p{.6\textwidth} | }
+  \hline
+  Observación & Nuestra solución puede mejorar si aumentamos el numero de
+  centros \\
+  \hline
+  Planteamiento & Escogemos diversos valores de numeros de centros en
+  el estado, inicialmente 2 hasta llegar a 10\\
+  \hline
+  Hipótesis & La calidad de la solución mejora a mayor número de centros 
+  tenemos (H0) o no\\
+  \hline
+  Método & 
+    \begin{itemize}
+      \item Escogemos semillas aleatoriamente para todas las repeticiones
+      \item Ejecutamos 10 experimentos para cada configuracion de centros
+        sensores que necesitamos
+      \item Usamos el algoritmo de HillClimbing y el de Simmulated Annealing 
+      \item Mediremos diferentes parámetros para realizar la comparación  
+    \end{itemize}
+    \\
+  \hline
+\end{tabular}
+
+\paragraph{Resultados del experimento}
+
+En las figuras \ref{fig:exp6-hill-cost}, \ref{fig:exp6-hill-time}, 
+\ref{fig:exp6-simm-cost} y \ref{fig:exp6-simm-time} podemos observar
+varios experimentos hechos con respecto al enunciado. Los resultados que
+hablan de tiempo representan el cambio del tiempo de ejecución para
+cada configuración de 2, 4, 6, 8, y 10 centros. Análogamente, los que
+hablan de coste de conexión aluden al coste de la solución en esas
+configuraciones.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{exp6-hill-cost}
+  \caption {Coste de la solución con el algoritmo Hill Climbing}
+  \label{fig:exp6-hill-cost}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{exp6-hill-time}
+  \caption {Tiempo de ejecución con el algoritmo Hill Climbing}
+  \label{fig:exp6-hill-time}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{exp6-simm-cost}
+  \caption {Coste de la solución con el algoritmo Simmulated Annealing}
+  \label{fig:exp6-simm-cost}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{exp6-simm-time}
+  \caption {Tiempo de ejecución con el algoritmo Simmulated Annealing}
+  \label{fig:exp6-simm-time}
+\end{figure}
+
+\paragraph{Conclusiones}
+
+El resultado del experimento se asemeja mucho a lo que nosotros nos esperabamos
+que sucediese según la hipótesis nula H0. A excepción de Simmulated Annealing,
+los resultados se vuelven más optimos a medida que aumentamos el numero de
+centros de datos. Las soluciones aumentan de coste temporal a medida que
+aumentamos el numero de centros, lo que también era de esperar.
+

@@ -1,0 +1,9 @@
+Data Loss Factor = 64
+
+Connection cost
+
+712626.0
+484808.0
+474594.0
+449548.0
+485772.0

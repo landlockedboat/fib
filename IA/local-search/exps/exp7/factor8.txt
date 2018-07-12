@@ -1,0 +1,9 @@
+Data Loss Factor = 8
+
+Connection cost
+
+179651.0
+196226.0
+191780.0
+183120.0
+204958.0

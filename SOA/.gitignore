@@ -1,0 +1,14 @@
+*.swp
+*.o
+bootsect
+bootsect.s
+build
+entry.s
+sys_call_table.s
+system
+system.out
+user
+user.out
+zeos.bin
+bochsout.txt
+.gdbcmd

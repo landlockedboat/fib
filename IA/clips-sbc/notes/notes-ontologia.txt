@@ -1,0 +1,108 @@
+-- Información sobre un evento, en principio debe contener:
+
+tipo de evento
+  celebraciones familiares
+    bodas
+    bautizos
+    comuniones
+  comidas
+  cenas de congresos
+
+-- Esto esta porque ciertos ingredientes solo estan disponibles
+-- en ciertas epocas del año
+epoca del año
+  primavera
+  verano
+  otoño
+  invierno
+
+numero de comensales
+
+-- Restricciones sobre el menu que el usuario debe proporcionar
+
+precio maximo
+precio minimo
+
+tipo de comida
+
+  vegetariano s/n
+
+  ingredientes prohibidos
+    ing1
+    ing2
+    ...
+    ingn
+
+  vino s/n
+
+  vino adecuado para cada plato (s/n)
+
+estilo de la comida
+  clásico
+  moderno
+  sibarita
+
+-- Composición de un menú
+-- La bebida puede ser la misma para todo el menú o ir asociada a
+-- cada plato
+
+menú
+  primero (plato)
+    bebida_plato
+  segundo (plato)
+    bebida_plato
+  postre (plato)
+    bebida_plato
+
+  bebida_menu (menú)
+
+plato
+  ingredientes principales
+    ing1
+    ing2
+    ...
+    ingn
+
+  -- Algunos platos pueden ser primero y segundo
+  tipo plato
+    primero
+    segundo
+    postre
+
+  disponibilidad
+    primavera
+    verano
+    otoño
+    invierno
+  
+  incompatible con
+    plato_1 
+    plato_2 
+    ...
+    plato_3 
+
+  -- Info generica sobre los platos
+  info
+    carne
+    pescado
+    vegetal
+
+    frio
+    caliente
+
+    sopa
+    estofado
+    pasta
+
+    típico de [algun_lugar]
+
+  precio
+
+bebida
+  compatible con
+    plato_1 
+    plato_2 
+    ...
+    plato_3 
+
+  precio

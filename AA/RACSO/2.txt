@@ -1,0 +1,46 @@
+main {
+  out.k = in.numvars;
+  // We create three nodes for each
+  // literal. Each one of them
+  // represents the literal in
+  // one state or another.
+  // 
+  // negative: n{i}
+  // positive: p{i}
+  // auxiliar node: a{i}
+  // 
+  // The auxiliar node is here for
+  // assuring that we only pick either
+  // the positive state of the variable
+  // or its negated.
+  for(i = 1; i <= in.numvars; i++){
+    out.nodes.push = "a{i}";
+    out.nodes.push = "p{i}";
+    out.nodes.push = "n{i}";
+    // We make a "triangle" between all
+    // nodes.
+    out.edges.push = "a{i}", "n{i}";
+    out.edges.push = "a{i}", "p{i}";
+    out.edges.push = "p{i}", "n{i}";
+  }
+  // We iterate through the clauses
+  foreach(i, clause; in.clauses)
+  { 
+    out.nodes.push = "c{i}";
+    // For each clause, we connect its literals
+    // to its "state" node. 
+    foreach(lit; clause)
+    {
+      if (lit < 0)
+      // The literal is false
+      {
+        out.edges.push = "c{i}", "n{-lit}";
+      }
+      if (lit > 0)
+      // The literal is true
+      {
+        out.edges.push = "c{i}", "p{lit}";
+      }
+    }
+  } 
+}

@@ -1,0 +1,4 @@
+0	tears
+1	sea
+2	land
+3	air

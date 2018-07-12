@@ -1,0 +1,48 @@
+\section*{11. Sales de Joc}
+
+La societat d'Amics dels Videojocs (SAV) té una col·lecció de $m$  locals a la ciutat de Barcelona i un total de $n$  socis. Volen determinar en quins locals els hi convé obrir una sala de joc juntament amb una assignació de socis a les sales de joc.
+
+La SAV per una part ha fet una estimació del cost d'adequar un local com a sala de joc i així, per cada local $i$ té una estimació del cost $l_i$. Per una altre part, la SAV vol tenir en compte el cost que té per als socis desplaçar-se fins el local assignat. Així disposa dels valors $c(i,j)$ que indiquen la distancia que habitualment el soci $i$ ha de recorrer per arribar al local $j$.
+
+L'objectiu de la SAV és trobar una solució en la que es minimitzi la suma dels costos d'adequació dels locals seleccionats més al suma de les distancies dels desplaçaments dels socis a les sales assignades.
+
+\paragraph{Q1}
+Doneu una formalitzacó com problema de programació entera d'aquest problema. Feu servir una variable $x_j$ per la selecció del local $j$ i una variable $y_{ij}$ per la possible assignació del soci $i$ al local $j$.
+
+\input{docs/q1}
+
+Considereu el problema de programació lineal obtingut desprès de relaxar les condicions d'integritat. Sigui $x^*$, $y^*$ una solució òptima del programa relaxat.
+
+Considereu el següent procès:
+\begin{enumerate}[label=(\alph*)]{
+\item Per cada soci $i$, sigui $\tilde{c}_i =  \Sigma_j c(i,j)y^*_{ij} $ la distancia mitjana del soci $i$ a les ssales assignades en $y^*$.
+\item Per cada soci $i$, sigui $S_i = \{j | c(i,j) \leq 2\tilde{c}_i\}$.
+\item Per i, j, if $j \notin S_i$, sigui $\tilde{y}_{ij} = 0$, en cas contrari $\tilde{y}_{ij} = y^*_{ij}/\Sigma_{j \in S_i} y^*_{ij}$.
+\item Per cada local $j$, sigui $\tilde{x}_j = \textrm{min}(2x^*_j, 1)$. 
+}
+
+\end{enumerate}
+
+\paragraph{Q2}
+Demostreu que, per tot $i$ i tot $j$, $\tilde{y}_{ij} \leq 2y^*_{ij}$.
+
+\input{docs/q2}
+
+\paragraph{Q3}
+Demostreu que $\tilde{x}$, $\tilde{y}$ és una solució factible del problema de programació lineal i que $\Sigma_{i,j}c(i,j)\tilde{y}_{ij} \leq 2\Sigma_{ij}c(i,j)y^*_{ij}$.
+
+\input{docs/q3}
+
+Ara, donats $\tilde{x}$, $\tilde{y}$, considereu el següent procès, mentre quedin socis sense assignar a una sala: 
+\begin{enumerate}[label=(\alph*)] {
+\item Seleccioneu el soci $i$ no assignat amb $\tilde{c}_i$ mínim
+\item Obrim una sala de joc al local $j$ que minimitzi el valor $\textrm{min}_{j \in S_i} l_i$
+\item Assignem el soci $i$ a la sala $j$.
+\item Tots els socis $i'$ tals que $S_i \cap S_{i'} \neq \emptyset$ s'assignen a la sala $j$.
+}
+
+\end{enumerate}
+
+\paragraph{Q4}
+Demostreu que la solució així obtinguda és una 6 aproximació per al problema plantejat.
+\input{docs/q4}

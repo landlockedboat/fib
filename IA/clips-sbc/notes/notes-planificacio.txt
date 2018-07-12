@@ -1,0 +1,19 @@
+Apuntes sobre formalización:
+
+Tenemos tres fases:
+
+> Abstracción de datos
+ 
+A partir de los datos del usuario extraemos una serie de restricciones
+genericas sobre la comida que el usuario quiere.
+
+> Asociación heurística
+
+A partir de las restricciones generadas creamos restricciones sobre un menú
+abstracto. Por ejemplo: primer-plato-pescado, primer-plato-caliente, 
+primer-plato-de-temporada, etc...
+
+> Refinamiento y adaptación
+
+A partir de esas restricciones podemos escoger instancias de platos. Este
+seria el refinamiento que haremos sobre las restricciones de menúes.

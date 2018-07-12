@@ -1,0 +1,13 @@
+INPUT X
+INPUT Y
+IF X > 0 OR X = 0 OR NOT 0 > Y THEN
+  Z := 2
+  WHILE X > Y
+  DO
+    X := X - 1
+    Z := Z * Z
+  END
+ELSE
+  Z := 0
+END
+PRINT Z

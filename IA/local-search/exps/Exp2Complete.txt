@@ -1,0 +1,52 @@
+Sensor seed is -1575638619
+Center seed is -494947861
+conectem 2 a 3 amb un heuristic de 97033.0. el cost de la solució es 61312.0
+nodesExpanded : 132
+
+Sensor seed is 1912021076
+Center seed is -1416668013
+conectem 41 a 55 amb un heuristic de 108773.0. el cost de la solució es 72673.0
+nodesExpanded : 158
+
+Sensor seed is -928952392
+Center seed is -1699865761
+conectem 48 a 72 amb un heuristic de 111896.0. el cost de la solució es 77300.0
+nodesExpanded : 131
+
+Sensor seed is 1230508229
+Center seed is -2021391348
+conectem 81 a 65 amb un heuristic de 116329.0. el cost de la solució es 77125.0
+nodesExpanded : 126
+
+Sensor seed is 657904996
+Center seed is -2060809471
+conectem 33 a 24 amb un heuristic de 119721.0. el cost de la solució es 89792.0
+nodesExpanded : 131
+
+
+Sensor seed is -1052073648
+Center seed is 61959370
+conectem 63 a 60 amb un heuristic de 115509.0. el cost de la solució es 82020.0
+nodesExpanded : 122
+
+Sensor seed is -369862908
+Center seed is 1169355205
+conectem 54 a 76 amb un heuristic de 112056.0. el cost de la solució es 75575.0
+nodesExpanded : 135
+
+Sensor seed is 1481308789
+Center seed is -1528912654
+conectem 96 a 93 amb un heuristic de 108945.0. el cost de la solució es 78320.0
+nodesExpanded : 136
+
+Sensor seed is 1916242953
+Center seed is 476423284
+conectem 81 a 75 amb un heuristic de 112639.0. el cost de la solució es 75003.0
+nodesExpanded : 140
+
+
+Sensor seed is 734803420
+Center seed is -596850574
+conectem 52 a 88 amb un heuristic de 101969.0. el cost de la solució es 72040.0
+nodesExpanded : 137
+End

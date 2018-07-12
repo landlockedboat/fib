@@ -1,0 +1,78 @@
+\subsection{Experimento 4}
+
+\paragraph{Enunciado}
+
+Dado el escenario de los apartados anteriores, estudiad como evoluciona el 
+tiempo de ejecución para hallar la solución para valores crecientes de los 
+parámetros siguendo la proporción 4:100. Comenzad con 4 centros de datos e
+incrementad el número de 2 en 2 hasta que se vea la tendencia. Usad el
+algoritmo de Hill Climbing y la misma función heurística que antes.
+
+\paragraph{Condiciones del experimento}
+
+Para realizar este experimento necesitamos generar los datos correspondientes
+a un total de 5 ejecuciones bajo diferentes criterios: 4 centros, 100 sensores;
+6 centros, 150 sensores; 8 centros, 200 sensores; 10 centros, 250 sensores.
+
+Para garantizar que nuestra solucion es correcta, realizaremos 10 ejecuciones
+por cada caso y trabajaremos con su media aritmética. A parte, para obtener una
+muestra representativa, generaremos las semillas para cada ejecución de manera
+aleatoria.
+
+Podemos resumir las características del experimento en la siguiente tabla:
+
+\begin{tabular}{ | p{0.4\textwidth} | p{.6\textwidth} | }
+  \hline
+  Observación & El tiempo de ejecución puede variar aunque la proporción
+  sensores-centros se mantenga constante\\
+  \hline
+  Planteamiento & Escogemos diferentes configuraciones de numeros de centros
+  y sensores \\
+  \hline
+  Hipótesis & El tiempo de ejecución varía a pesar de que no cambie la 
+  proporción de sensores-centros (H0) o sí.\\
+  \hline
+  Método & 
+    \begin{itemize}
+      \item Escogemos semillas aleatoriamente para todas las repeticiones
+      \item Ejecutamos 10 experimentos para cada configuracion de centros
+        sensores que necesitamos
+      \item Usamos el algoritmo de HillClimbing 
+      \item Mediremos el tiempo para realizar la comparación
+    \end{itemize}
+    \\
+  \hline
+\end{tabular}
+
+
+\paragraph{Resultados del experimento}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{exp4}
+  \begin{tabular}{ | l | c | }
+    \hline
+    Número & Configuración del estado \\
+    \hline
+    1 & 4 centros y 100 sensores \\
+    2 & 6 centros y 150 sensores \\
+    3 & 8 centros y 200 sensores \\
+    4 & 10 centros y 250 sensores \\
+    \hline
+  \end{tabular}
+  \caption{Evolución del tiempo de ejecución bajo varias configuraciones
+  y la leyenda apropiada}
+  \label{fig:exp4-time-evolution}
+\end{figure}
+
+En la figura \ref{fig:exp4-time-evolution} podemos ver como el tiempo de
+ejecucion varía en funcion de la configuracion que hemos utilizado.
+Cada configuración va representada a partir de un número.
+
+\paragraph{Conclusiones}
+
+El resultado del experimento se asemeja mucho a lo que nosotros nos esperabamos
+que sucediese según la hipótesis nula H0. El tiempo de ejecución va aumentando
+a medida que aumentamos el numero de centros y sensores, de una manera casi
+exponencial.
+

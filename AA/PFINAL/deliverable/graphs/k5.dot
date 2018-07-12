@@ -1,0 +1,8 @@
+graph {
+graph [ dpi = 600 ]; 
+node[shape=none width=0.3, height=0, margin=0.02];
+1 -- {2,3,4,5}
+2 -- {3,4,5}
+3 -- {4,5}
+4 -- {5}
+}

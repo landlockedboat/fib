@@ -1,0 +1,10 @@
+Data Loss Factor = 2
+
+Connection cost
+
+84123.0
+97951.0
+85922.0
+81568.0
+80527.0
+

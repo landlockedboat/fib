@@ -1,0 +1,77 @@
+\section{Descripción de cómo han sido utilizadas las técnicas}
+\label{sec:desc_util}
+
+A pesar de que no hay mucha información al respecto, podemos hacernos
+una idea aproximada de cómo funcionan los árboles decisionales 
+( explicados en la seccion \ref{sec:desc_tecnica} ) en \texttt{thegrid.io}.
+
+\texttt{thegrid.io} opera preguntando al usuario un serie de preguntas
+iniciales, que por orden son \cite{website_ai}:
+
+\begin{description}
+    \item[Branding] El usuario decide en cuanta medida el sitio web deberia
+    ser estructurado por el contenido y cuanto por sus elecciones.
+    \item[Color] El usuario puede escoger una paleta concreta de colores 
+    para su web.
+    \item[Layout] El usuario puede definir, a rasgos generales, si prefiere
+    un web de contenido denso, minimalista o más orientada al arte y diseño.
+    \item[Type] Al usuario se le da a escoger entre una serie de 
+    tipografías para su sitio web.
+\end{description}
+
+Hemos de suponer que los árboles decisionales del algoritmo de 
+\texttt{thegrid.io} operan con
+input "inferido" a través de las preferencias y el contenido que el 
+usuario ha indicado que debería aparecer en su página. Teniendo en cuenta
+que la cantidad de información que el usuario da al sistema es, 
+como acabamos de ver, mínima, podemos concluir que el feedback del usuario 
+tiene un
+impacto reducido en el producto final y que el ritmo del algoritmo es
+dictado mayormente por el contenido, aunque parezca paradójico dado que 
+estamos hablando de árboles de decisión.
+
+Pensamos que el algoritmo opera a varios niveles de abstracción, dada
+la naturaleza del diseño web. Es muy probable de que se trate, por lo tanto,
+de una aglomeración de árboles comunicándose entre ellos más que uno solo.
+
+Podemos asumir, por ejemplo, que un árbol se encarga de distribuir la carga
+de la información sobre la página, generando así picos y valles de 
+información que hacen que la experiencia de visualizado sea más amena.
+Es posible que a otro nivel operen árboles decisionales que se 
+encargan de estructurar cada una de las piezas de contenido por separado,
+y después se comuniquen con árboles de niveles superiores para cuadrar
+colores y situarlos en posiciones óptimas para la experiencia del usuario.
+
+\texttt{thegrid.io} está creada para que los diseñadores profesionales
+puedan ampliar la capacidad del algoritmo de construcción de páginas, lo
+que nos lleva a asumir que la mayoría de decisiones que se toman durante
+el procesado de una página son derivadas del conocimiento experto de los
+diseñadores que han trabajado en el algoritmo. Un ejemplo de ejecución
+sería el siguiente:
+
+\begin{enumerate}
+  \item ¿Es bueno este color de texto para esta imagen?
+  \item 
+  \begin{enumerate}
+    \item Opacidad $\rightarrow$ Correcta  
+    \item Combinacion con el color de la imagen $\rightarrow$ Correcta  
+    \item Cohesión con el tono de la imagen $\rightarrow$ Correcta  
+    \item \textbf{Veredicto} $\rightarrow$ Correcto
+  \end{enumerate}
+  \item ¿El texto debería estar centrado?
+  \item $\cdots$
+\end{enumerate}
+
+En resumen, \texttt{thegrid.io} funciona mediante una variación de el 
+algoritmo de árboles de decisión, en el cual el conocimiento es extraído
+de una base de conocimiento creada por varios diseñadores que en su
+mayor parte se constituye de restricciones y buenas prácticas de diseño
+que se han aplicado al desarrollo web tradicionalmente durante los 
+últimos años.
+
+Muchos críticos al sistema señalan la robustez sobre el cual está 
+construido \cite{the_grid_better}, y rechazan la idea de que este servicio o cualquiera pueda
+desbancar a los artistas y diseñadores web en su totalidad. Sin duda es
+un punto débil del algoritmo a tener en cuenta, aunque opinamos que todavía
+es pronto para forjar un veredicto tan severo como el que algunos se han
+atrevido a pronunciar.

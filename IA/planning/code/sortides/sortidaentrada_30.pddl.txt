@@ -1,0 +1,50 @@
+
+ff: parsing domain file
+domain 'MENUS' defined
+ ... done.
+ff: parsing problem file
+problem 'MENUS-1' defined
+ ... done.
+
+
+
+no optimization required. skipping criterion.
+
+
+no metric specified. plan length assumed.
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
+    metric is  plan length
+
+Cueing down from goal distance:   20 into depth [1]
+                                  16            [1]
+                                  12            [1]
+                                  10            [1]
+                                   7            [1]
+                                   5            [1]
+                                   3            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+
+step    0: SERVIR_ULTIMO_DIA_PRIMERO VIERNES PRIMERO12 TIPO5
+        1: SERVIR_PRIMERO_SOLO JUEVES PRIMERO48 TIPO2 VIERNES TIPO5
+        2: SERVIR_ULTIMO_DIA_SEGUNDO VIERNES SEGUNDO12 TIPO5
+        3: SERVIR_PRIMERO_SOLO MIERCOLES PRIMERO30 TIPO5 JUEVES TIPO2
+        4: SERVIR_SEGUNDO JUEVES SEGUNDO41 TIPO3 PRIMERO48 VIERNES TIPO5
+        5: SERVIR_PRIMERO_SOLO MARTES PRIMERO44 TIPO1 MIERCOLES TIPO5
+        6: SERVIR_SEGUNDO MIERCOLES SEGUNDO0 TIPO4 PRIMERO30 JUEVES TIPO3
+        7: SERVIR_SEGUNDO MARTES SEGUNDO33 TIPO5 PRIMERO44 MIERCOLES TIPO4
+     
+
+time spent:    0.06 seconds instantiating 80980 easy, 0 hard action templates
+               0.04 seconds reachability analysis, yielding 660 facts and 6263 actions
+               0.06 seconds creating final representation with 652 relevant facts, 1 relevant fluents
+               0.02 seconds computing LNF
+               0.03 seconds building connectivity graph
+               0.01 seconds searching, evaluating 10 states, to a max depth of 1
+               0.22 seconds total time
+

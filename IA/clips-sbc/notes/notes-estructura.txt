@@ -1,0 +1,38 @@
+IDEES ESTRUCTURA
+
+1. Obtenir preferencies del client
+
+  Preguntem directament al client quines coses li agraden i quines no
+
+2. Inferir noves preferencies
+
+  Inferim nova informacio a partir del input que el client ens ha donat
+  Per exemple, si al client li agraden els ingredients de temporada (ho
+  inferim a partir de si es sibarita)
+
+3. Descartar plats incompatibles amb les preferencies
+
+  Plats amb carn si el usuari es vegetaria, ingredients prohibits...
+
+4. Puntuar plats en funcio de les preferencies
+  
+  Plats exclusius si es usuari es Sibarita...
+
+5. Crear tots els menus possibles a partir dels plats resultants
+    i descartar els que no ens interessen.
+
+  Producte cartesia de tots els plats amb tots el plats amb tots els plats!
+  Molt costos pero necessari?
+
+6. Puntuar menus en funcio de les preferencies
+
+  Calcular la puntuacio dels menus sumant les dels plats
+  
+  Afegir criteris adicionals
+    Puntuar negativament dos plats seguits amb la mateixa textura
+    Puntuar negativament dos plats seguits freds
+
+7. Triar els millors menus de cada categoria
+
+  Escollir i imprimir per pantalla els tres menus amb la millor
+  puntuacio escollint les ponderacions pertinents al seu preu

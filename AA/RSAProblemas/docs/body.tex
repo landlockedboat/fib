@@ -1,0 +1,11 @@
+Note: This is a correction of our previous submission.
+
+\section*{Exercise 2}
+
+We first compute $x=b^c mod \phi(p)$ \\
+Then we compute  $a^x mod p$. 
+
+Why is this correct? Simply because for every p,a, as Euler tells us that$a^{\phi(p)}=1 mod p$, we have the following $ a^k = a^{k+\phi(p)*l} mod p $.
+
+This takes polynomial time, as modular exponentiation can be computed in polynomial time, with use of repeated squaring.
+

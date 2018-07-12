@@ -1,0 +1,30 @@
+\textbf{La respuesta a Q1 empieza aquí}
+
+Para simplificar la notación, definimos $M = \{1,2,\dots,m\}$ (para referirnos a los locales) y $N = \{1,2,\dots,n\}$ (para referirnos a los socios).
+
+Objetivo: minimizar
+
+\begin{equation}
+ \sum_{\forall j \in M} l_jx_j + \sum_{\forall i \in N} \sum_{\forall j \in M} c(i,j)y_{ij}
+\end{equation}
+
+Cumpliendo las siguientes restricciones:
+
+\begin{equation}
+\label{r1}
+ \forall i \in N \sum_{\forall j \in M} y_{ij} \geq 1
+\end{equation}
+
+\begin{equation}
+\label{r2}
+ \forall i \in N, j \in M -y_{ij} + x_j \geq 0
+\end{equation}
+
+\begin{equation}
+\label{r3}
+ \forall i \in N, j \in M, x_j \in \{0,1\} \wedge y_{ij} \in \{0,1\} 
+\end{equation}
+
+La restricción \ref{r1} indica que todo socio debe estar asignado a algún local. La restricción \ref{r2} indica que si un socio está asignado a un local, entonces en ese local hay que abrir una sala de juegos. La restricción \ref{r3} es para asegurar que la solución es entera
+
+\textbf{La respuesta a Q1 termina aquí}

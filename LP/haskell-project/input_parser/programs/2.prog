@@ -1,0 +1,6 @@
+INPUT Z
+IF Z > 0 AND 30 > Z THEN
+  M := 2
+ELSE
+  V := 0
+END

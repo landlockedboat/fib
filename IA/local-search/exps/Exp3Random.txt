@@ -1,0 +1,61 @@
+
+Sensor seed is 703808648
+Center seed is -1576001517
+h:125345.0
+c:84541.0
+n:200001
+
+Sensor seed is 728164705
+Center seed is -1613362312
+h:120881.0
+c:87757.0
+n:200001
+
+Sensor seed is 274371650
+Center seed is 538788598
+h:137280.0
+c:106304.0
+n:200001
+
+Sensor seed is 1124394892
+Center seed is 395743981
+h:112321.0
+c:77352.0
+n:200001
+
+Sensor seed is -1848131230
+Center seed is 1072579199
+h:113034.0
+c:87753.0
+n:200001
+
+Sensor seed is 1717274038
+Center seed is 1237912679
+h:128255.0
+c:96571.0
+n:200001
+
+Sensor seed is 1287726432
+Center seed is -1253411019
+h:130036.0
+c:99760.0
+n:200001
+
+Sensor seed is 1311356051
+Center seed is -1014131894
+h:105629.0
+c:70285.0
+n:200001
+
+Sensor seed is 1784671594
+Center seed is -2090696186
+h:123399.0
+c:81374.0
+n:200001
+
+Sensor seed is -454807696
+Center seed is 402581762
+h:110849.0
+c:81608.0
+n:200001
+End

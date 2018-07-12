@@ -1,0 +1,129 @@
+\section{Description of the language} \label{sec:description_of_the_language}
+
+\subsection{History} \label{subsec:history}
+
+D was created by Walter Bright, owner of Digital Mars, and was released to the public in 2001.\footcite{d_change_log}
+Six years later, Andrei Alexandrescu joined in.
+D was originally intended to be a re-engineering of C++, but it is quite a distinct and unique concept, gathering inspiration from many other languages.
+
+\subsection{Programming paradigms} \label{subsec:programming_paradigms}
+
+D is a multi-paradigm language, and supports five different programming paradigms: imperative, object-oriented, metaprogramming, functional and concurrent.\footcite{wikipedia_page}
+
+\paragraph{Imperative}
+
+D imperative programming is almost exactly identical to that in C. Functions, variables, statements, etc. work exactly like C. Moreover, the C runtime library can be directly accessed in D.\footcite{interface_to_c}
+
+\paragraph{Object-oriented}
+
+Object-orientation in D is based on a single inheritance hierarchy in which all classes are derived from class Object. It does not support multiple inheritance, although it can be mimicked via Java-style interfaces and mixins, which separate functionality from class hierachy.
+
+\paragraph{Metaprogramming}
+
+Metaprogramming is supported by a combination of templates, compile time function execution, tuples, and string mixins.
+
+Mixins are a very powerful way to read and execute code from external sources. A practical usage of metaprogramming with mixins in D could be the interpretation of configuration files during runtime. An example of metaproramming with mixins can be observed in the code snippet on figure \ref{fig:mixin_usage_in_D}.
+
+\begin{figure}
+  \caption{Mixin usage in D}
+  \label{fig:mixin_usage_in_D}
+  \begin{lstlisting}
+  // main.d
+
+  string make_ints(string s)
+  {
+      string ret = "";
+      foreach (varname; split(s))
+          ret ~= "int " ~ varname ~ "; ";
+      return ret;
+  }
+
+  void main()
+  {
+      mixin(make_ints(import("script")));
+      foo = 1;
+      bar = 2;
+      xyz = 3;
+  }
+
+  // script
+
+  foo bar xyz
+  \end{lstlisting}
+\end{figure}
+
+\paragraph{Functional}\footcite{functional_programming_in_d}
+
+D offers a variety of resources that makes it very suitable for functional programming.
+It supports \emph{lambda expressions}, and its syntax follows the one in the code example at figure \ref{fig:lambda_expressions_code_example}.
+
+\begin{figure}
+  \caption{Lambda expressions code example}
+  \label{fig:lambda_expressions_code_example}
+  \begin{lstlisting}
+  auto square = function int(int x) { return x * x; }
+  int exponent = 2;
+  auto square = delegate int(int x)
+    { return pow(x, exponent);}
+  \end{lstlisting}
+\end{figure}
+
+\emph{Currying} and \emph{function composition} is also supported by the language, although it is implemented way more elegantly in Haskell. For D, we have to import from the \texttt{std.functional} library the \texttt{curry} and \texttt{compose} environments.
+
+It also has great tools for \emph{object immutability} such as the \texttt{immutable}\footcite{type_qualifiers_in_d} type qualifier, which is a way more \textit{restricted} version of C's \texttt{const} because of its transitivity. Transitivity means that everything reachable by an immutable pointer is also immutable.
+
+\emph{Purity} is also supported in the language. It is possible to mark functions as \texttt{pure}, which means that it can not read or write state nor call impure functions, including IO.
+
+It is important to note that although a function may be marked as \texttt{pure} it is still capable of impure behaviour (throwing exceptions, allocate heap memory...), some of which can be avoided with little extra code.
+
+\paragraph{Concurrent}\footcite{the_d_programming_language}
+
+D's approach to concurrency is based on the idea that there should be little to no data sharing between threads. By default, concurrent threads are isolated, and although data sharing is still allowed, there are strict limitations to the ways which it happens.
+
+Data sharing is approached via the \textit{message passing} paradigm, which has been historically slower than memory sharing architectures. D has chosen this approach because it offers higher modularity and mantainability than the ones of more unrestricted versions of data sharing.
+
+It is possible to obtain unchecked data sharing in programs not marked as \texttt{@safe} by the programmer. Functions with the \texttt{@safe} attribute guarantee memory safety.
+\footcite{memory_safety_in_d}
+
+An example of concurrent code written in D can found in figure  \ref{fig:d_concurrency_code_example}. Notice the \texttt{spawn} function, which executes the function passed as argument in a new logical thread.
+
+\begin{figure}
+  \caption{An example of concurrent code in D}
+  \label{fig:d_concurrency_code_example}
+  \begin{lstlisting}
+  import std.stdio;
+  import std.concurrency;
+
+  void spawnedFunc(Tid ownerTid)
+  {
+      // Receive a message from the owner thread.
+      receive(
+          (int i) { writeln("Received the number ", i);}
+      );
+
+      // Send a message back to the owner thread
+      // indicating success.
+      send(ownerTid, true);
+  }
+
+  void main()
+  {
+      // Start spawnedFunc in a new thread.
+      auto childTid = spawn(&spawnedFunc, thisTid);
+
+      // Send the number 42 to this new thread.
+      send(childTid, 42);
+
+      // Receive the result code.
+      auto wasSuccessful = receiveOnly!(bool);
+      assert(wasSuccessful);
+      writeln("Successfully printed number.");
+  }
+  \end{lstlisting}
+\end{figure}
+
+\subsection{Compilation and type system} \label{subsec:compilation_and_type_system}
+
+D is compiled. Although it has an optional garbage collector, it is not compiled at run time.
+
+D is type unsafe, has explicit type expression and static type cheching.\footcite{comparison_by_type} Its type system works almost identically to C's, with explicit type declarantion and, since C++11, the \texttt{auto} keyword, which lets the compiler infer the type of a variable.

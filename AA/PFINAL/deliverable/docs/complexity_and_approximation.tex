@@ -1,0 +1,59 @@
+\section{A $(log^2(n))$ Approximation}
+
+There exists an algorithm that runs in subexponential time and achieves an
+$(log^2(n))$ approximation of the min.cut linear arrangement problem  \cite{vazi01}.
+
+Basic elements used are:
+
+\begin{itemize}
+
+\item An algorithm that computes in subexponential time a $(\frac{1}{3})$-balanced cut whose capacity is within an $O(nlogn)$
+factor of the capacity of a minimum bisection cut. It is described in \cite{vazi01}.
+\item The idea that the capacity of a minimum bisection cut is lower bound on the optimal arrangement. 
+\end{itemize}
+
+The second element can be understood better considering that the cut in the middle of the linear arrangement is a bisection
+cut, and in every linear arrangement there is a bisection cut. So, in whatever order may we put the vertices in the line, 
+we can't have cutwidth smaller than the capacity of a minimum bisection cut.
+
+Combining the 2 elements above, we can get like the following algorithm:
+ 
+ Find a (1/3)-balanced cut in G V , say (S, S'),
+ and recursively find a numbering of S in $G_S$ using numbers from 1 to |S|
+ and a numbering of S' in $G_{S'}$ using numbers from |S| + 1 to n. Of course,
+ the recursion ends when the set is a singleton, in which case the prescribed
+ number is assigned to this vertex
+
+It is claimed that this algorithm runs in logn * (time of the ${1}{3}$-balanced cut algorithm) and achieves an $O(log^2(n)$ factor for the minimum cut linear arrangement problem.
+
+
+% finding a minimum capacity such cut is called the minimum bisection problem.
+% We will use Theorem 21.24 to obtain a pseudo-approximation algorithm for
+% Problem 21.27 – we will find a (1/3)-balanced cut whose capacity is within
+% an O(log n) factor of the capacity of a minimum bisection cut (see the notes
+% in Section 21.8 for a true approximation algorithm).
+% For V ⊂ V , let G V denote the subgraph of G induced by V . The
+% algorithm is: Initialize U ← ∅ and V ← V . Until |U | ≥ n/3, find a minimum
+% expansion set in G V , say W , then set U ← U ∪W and V ← V −W . Finally,
+% let S ← U , and output the cut (S, V − S).
+% 
+% Problem 21.29 (Minimum cut linear arrangement) Given an undi-
+% rected graph G = (V, E) with nonnegative edge costs, for a numbering of its
+% vertices from 1 to n, define S i to be the set of vertices numbered at most i,
+% for 1 <= i <= n − 1; this defines n − 1 cuts. The problem is to find a numbering
+% that minimizes the capacity of the largest of these n−1 cuts, i.e., it minimizes
+% max{c(S i )| 1 <= i <= (n − 1)}.
+% Using the pseudo-approximation algorithm obtained above for the (1/3)-
+% balanced cut problem, we will obtain a true O(log 2 n) factor approximation
+% algorithm for this problem. A key observation is that in any arrangement,
+% S n/2 is a bisection cut, and thus the capacity of a minimum bisection cut
+% in G, say β, is a lower bound on the optimal arrangement. The reason we
+% get a true approximation algorithm is that the (1/3)-balanced cut algorithm
+% compares the cut found to β.
+% The algorithm is recursive: find a (1/3)-balanced cut in G V , say (S, S),
+% and recursively find a numbering of S in G S using numbers from 1 to |S|
+% and a numbering of S in G S using numbers from |S| + 1 to n. Of course,
+% the recursion ends when the set is a singleton, in which case the prescribed
+% number is assigned to this vertex.
+% Claim 21.30 The algorithm given above achieves an O(log 2 n) factor for the
+% minimum cut linear arrangement problem.

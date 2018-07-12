@@ -1,0 +1,119 @@
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+\graphicspath{ {figs/} }
+\usepackage[utf8]{inputenc}
+\setbeamertemplate{navigation symbols}{}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\title{The grid}
+\author{Raluca Vijulie \and Martí Rosell \and Víctor Alcázar}
+\institute{Inteligencia Artificial}
+
+\date{2016}
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\begin{frame}
+
+\frametitle{Que es The grid}
+\begin{itemize}
+  \item<1-> Un servicio web que diseña y constrye paginas web
+  \item<2-> El usuario introduce contenido y el programa lo estructura
+  \item<3-> El algoritmo responsable combina el contenido con gusto
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ejemplos}
+  \includegraphics[scale=.22]{figs/example1.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ejemplos}
+  \includegraphics[scale=.22]{figs/example2.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ejemplos}
+  \includegraphics[scale=.22]{figs/example3.png}
+\end{frame}
+
+\begin{frame}
+
+  \frametitle{Algunas funcionalidades}
+  \begin{itemize}
+    \item<1-> Crea automáticamente paletas de colores a partir de imagenes
+    \item<2-> Distribuye el contenido para repartir la cantidad de 
+      informacion dada al usuario
+    \item<3-> Detecta puntos de interes de las imagenes para no 
+      recortarlas
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Implementacion}
+    \begin{itemize}
+      \item<1-> The grid funciona con arboles decisionales
+      \item<2-> La técnica es la mejor para un sistema con aprendizaje 
+        supervisado
+      \item<3-> Funcionan extrayendo informacio del usuario y llegando a 
+        una conclusion final
+      \item<4-> Ejemplo: \texttt{akinator.com}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Implementacion}
+    \begin{itemize}
+      \item<1-> El usuario responde una serie de preguntas inicial
+      \item<2-> Los arboles son construidos y extendidos con
+        ayuda de diseñadores graficos
+      \item<3-> Funcionan infiriendo respuestas del entorno
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Algunas criticas}
+    \begin{itemize}
+      \item<1-> El codigo generado es lento (javascript para estructurar)
+      \item<2-> El algoritmo no tiene en cuenta la semantica del contenido
+      \item<3-> Es poco flexible, ya que solo genera ``feeds'' al estilo facebook
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Rentabilidad}
+    \begin{itemize}
+      \item<1-> The grid es una startup que ha recaudado 6M\$ de capital
+      \item<2-> Ofrece un plan de subscripcion basico de 90\$ al año
+      \item<3-> La empresa continua expandiendose y creciendo
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Impacto}
+    \begin{itemize}
+      \item<1-> Es un servicio que pretende eliminar gran parte del 
+        trabajo de diseño y desarrollo web
+      \item<2-> Hay bastante polemica entre los diseñadores web sobre
+        si la pagina realmente funciona
+      \item<3-> Es beneficioso para gente principiante
+    \end{itemize}
+\end{frame}
+
+\end{document}

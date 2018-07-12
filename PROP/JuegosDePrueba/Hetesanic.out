@@ -1,0 +1,87 @@
+Que numero de instruccion quieres ejecutar?
+0 - Cargar el grafo a traves del path recibido.
+1 - Setear el grafo nuevo en el hetesim (Cada vez que hay un grafo nuevo, se tiene que setear en el hetesim).
+2 - Busqueda que te devuelve la matriz de hetesims para cierto path.
+3 - Busqueda que te devuelve para cierto path, para cierto nodo, el hetesim de ese nodo a todos los nodos de final del path, desordenadamente.
+4 - Busqueda que te devuelve el valor hetesim entre los dos nodos.
+5 - Salir del progrma.
+> Papers Done
+Authors Done
+relaciones autor Done
+Conferencias Done
+relaciones conf Done
+Terme Done
+relaciones term Done
+    Cargado correctamente :D
+Que numero de instruccion quieres ejecutar?
+0 - Cargar el grafo a traves del path recibido.
+1 - Setear el grafo nuevo en el hetesim (Cada vez que hay un grafo nuevo, se tiene que setear en el hetesim).
+2 - Busqueda que te devuelve la matriz de hetesims para cierto path.
+3 - Busqueda que te devuelve para cierto path, para cierto nodo, el hetesim de ese nodo a todos los nodos de final del path, desordenadamente.
+4 - Busqueda que te devuelve el valor hetesim entre los dos nodos.
+5 - Salir del progrma.
+>     Seteado correctamente :D
+Que numero de instruccion quieres ejecutar?
+0 - Cargar el grafo a traves del path recibido.
+1 - Setear el grafo nuevo en el hetesim (Cada vez que hay un grafo nuevo, se tiene que setear en el hetesim).
+2 - Busqueda que te devuelve la matriz de hetesims para cierto path.
+3 - Busqueda que te devuelve para cierto path, para cierto nodo, el hetesim de ese nodo a todos los nodos de final del path, desordenadamente.
+4 - Busqueda que te devuelve el valor hetesim entre los dos nodos.
+5 - Salir del progrma.
+> Que path quieres utilizar? 'A' autor, 'T' term, 'P' paper, 'C' conf 
+APA autor -> paper -> autor, TPCPA term->paper->conf->...
+> 1.00 0.86 0.90 0.86 
+0.86 1.00 0.91 1.00 
+0.90 0.91 1.00 0.91 
+0.86 1.00 0.91 1.00 
+Que numero de instruccion quieres ejecutar?
+0 - Cargar el grafo a traves del path recibido.
+1 - Setear el grafo nuevo en el hetesim (Cada vez que hay un grafo nuevo, se tiene que setear en el hetesim).
+2 - Busqueda que te devuelve la matriz de hetesims para cierto path.
+3 - Busqueda que te devuelve para cierto path, para cierto nodo, el hetesim de ese nodo a todos los nodos de final del path, desordenadamente.
+4 - Busqueda que te devuelve el valor hetesim entre los dos nodos.
+5 - Salir del progrma.
+> Que path quieres utilizar? 'A' autor, 'T' term, 'P' paper, 'C' conf 
+APA autor -> paper -> autor, TPCPA term->paper->conf->...
+> Que nodo quieres poner como principio de busqueda?
+0 -> Federico de los palotes
+1 -> Membrillo pepillo
+2 -> Jonh Snow
+3 -> Threpwood
+> Threpwood 0.26726124 An Intuition Form Of Crying A River
+Threpwood 0.4713854 An Intuition Form Of Crying A Sea
+Threpwood 0.5172612 An Intuition Form Of Crying A Cloud
+Threpwood 0.4713854 An Intuition Form Of Crying A Ocean
+Threpwood 0.26726124 An Intuition Form Of Crying A Lake
+Threpwood 0.5172612 An Intuition Form Of Crying A Rain
+Threpwood 0.4713854 An Intuition Form Of Crying A Tsunami
+Que numero de instruccion quieres ejecutar?
+0 - Cargar el grafo a traves del path recibido.
+1 - Setear el grafo nuevo en el hetesim (Cada vez que hay un grafo nuevo, se tiene que setear en el hetesim).
+2 - Busqueda que te devuelve la matriz de hetesims para cierto path.
+3 - Busqueda que te devuelve para cierto path, para cierto nodo, el hetesim de ese nodo a todos los nodos de final del path, desordenadamente.
+4 - Busqueda que te devuelve el valor hetesim entre los dos nodos.
+5 - Salir del progrma.
+> Que path quieres utilizar? 'A' autor, 'T' term, 'P' paper, 'C' conf 
+APA autor -> paper -> autor, TPCPA term->paper->conf->...
+> Que nodo quieres poner como principio de busqueda?
+0 -> An Intuition Form Of Crying A River
+1 -> An Intuition Form Of Crying A Sea
+2 -> An Intuition Form Of Crying A Cloud
+3 -> An Intuition Form Of Crying A Ocean
+4 -> An Intuition Form Of Crying A Lake
+5 -> An Intuition Form Of Crying A Rain
+6 -> An Intuition Form Of Crying A Tsunami
+> 0 -> Federico de los palotes
+1 -> Membrillo pepillo
+2 -> Jonh Snow
+3 -> Threpwood
+> No has introducido un numero o está fuera de rango.
+Que numero de instruccion quieres ejecutar?
+0 - Cargar el grafo a traves del path recibido.
+1 - Setear el grafo nuevo en el hetesim (Cada vez que hay un grafo nuevo, se tiene que setear en el hetesim).
+2 - Busqueda que te devuelve la matriz de hetesims para cierto path.
+3 - Busqueda que te devuelve para cierto path, para cierto nodo, el hetesim de ese nodo a todos los nodos de final del path, desordenadamente.
+4 - Busqueda que te devuelve el valor hetesim entre los dos nodos.
+5 - Salir del progrma.
+> 

@@ -1,0 +1,26 @@
+menú
+  primero
+  segundo
+
+para cada día laborable
+
+restricciones en el tipo de plato entre días consecutivos de manera que
+este no pueda repetirse. 
+
+no podemos poner dos días seguidos dos primeros platos de pescado 
+
+pero puede haber un primero de pescado un día y un segundo de 
+pescado al día siguiente. 
+
+disponemos del numero de calorías que tiene cada plato 
+podemos usarla para obtener combinaciones de platos que aporten las 
+calorías necesarias para una comida saludable.
+
+los platos también tienen un coste de elaboración.
+Por lo tanto al sistema se le ha de dar conocimiento sobre:
+
+Platos primeros y segundos que se pueden elaborar
+Tipología a la que pertenece cada plato
+Incompatibilidades entre platos primeros y segundos
+La cantidad de calorías que cada plato aporta
+El precio que cuesta un plato

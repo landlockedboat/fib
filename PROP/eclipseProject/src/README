@@ -1,0 +1,22 @@
+Para compilar todos los tests en linux:
+	javac Dominio/CtrlDominioTest.java Dominio/HeteSimTest.java Dominio/HeteSanicTest.java resultTesting/*.java
+	
+
+CtrlDominioTest:
+	java Dominio.CtrlDominioTest GraphForTesting/
+
+CtrlDataTest:
+	java -jar Albert/CtrlDataTest.jar
+	Para más información, abrir "Descripció test"
+
+
+HeteSimTest:
+	java Dominio.HeteSimTest GraphForTesting/
+
+
+HeteSanicTest:
+	java Dominio.HeteSanicTest GraphForTesting/
+
+
+ResultTest:
+	java resultTesting.ResultTest

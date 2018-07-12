@@ -1,0 +1,16 @@
+\section{Various results}
+
+
+In this section we will present a number of results regarding our problem. 
+
+
+The problem for genera1 graphs is NP-complete \cite{Garey79}, \cite{Gavril77}, even for planar graphs \cite{MS85}
+For fixed cost k, the problem can be solved in $O(n^{k-1})$ time \cite{Ma82}. For trees, better results have been found.
+
+The restriction of the problem to trees has been open for some time.
+In 1982 Lengauer described an approximation algorithm for trees in \cite{Len82}
+that produces a layout with cutwidth at most twice the optimal. He also determined exactly the cutwidth of complete k-ary trees.  M. Chung et al. present in \cite{Chu82} an algorithm that solves the MINCUT problem
+on trees in time $O(n(log n)^{d-2})$ where d is the maximum degree of the tree. Thus,
+their algorithm works in polynomial time for bounded degree trees, but exponential
+time in general. Yanakakis in 1983, presents an algorithm that finds a min-cut linear arrangement of a tree in O(n log n) time \cite{yan}. 
+

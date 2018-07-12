@@ -1,0 +1,3 @@
+[submodule "VJ/rocket-league"]
+	path = VJ/rocket-league
+	url = https://github.com/vikepic/rocket-league.git

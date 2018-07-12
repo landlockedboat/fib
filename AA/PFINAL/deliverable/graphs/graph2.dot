@@ -1,0 +1,11 @@
+graph{
+graph [ dpi = 600 ]; 
+rankdir=LR;
+ranksep=0;
+node[shape=none, width=0.3, height=0, margin=0.02];
+1--3--4--2
+
+edge[style=solid, constraint=false];
+1:s--2:s--3:s
+
+}

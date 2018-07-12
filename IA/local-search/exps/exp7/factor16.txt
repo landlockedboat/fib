@@ -1,0 +1,9 @@
+Data Loss Factor = 16
+
+Connection cost
+
+297300.0
+264150.0
+277630.0
+305106.0
+216849.0

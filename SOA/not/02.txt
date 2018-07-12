@@ -1,0 +1,14 @@
+[X] Implement the macro RESTORE_ALL
+[X] Implement the macro EOI
+[ ] Implement the keyboard management.
+	[ ] Implement the keyboard service routine.
+	[ ] Implement the keyboard handler.
+	[ ] Initialize the IDT with the keyboard handler
+[ ] Enable the interrupt
+[ ] Implement the system_call_handler routine.
+[ ] Initialize the IDT with the handler
+[ ] Implement the write system call
+	[ ] Implement the sys_write routine.
+	[ ] Modify the sys_call_table with the new routine.
+	[ ] Create a wrapper for the system call.
+[ ] Implement the errno and perror function

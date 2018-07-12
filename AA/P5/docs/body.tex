@@ -1,0 +1,88 @@
+\section*{Problem statement}
+\subsection*{The \exc{} problem}
+We are feeling experimental and want to create a new dish. There are various ingredients we can choose from and we'd like to use as many of them as possible, but some ingredients don't go well with others. If there are $n$ possible ingredients (numbered 1 to $n$, we write down the $n\times n$ matrix D giving the \textit{discord} between any pair of ingredients. This \textit{discord} is a real number between $0.0$ and $1.0$, where $0.0$ means ``they go together perfectly'' and $1.0$ means ``they don't go together''. For example, if $D[2,3] = 0.1$ and $D[1,5] = 1.0$, then ingredients 2 and 3 go together pretty well whereas 1  and 5 clash badly.
+
+Notice that D is necessarely symmetric and that the diagonal entries are always $0.0$. Any set of ingredients always incurs a penalty which is the sum of all discors values between pairs of ingredients. For instance the set of ingredients $\{1,2,3\}$ incurs a penalty of $D[1,2] + D[1,3] + D[2,3]$. We want the penalty to be small.
+
+\subsection*{Exercise}
+Given $n$ ingredients, and the discord $n \times n$ matrix $D$ and some number $p$, compute the maximum number of ingredients we can choose with penaly $\leq p$
+
+Show that if \exc{} is solvable in polinomial time, then is so 3SAT.
+
+\section*{Answer}
+A way to prove that if \exc{} is solvable in polinomial time, then so is \tsat{} is by reducing in polynomial time \tsat{} to \exc{}.
+
+Assuming a reduction is found, it means that \exc{} is harder or as hard to solve as \tsat{}. Once this has been established, there is no doubt that if we assume that \exc{} is solvable in polynomial time, we have that \tsat{} must be solvable in polynomial time, because it is easier or as easy to solve as \exc{}, based on our previous assumptions.
+
+The problem is that \tsat{} and \exc{} are \textit{very} different problems one to another. \tsat{} is about boolean formula satisfactibility and \exc{} is much more similar to a \textsc{Longest Path} problem, for example. Because of this, we'll have to use another problem to help us with the reduction: \is{}.
+
+\paragraph{\is{}}
+A subset of nodes $S \subseteq V$ is an \textit{independent set} of graph $G = (V,E)$ if there are no edges between them. Given a graph $G = (V,E)$ and a number $s \leq |V|$, say if there is a subset $S$ size $s$ that is an \textit{independent set} of $G$.
+\\ \\
+\is{} is very similar (or at least more similar than \tsat{}) to \exc{}. If we interpret \exc{} as a graph problem, with $D$ as its adjacency matrix, the simiarities begin to arise. And what is more convenient: \tsat{} can be reduced to \is{}, and it has aleady been done\cite[p. 262]{algorithms}!
+
+The problem is that \is{} is a search problem while \exc{} is an \textit{optimisation} problem (Given a set of restrictions, find the better solution to the problem). This makes it very difficult if not impossible to find a reduction directly from one another. Fortunately, we know that a search problem reduces in polynomial time to its optimisation version and vice versa\cite[p. 250]{algorithms}, so we can easily re-formulate \exc{} to be a search problem:
+
+\paragraph{\exc{}}
+Given $n$ ingredients, a number $k \leq n$, the discord $n \times n$ matrix $D$ and some number $p$, compute if it is possible to choose $k$ ingredients which the total discord between them is $\leq p$.
+\\ \\
+From now on, when we refer to the problem, we'll be referring to its search version.
+
+Now it is only left for us to reduce \is{} to \exc{}.
+
+\subsection*{\is{} $\longrightarrow$ \exc{}}
+
+\paragraph{Building the reduction}
+For a reduction to be effective, we have to create a function $F$ that modifies an instance $I$ of \is{} to a valid one of \exc{}. Additionally, we have to create a function $h$ that takes in a valid solution $S$ to \exc{} and transforms it to be a valid solution of \is{}. Finally, if $F(I)$ is not a solution to \exc{}, then $I$ should not be a solution of \is{}.
+
+Let us begin with the reduction. Given an instance of \is{}, $G$, where $G$ is a graph, construct the following:
+
+Set $D$ to be an incidence matrix of $G$, where $a_{ij}=0$ if the graph's vertices do not share a common edge, and $a_{ij}=1$ if they are, and assign to the maximum discordance $d$ the value of 0. We should then set $k$ to $s$.
+
+If we feed this values to an algoritm that solves \exc{}, the result that it yields is a boolean value which says if an independent set of $G$ and size $s$ has been found.
+
+We do not need to transform the solution of \exc{} to one of \is{}, as they should both output the same boolean variable.
+
+This construction clearly takes polynomial time to create. We now have to prove that an answer to \is{} can always be reconstructed from our reduction to \exc{}, and that it satisfies the properties we've assigned to it (in this case, the solution of the reduction to \exc{} is the same to the one of the \is{} instance we've made the reduction from).
+
+\paragraph{Proving that this reduction is correct}
+
+There are two things to show:
+
+\begin{enumerate}
+  \item If $F(I)$ is a solution to \exc{}, then $I$ should be a solution to \is{}.
+\end{enumerate}
+
+It is easier for us to prove the contraposite:
+
+If $I$ is not a solution to \is{}, we'd have that no independent set $S \subseteq V$ of size $k$ or more exists. When we build $F(I)$, we'd have that it would be \textit{impossible} for it to be a solution in \exc{}.
+
+Because of the way it's build, we'd have that there'd be not enough ingredients to satisfy the condition. Because it is impossible for the algorithm that solves \exc{} to pick nodes that are connected in the graph (because we've assigned them a discordance value of 1). If no independent set of size $k$ is found in $I$, that means that  in $F(I)$ there'd be a number $n < k$ of ingredients that share 0-weight edges between them. Given the nature of our reduction, if this is true, it means that our algorithm cannot choose more than $n$ ingredients, thus returning \textit{false} and satisfying this first restriction.
+
+\begin{enumerate}[resume]
+  \item If $F(I)$ is not a solution to \exc{}, then $I$ should not be a solution to \is{}.
+\end{enumerate}
+
+This can be seen by again looking at how the reduction is made. By contradiction, if we assume $F(I)$ to be a solution of \exc{}, we'd have that there are $k$ ingredients that can be chosen with a maximum discordance of 0. Then, this means that at least $k$ nodes in the graph of $I$ should not be connected between them. If the problem should output true if an independent set in $G$ of size $s = k$ exists, we'd have that $I$ has to be a solution of \is{}, because of the definition of an independent set of nodes. We have thus reached a contradiction, and the implication is proven.
+
+The reduction has been proven to be correct.
+
+\paragraph{Conclusion}
+
+Let us be reminded of the problem statement: Show that if \exc{} is solvable in polinomial time, then is so 3SAT.
+
+The path we've followed to prove this has been:
+
+\begin{enumerate}
+  \item Saying that if we can prove that \tsat{} $\karp{}$ \exc{}, the statement is satisfied.
+  \item Reducing \tsat{} to \is{}.
+  \item Reducing \is{} to \exc{}.
+\end{enumerate}
+
+There only remains some explanation as to why those steps are sufficient to prove that the statement is true.
+
+We have \tsat{} $\karp{}$ \is{} $\karp{}$ \exc{}
+
+This means that \tsat{} is as easy or easier to solve than \exc{}. If we assume \exc{} solvable in polynomial time, then an easier problem than it should be solver in polynomial time or less!
+
+This concludes the proof.

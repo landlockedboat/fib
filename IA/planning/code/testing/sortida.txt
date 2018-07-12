@@ -1,0 +1,48 @@
+
+ff: parsing domain file
+domain 'MENUS' defined
+ ... done.
+ff: parsing problem file
+problem 'MENUS-1' defined
+ ... done.
+
+
+translating negated cond for predicate =
+translating negated cond for predicate INCOMPATIBLE
+translating negated cond for predicate PREPARADO
+translating negated cond for predicate SERVIDO_SEGUNDO
+translating negated cond for predicate SERVIDO_PRIMERO
+
+ff: search configuration is Enforced Hill-Climbing, then A*epsilon with weight 5.
+Metric is ((1.00*[RF0](PRECIO_TOTAL)) - () + 0.00)
+COST MINIMIZATION DONE (WITH cost-minimizing relaxed plans).
+
+Cueing down from goal distance:   11 into depth [1]
+                                   9            [1]
+                                   7            [1]
+                                   6            [1]
+                                   4            [1]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+step    0: SERVIR_ULTIMO_DIA_PRIMERO VIERNES PRIMERO7 TIPO1
+        1: SERVIR_PRIMERO_SOLO MARTES PRIMERO5 TIPO3 MIERCOLES TIPO4
+        2: SERVIR_SEGUNDO MIERCOLES SEGUNDO4 TIPO1 PRIMERO4 JUEVES TIPO0
+        3: SERVIR_PRIMERO_SOLO LUNES PRIMERO1 TIPO5 MARTES TIPO3
+        4: SERVIR_SEGUNDO MARTES SEGUNDO10 TIPO2 PRIMERO5 MIERCOLES TIPO1
+        5: SERVIR_ULTIMO_DIA_SEGUNDO VIERNES SEGUNDO1 TIPO5
+        6: SERVIR_PRIMERO JUEVES PRIMERO3 TIPO4 SEGUNDO0 VIERNES TIPO1
+        7: SERVIR_SEGUNDO LUNES SEGUNDO9 TIPO1 PRIMERO1 MARTES TIPO2
+plan cost: 53.000000
+
+time spent:    0.04 seconds instantiating 81940 easy, 0 hard action templates
+               0.02 seconds reachability analysis, yielding 623 facts and 3258 actions
+               0.02 seconds creating final representation with 615 relevant facts, 1 relevant fluents
+               0.01 seconds computing LNF
+               0.01 seconds building connectivity graph
+               0.04 seconds searching, evaluating 9 states, to a max depth of 1
+               0.14 seconds total time
+

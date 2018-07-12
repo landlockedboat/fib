@@ -1,0 +1,70 @@
+Quines comandes heu utilitzat per crear la partició, donar format al sistema de
+fitxers, muntar la partició i canviar els permisos del directori backup?
+
+# mkdir /backup
+# chmod 700 /backup
+# fdisk /dev/sdb
+# mkfs -t ext4 --verbose /dev/sdb4
+
+Quina modificació és necessària fer perquè aquesta nova partició es munti
+automàticament durant el boot amb mode de només lectura?
+
+Tocar /etc/fstab i afegir:
+
+/dev/sdb4 /backup ext4 defaults,ro 0 2
+
+Com es pot fer perquè el nom del fitxer de backup inclogui automàticament la data  del backup?
+Per  exemple  que  sigui   backup-etc-nivell0-200712041030 (any mes dia hora minut segon).
+Utilitza la comanda date.
+
+backup.sh
+
+  #!/bin/bash
+
+  FOLDER=$1
+  TYPE="TOTAL"
+  LEVEL=$2
+  DATE=`date +%Y_%m_%d_%H_%M_%S`
+  # Replacing the '/'s of the folder name
+  FOLDERNAME="${FOLDER//\//-}"
+  NAME=$DATE\_$FOLDERNAME\_$TYPE\_$LEVEL
+  tar -cvpf "/backup/$NAME.tar" $FOLDER
+
+Quina comanda heu fet servir per fer la còpia completa del directori /etc?
+
+./backup.sh /etc/ 0
+
+Per què no és aconsellable comprimir el fitxer de backup?
+
+    Perquè no es guanya res, ja que la majoria de fitxers són petits i tect pla, que no tenen molta possibilitat de ser comprimits.
+
+Si volguéssim comprimir el fitxer de backup quina opció afegiriem a la comanda tar?
+
+    tar -cvpzf "/backup/$NAME.tar.gz" $FOLDER
+
+Quina opció de tar permet excloure un llistat de fitxers del backup?
+
+    --exclude-from=excludes
+
+Com heu utilitzat la comanda md5sum per produir la signatura md5?
+
+    md5sum /backup/$NAME.tar | awk '{print $1}' > /backup/$NAME.asc
+
+Quina comanda heu utilitzat per fer la còpia incremental?
+
+    sudo tar --newer=/backup/2017_12_14_15_35_47_-root-_TOTAL_0.tar -cvpf /backup/$NAME.tar /root
+
+Quin problema potencial hi ha al utilitzar el fitxer .tar de la còpia completa per
+obtenir la data del backup per fer la còpia incremental? Com es pot resoldre
+aquest problema?
+  Que llavors cada cop que fem una còpia incremental copiarem els fitxers modificats
+  des de la data en que vam fer la còpia TOTAL.
+  Per a solucionar-ho, després de fer una còpia incremental, fem "touch <nom_copia_TOTAL>",
+  així només gafarem per a les incrementals els fitxers modificats després de la última còpia incremental.
+
+tar --compare --file=archive-file.tar
+
+NOTES
+
+/etc/ssh/sshd_config
+set PermitRoot... to yes

@@ -1,0 +1,350 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{csquotes}
+\usepackage[pdftex]{graphicx}
+\usepackage{sidecap}
+% \usepackage{math}
+\graphicspath{{./figs/}}
+
+
+
+\author{Víctor Alcázar \and Josué Alcántara}
+\title{PAR Laboratory Deliverable \\ Lab 5}
+\date{\today}
+
+\begin{document}
+
+\lstdefinestyle{C2}
+{
+    language=C,
+    tabsize=2,
+    literate = *{\ \ }{\ }1,
+}
+
+\maketitle
+
+\tableofcontents{}
+
+\chapter{Analysis with Tareador}
+
+\begin{enumerate}
+  \item  Include the relevant parts of the modified solver-tareador.c code and comment where the calls to the Tareador API have been placed. Comment also about the task graph generated and the causes of the dependences that appear in the two solvers: \texttt{Jacobi} and \texttt{Gauss-Seidel}. How will you protect them in the parallel OpenMP code?
+\end{enumerate}
+\vspace{1cm}
+
+\emph{Include the relevant parts of the modified solver-tareador.c code and comment where the calls to the Tareador API have been placed:}
+
+\begin{lstlisting}[style=C2]
+double relax_jacobi (double *u, double *utmp,
+unsigned sizex, unsigned sizey)
+{
+  double diff, sum=0.0;
+
+  int howmany=1;
+  for (int blockid = 0; blockid < howmany; ++blockid) {
+    int i_start = lowerb(blockid, howmany, sizex);
+    int i_end = upperb(blockid, howmany, sizex);
+    for (int i=max(1, i_start); i<= min(sizex-2, i_end); i++) {
+      for (int j=1; j<= sizey-2; j++) {
+
+        // First call to tareador
+        tareador_start_task("innerloop");
+
+        // This instruction generates a better
+        // dependency tree in Tareador
+        tareador_disable_object(&sum);
+
+        utmp[i*sizey+j]= 0.25 * (
+        u[ i*sizey + (j-1) ]+  // left
+        u[ i*sizey + (j+1) ]+  // right
+        u[ (i-1)*sizey + j ]+  // top
+        u[ (i+1)*sizey + j ]); // bottom
+
+        diff = utmp[i*sizey+j] - u[i*sizey + j];
+        sum += diff * diff;
+
+        // We revert the previous tareador directive
+        tareador_enable_object(&sum);
+
+        // Last tareador directive
+        tareador_end_task("innerloop");
+
+      }
+    }
+  }
+  return sum;
+}
+\end{lstlisting}
+
+\vspace{1cm}
+
+\begin{lstlisting}[style=C2]
+// The Tareador instrumentations in this code is analogous
+// to the one in relax_jacobi. We'll only comment where the
+// Tareador directives are.
+
+double relax_gauss (double *u, unsigned sizex, unsigned sizey)
+{
+  double unew, diff, sum=0.0;
+
+  int howmany=1;
+  for (int blockid = 0; blockid < howmany; ++blockid) {
+    int i_start = lowerb(blockid, howmany, sizex);
+    int i_end = upperb(blockid, howmany, sizex);
+    for (int i=max(1, i_start); i<= min(sizex-2, i_end); i++) {
+      for (int j=1; j<= sizey-2; j++) {
+
+        // Two tareador directives here
+        tareador_start_task("innerloop");
+        tareador_disable_object(&sum);
+
+        unew= 0.25 * (
+          u[i*sizey	+ (j-1)]+  // left
+          u[i*sizey	+ (j+1)]+  // right
+          u[(i-1)*sizey	+ j]+  // top
+          u[(i+1)*sizey	+ j]); // bottom
+          diff = unew - u[i*sizey+ j];
+          sum += diff * diff;
+          u[i*sizey+j]=unew;
+
+          // Two more here
+          tareador_enable_object(&sum);
+          tareador_end_task("innerloop");
+
+      }
+    }
+  }
+  return sum;
+}
+
+\end{lstlisting}
+
+\vspace{1cm}
+
+\emph{Comment also about the task graph generated and the causes of the dependences that appear in the two solvers:}
+\begin{SCfigure}[][ht]
+  \caption{The dependency graph generated for the Gauss solver. We can observe here a clear dependency of all the tasks between them. Each task depends on the correct execution of two previous ones. We can deduce they are the left and top blocks of the matrix, because the code depends on them to calculate the current block. We also can observe that each task creates dependencies on two other tasks aswell. This effect happens because each task is in of itself, a top or left block of another task, and thus generates this dependencies.}
+
+  \includegraphics[width=0.4\textwidth]{dependency-gauss-parallel.png}
+\end{SCfigure}
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[scale=0.3]{dependency-jacobi-parallel.png}
+    \caption{The dependency graph generated for the Jacobi solver. Here we can tell that all tasks generate dependencies on the \texttt{copy\_mat} function. This means that the former function produces a bottleneck in the program.}
+\end{figure}
+
+\clearpage
+
+\emph{How will you protect them in the parallel OpenMP code?}
+\\
+For both implementations we'll use a \texttt{reduction} directive if the loop is parallelised using \texttt{\#pragma omp for}. Otherwise, we’ll protect them using the \texttt{atomic} or \texttt{critical} directives.
+
+\chapter{OpenMP parallelization and execution analysis: \textit{Jacobi}}
+\begin{enumerate}
+  \item Describe the data decomposition strategy that is applied to solve the problem, including a picture with the part of the data structure that is assigned to each processor.
+\end{enumerate}
+
+\begin{center}
+\begin{tabular}{ l | r |}
+  \cline{2-2}
+  \(\displaystyle P_{0}\) & sizey / 4 rows \\
+  \cline{2-2}
+  \(\displaystyle P_{1}\) & sizey / 4 rows \\
+  \cline{2-2}
+  \(\displaystyle P_{2}\) & sizey / 4 rows \\
+  \cline{2-2}
+  \(\displaystyle P_{3}\) & sizey / 4 rows \\
+  \cline{2-2}
+\end{tabular}
+\end{center}
+% \vspace{1cm}
+
+We are using geometric block data decomposition. The size of each block is bound by the following formula:
+
+$$
+block\_size =  \frac{sizey * sizex}{num\_procs}
+$$
+
+\begin{enumerate}[resume]
+  \item Include the relevant portions of the parallel code that you implemented to solve the heat equation
+  using the Jacobi solver, commenting whatever necessary.  Including captures of Paraver windows to justify your explanations and the differences observed in the execution.
+\end{enumerate}
+
+\begin{lstlisting}[style=C2]
+double relax_jacobi (double *u, double *utmp,
+  unsigned sizex, unsigned sizey)
+  {
+    double diff, sum=0.0;
+
+    int howmany = omp_get_max_threads();
+
+    #pragma omp parallel for private(diff) reduction(+:sum)
+    for (int blockid = 0; blockid < howmany; ++blockid) {
+      int i_start = lowerb(blockid, howmany, sizex);
+      int i_end = upperb(blockid, howmany, sizex);
+      for (int i=max(1, i_start); i<= min(sizex-2, i_end); i++) {
+        for (int j=1; j<= sizey-2; j++) {
+          utmp[i*sizey+j]= 0.25 * (
+            u[ i*sizey + (j-1) ]+  // left
+            u[ i*sizey + (j+1) ]+  // right
+            u[ (i-1)*sizey + j ]+  // top
+            u[ (i+1)*sizey + j ]); // bottom
+            diff = utmp[i*sizey+j] - u[i*sizey + j];
+            sum += diff * diff;
+          }
+        }
+      }
+      return sum;
+    }
+\end{lstlisting}
+\vspace{1cm}
+
+We've added a \texttt{\#pragma omp for} directive at the start of the loop. This directive makes diff private and applies an adding reduction over the variable sum.
+
+The private parameter is added because otherwise the diff variable will conflict with itself when modified by different threads.
+
+The reduction clause is there to synchronise the sum variable at the end of the parallel region by adding to itself the value that each thread has generated.
+
+\begin{enumerate}[resume]
+  \item Include the speed-up (strong scalability) plots that have been obtained for the different numbers of processors. Reason about the performance that is observed.
+\end{enumerate}
+
+
+\begin{SCfigure}[][ht]
+  \caption
+  {
+  Strong scalability plots obtained using the Jacobi solver. \break We can observe that there exists a massive disparity in execution time and speedup from one configuration to another. Because load unbalance is not possible given the data decomposition strategy being used here, we can only assume that the overhead is caused by a lack of memory optimisation in situations where the number of processors might not produce the most efficient solution, i.e. The data distribution for a given processor may produce more cache misses, thus augmenting the memory access overhead of the program.
+  }
+  \hspace*{-5cm}
+  \includegraphics[width=1\textwidth]{speedup-jacobi.pdf}
+\end{SCfigure}
+
+
+\chapter{OpenMP parallelization and execution analysis: \textit{Gauss-Seidel}}
+
+\begin{enumerate}
+  \item Include the relevant portions of the parallel code that implements the Gauss-Seidel solver, commenting how you implemented the synchronization between threads.
+\end{enumerate}
+
+\begin{lstlisting}[style=C2]
+double relax_gauss (double *u, unsigned sizex, unsigned sizey)
+{
+	double unew, diff, sum=0.0;
+
+	int howmany = omp_get_max_threads();
+	int lock[howmany];
+
+	for (int i = 0; i < howmany; ++i) lock[i] = 0;
+
+	#pragma omp parallel for private(unew,diff) reduction(+:sum)
+	for (int blockid = 0; blockid < howmany; ++blockid) {
+		int i_start = lowerb(blockid, howmany, sizex);
+		int i_end = upperb(blockid, howmany, sizex);
+
+		for (int colid = 0; colid < howmany; ++colid) {
+			int j_start = lowerb(colid, howmany, sizey);
+			int j_end = upperb(colid, howmany, sizey);
+			if (blockid > 0) {
+				while (lock[blockid-1] <= colid) {
+					#pragma omp flush
+					;
+				}
+			}
+			for (int i=max(1, i_start); i<= min(sizex-2, i_end); i++) {
+				for (int j=max(1, j_start); j<= min(sizey-2, j_end); j++) {
+					unew= 0.25 * (
+          u[ i*sizey	+ (j-1) ]+  // left
+					u[ i*sizey	+ (j+1) ]+  // right
+					u[ (i-1)*sizey	+ j ]+  // top
+					u[ (i+1)*sizey	+ j ]); // bottom
+					diff = unew - u[i*sizey+ j];
+					sum += diff * diff;
+					u[i*sizey+j]=unew;
+				}
+			}
+			lock[blockid]++;
+			#pragma omp flush
+		}
+	}
+	return sum;
+}
+\end{lstlisting}
+
+\vspace{1cm}
+
+Here, we implemented the synchronization using a while loop that checks that the data dependencies have been satisfied against a data structure that indicates wether a column has been read or not. This is done in order to ensure that the data dependencies have been satisfied before beginning with the calculations. \texttt{\#pragma omp flush} is used to force memory consistency before accessing to shared variables. The remaining OpenMP directives are quite similar to the ones added to the relax\_jacobi solver and achieve similar means.
+
+
+\begin{enumerate}[resume]
+  \item Include the speed–up (strong scalability) plot that has been obtained for the different numbers of processors. Reason about the performance that is observed, including captures of Paraver windows to justify your explanations.
+\end{enumerate}
+
+\begin{SCfigure}[][ht]
+  \caption
+  {
+  Strong scalability plots obtained using the Gauss solver. \break We can observe here that the speedup of this version is much lesser than the Jacobi one. This happens because of the data dependencies the solver suffers from.
+  }
+  \hspace*{-5cm}
+  \includegraphics[width=1\textwidth]{gauss-string.pdf}
+\end{SCfigure}
+\clearpage
+\begin{enumerate}[resume]
+  \item Explain how did you obtain the optimum value for the ratio computation/synchronization in the parallelization of this solver for 8 threads.
+\end{enumerate}
+
+We don't know how to modify the relation between synchronization and processing. We think it has to do with modifying the block size, making it bigger the more computation time we want or smaller the more synchronization time we want.
+
+\chapter{Optional}
+
+\begin{enumerate}
+  \item If you have done the optional part in this laboratory assignment, please include and comment in your report the relevant portions of the code, performance plots, or Paraver windows that have been obtained.
+\end{enumerate}
+
+\emph{Gauss solver using task directives and data dependencies:}
+
+\begin{lstlisting}[style=C2]
+  double relax_gauss (double *u, unsigned sizex, unsigned sizey)
+  {
+    double unew, diff, sum=0.0;
+
+    int howmany = omp_get_max_threads();
+    int lock[howmany];
+
+    for (int i = 0; i < howmany; ++i) lock[i] = 0;
+
+    #pragma parallel private(unew,diff) shared(sum)
+    #pragma omp single
+    for (int blockid = 0; blockid < howmany; ++blockid) {
+      int i_start = lowerb(blockid, howmany, sizex);
+      int i_end = upperb(blockid, howmany, sizex);
+
+      for (int colid = 0; colid < howmany; ++colid) {
+        int j_start = lowerb(colid, howmany, sizey);
+        int j_end = upperb(colid, howmany, sizey);
+        #pragma omp task  [depend (in: u[ i*sizey	+ (j-1) ], u[ i*sizey	+ (j+1) ])]
+                                          [depend (out: u[i*sizey+j]]
+        {
+          for (int i=max(1, i_start); i<= min(sizex-2, i_end); i++) {
+            for (int j=max(1, j_start); j<= min(sizey-2, j_end); j++) {
+              unew= 0.25 * ( u[ i*sizey	+ (j-1) ]+  // left
+              u[ i*sizey	+ (j+1) ]+  // right
+              u[ (i-1)*sizey	+ j     ]+  // top
+              u[ (i+1)*sizey	+ j     ]); // bottom
+              diff = unew - u[i*sizey+ j];
+              sum += diff * diff;
+              u[i*sizey+j]=unew;
+            }
+          }
+        }
+      }
+    }
+    return sum;
+  }
+\end{lstlisting}
+
+We've added a task directive and a single directive to the already existing code in the relax\_gauss function. The task directive is used to generate a thread and also to guarantee that the dependences are met using the depends parameter. The single directive is added because we want each task to be performed only once.
+
+\end{document}

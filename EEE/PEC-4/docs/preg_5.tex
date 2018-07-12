@@ -1,0 +1,30 @@
+\section{Per a un dels anteriors processos o activitats, en què consistiria la planificació? Quins objectius, quines
+tasques, com hi juga el temps i quins recursos s’assignen?}
+
+Si per exemple estudiem la \textbf{generació de l'horari d'entregues de productes a cadascuna de les botigues}:
+
+\paragraph{Objectius} Transportar els productes que cada botiga necessita des de l'obrador de manera que estiguin en les millors condicions possibles quan el client les consumeixi.
+
+\paragraph{Tasques} Aquest procés necessita la realitació de diverses tasques per a poder realitzar-se, si ens referim a cada vehicle podem observar varis processos:
+
+\begin{enumerate*}
+  \item[1.] Carregar el vehicle.
+  \item[2.] Conduïr-lo fins a una botiga assignada.
+  \item[3.] Descarregar-lo.
+  \item[] Si encara hi ha producte dins el vehicle, tornar al punt 2.
+  \item[4.] Conduïr el vehicle fins l'obrador
+  \item[] Si encara falten productes per entregar, tornar al pas 1.
+\end{enumerate*}
+
+\paragraph{Planificació} La planificació consistitria en un procès de càlculs d'optimitxació per a arribar a la elaboració d'aquest horari. Entre d'altres, aquesta planificació requereix de la resolució dels següents subproblemes:
+
+\begin{enumerate}
+  \item Diferenciar els productes entre els que s'entregaràn a primera hora i els que ho faran al final del matí.
+  \item Assignar la quantitat de productes que rebrà cada botiga a cada torn de repart.
+  \item Optimitzar la distribució dels productes a cada vehicle de manera que puguin transportar la major quantitat d'ells en un sol viatge.
+  \item Calcular les rutes óptimes de transport per a minimitzar el temps de circulació dels vehicles de l'empresa. Això és necessari perquè si una única camioneta frigorífica pot potencialment abastir a més d'una botiga durant una sola jornada suposa un estalvi important.
+\end{enumerate}
+
+\paragraph{Temps} La planificació d'aquest procès hauria d'estar completada abans del primer repart, en concret unes tres hores abans, temps suficient per a carregar i transportar el producte fins a les botigues. Assumint que les previsions de venda s'acaben d'actualitzar a les 23:00 i la botiga obre de 8:00 a 21:00, ens dona un marge de 6 hores per a generar el horari de repartiment (23:00 - 5:00).
+
+\paragraph{Recursos} Un programa informàtic podria generar la planificació durant la nit, començant quan les previsions de venda pel dia següent s'han actualitzat. Una persona hauria d'encarregar-se d'imprimir els horaris i de distribuïr-los als responsables de realitzar les tasques necessàries.

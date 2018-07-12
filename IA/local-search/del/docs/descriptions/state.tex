@@ -1,0 +1,29 @@
+\subsection{Implementación del estado}
+
+El estado se ha implementado mediante un 
+array de arrays de enteros \texttt{private int[][] connections} que indica
+si un sensor está conectado a otro sensor o a un centro.
+
+Las filas de esta estructura de datos indican, entre $[0, num\_sens]$\footnote{
+$num\_sens$ indica el número de sensores del estado } el estado
+de la conexion de los sensores. Las filas entre 
+$(num\_sens, num\_sens + num\_centr]$\footnote{ $num\_centr$ indica el numero
+de centros de datos del estado } indican el estado de conexion de los
+centros.
+
+Los sensores tan solo pueden estar conectados a otro elemento y pueden recibir
+3 conexiones simultaneas, por lo que su estado de conexion es representado,
+dentro de su fila, por un array \texttt{int[4]}, donde la posición 0 representa
+a qué está conectado un sensor concreto, y las posiciones entre $[1, 3]$ 
+representan qué otros sensores están conectados a ellos.
+
+Los centros, por otro lado, ven su conexión representada por un array 
+\texttt{int[25]}, donde cada posición entre $[0, 25]$ 
+indica qué sensor está transmitiéndole datos.
+
+\paragraph{}
+
+Pensamos que esta es la mejor manera de implementar el problema,
+ya que es bastante óptima en espacio y resulta muy eficiente a la
+hora de operar con ella en opuesto a, por ejemplo, una 
+implementación con clases definidas por nosotros.

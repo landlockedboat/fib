@@ -1,0 +1,17 @@
+\subsection{Operadores escogidos}
+
+Tan solo hemos implementado un operador: 
+\texttt{public boolean connect(int origin, int destination)}.
+
+El operador recibe como parámetros el id de un sensor y el id de un sensor
+o un centro de datos.
+Lo que hace es substituir la conexión original que tenía el sensor 
+\texttt{origin} con otro elemento y crear, en su lugar, una conexión con
+\texttt{destination}. En el caso de que no se pudiera realizar la conexión,
+el operador retorna falso y no realiza la acción. Esto nos permite garantizar
+la ausencia de generación de estados fuera del espacio de soluciones.
+
+\paragraph{}
+
+Hemos implementado este operador porque es relativamente eficiente en tiempo
+y genera estados siempre dentro del espacio de soluciones.

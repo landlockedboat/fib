@@ -1,0 +1,28 @@
+\subsection{Función heurística}
+
+La función heurística es definida por esta fórmula:
+
+
+\[ h(state) = state.all\_connections\_cost + state.lost\_data^2 \]
+
+Donde $state$ representa el estado sobre el cual medimos la heurística,
+$all\_connections\_cost$ representa el coste\footnote{
+  Recordemos que el coste de una conextión entre dos sensores
+  $x$ e $y$ es definido por la función 
+  $coste(x, y) = d(x, y)^2 \times v(x)$ donde $d(x,y)$ es la distancia 
+  euclídea que los separa
+  y $v(x)$ es el volumen de datos que $x$ está transmitiendo a $y$.
+}
+de todas las conexiones activas en el estado y $lost\_data$ representa toda
+la información que ha sido perdida en el estado.
+
+\paragraph{}
+
+Hemos escogido esta función porque creemos que representa correctamente
+nuestras prioridades, dado que es una función que debemos minimizar.
+Los datos perdidos están elevados al cuadrado
+para compensar de alguna manera el factor cuadrático del cálculo del coste
+de conexión (el coste asumimos que es realizado con la distancia al cuadrado
+para no tener que realizar una operación de raíz cuadrada 
+\texttt{Mathf.sqrt} para calcular la distancia euclídea real, ya que es muy
+ineficiente).

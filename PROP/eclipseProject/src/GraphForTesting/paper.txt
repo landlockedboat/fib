@@ -1,0 +1,7 @@
+0	An Intuition Form Of Crying A River
+1	An Intuition Form Of Crying A Sea
+2	An Intuition Form Of Crying A Cloud
+3	An Intuition Form Of Crying A Ocean
+4	An Intuition Form Of Crying A Lake
+5	An Intuition Form Of Crying A Rain
+6	An Intuition Form Of Crying A Tsunami

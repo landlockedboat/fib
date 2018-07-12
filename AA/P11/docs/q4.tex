@@ -1,0 +1,22 @@
+
+
+\textbf{La respuesta a Q4 empieza aquí}
+
+Puesto que se trata de un problema de minimización, hemos de demostrar que
+para cualquier entrada I, $\textrm{sol(I)} \leq 6*\textrm{opt(I)}$, es decir, que
+\begin{equation}
+ \sum_{\forall j \in M} l_j\tilde{x}_j + \sum_{\forall i \in N} \sum_{\forall j \in M} c(i,j)\tilde{y_{ij}}
+  \leq 6\sum_{\forall j \in M} l_jx^*_j + \sum_{\forall i \in N} \sum_{\forall j \in M} c(i,j)y^*_{ij}
+\end{equation}
+
+Como para cada socio $i$ seguro que se convertirá en sala de juego al menos uno de los locales en $S_i$, (según el procedimiento que se ha indicado) podemos asegurar que:
+\begin{equation}
+1 \leq \sum_{k \in S_i} \tilde{x}_k
+\end{equation}
+
+Por lo tanto podemos afirmar que:
+\begin{equation}
+l_j \leq l_j\sum_{k \in S_i}\tilde{x}_k
+\end{equation}
+
+\textbf{La respuesta a Q4 termina aquí}

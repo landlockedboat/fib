@@ -1,0 +1,56 @@
+Evaluación de Competencias
+
+Esta asignatura tiene asignadas dos competencias transversales: 
+"Espíritu emprendedor e innovación"  y "Trabajo en equipo".
+
+Para la competencia de "Espíritu emprendedor e innovación" se elaborará un 
+trabajo sobre innovación en IA. Esta competencia se evaluará con la rúbrica 
+que tenéis adjunta.
+
+La competencia de "Trabajo en equipo" se evaluará con las prácticas 1 y 2
+de la asignatura y en el transcurso del trabajo de innovación. 
+Para hacer el seguimiento de la competencia usaremos una serie de 
+cuestionarios que tendréis que rellenar al finalizar las prácticas 
+durante la entrega presencial con el profesor. Os adjuntamos unas 
+muestras de como serán estos cuestionarios para que sepais desde el 
+primer día que aspectos se evaluarán.
+
+El Trabajo de Innovación
+
+Para el trabajo de innovación en IA deberéis escoger un servicio o un 
+producto desarrollado por una empresa en el que la innovación se haya 
+basado en el uso de técnicas de inteligencia artificial y hacer un 
+trabajo sobre él.  El trabajo deberá incluir:
+
+  Descripción del producto o servicio
+
+  Descripción de las técnicas de IA que se han utilizado
+
+  Descripción de cómo han sido utilizadas las técnicas
+
+  Explicación de porqué es un producto/servicio innovador y la
+naturaleza de la innovación (innovación en la técnica/método de IA, 
+uso innovador de técnicas ya existentes)
+    
+  Impacto del producto en la empresa (beneficios, riesgos, posición en el mercado)
+
+  Impacto del producto en el usuario o en la sociedad (beneficios y riesgos)
+
+  Bibliografía/Referencias utilizadas para la elaboración del documento
+
+El trabajo se realizará en grupos de 3 personas. Cada grupo ha de escoger 
+un tema diferente del resto, y para asegurar eso, cada grupo ha de mandar 
+un mensaje al fórum creado para los trabajos de innovación explicando 
+brevemente el tema que ha escogido. Una vez publicado un tema en el fórum 
+ningún otro grupo puede hacer un trabajo sobre él. El trabajo ha de tener 
+una extensión de entre 12 y 20 páginas, contando portada, índice 
+y bibliografía.
+
+Tenéis también una rúbrica de evaluación sobre la forma de 
+escribir el trabajo.
+
+La entrega del trabajo será el 25 de mayo a través del Racò. 
+
+Todos los trabajos se presentarán en clase durante la última semana 
+de curso. Todos los grupos deberéis preparar una presentación de no 
+más de 6 minutos sobre vuestro trabajo.

@@ -1,0 +1,145 @@
+Workload 1: 
+
+Description:
+
+Experiment with all processes executing long CPU bursts.
+
+Results:
+
+  RR:
+
+  All processes have the same ammount of total, user and ready ticks.
+
+  FCFS:
+
+  The number of CPU ticks is divided incrementally between all three 
+  processes - i.e., the first process has a significantly lower amount
+  of ticks than the third one.
+
+Conclussions:
+
+For balanced CPU workloads, FCFS appears to be better because of absence
+of ready ticks on its processes as opposed to RR. Note that in FCFS the 
+ready tick count increases incrementally for the processes.
+
+Workload 2: 
+
+Description:
+
+CPU bursts with the first process to be executed with a significantly
+higher workload than the other ones.
+
+Results:
+
+  RR:
+
+  All processes have a ready time around 1000 ticks. Process 1 shows
+  a higher ammount of user time (around 10 times the ones of other 
+  processes).
+
+  FCFS:
+
+  Processes 2 and 3 have a ready time of around 15000 ticks, while
+  process 1 has no ready ticks.
+
+Conclussions:
+
+FCFS causes starvation for the other processes. In RR, the other processes
+end their execution approximately at the same time, yielding a more 
+satisfying feedback loop for a possible end user.
+
+Workload 3:
+
+Description:
+
+Experiment with all processes executing long I/O bursts.
+
+Results:
+
+  RR:
+
+  Total time is incrementally distributed among the processes.
+  The processes have a very reduced user time in comparison to
+  system time, being dominant over it.
+
+  The idle process has as much total time as the maximum total time
+  of the other processes, being it mostly user time.
+  
+  FCFS:
+
+  Total time is incrementally distributed among the processes.
+  The processes have a very reduced user time in comparison to
+  blocked time, being dominant over it.
+  
+  The idle process has as much total time as the maximum total time
+  of the other processes, being it mostly user time.
+
+Conclussions:
+
+We can observe that in FCFS blocked time is equivalent to system time
+in RR. As expected, there is very little ammount of user time in the stats.
+The idle process shows as much user time as the maximum blocked time of
+the processes because when all processes are blocked, idle occupies the
+CPU.
+
+Workload 4:
+
+Description:
+
+Experiment with all processes executing I/O bursts mixed with CPU bursts.
+
+Results:
+
+  RR:
+
+  Time of the processes is equally distributed amongst user, ready
+  and system time.
+  
+  The idle process has as much total time as the maximum total time
+  of the other processes, being it mostly user and ready time.
+  
+  FCFS:
+
+  Total time is incrementally distributed among the processes.
+  The processes have constant user time in comparison to
+  blocked time, being the latter responsible for the total time
+  incrementing.
+  
+  The idle process has low total time, being it user time.
+
+Conclussions:
+
+We can observe that in RR processes end "at the same time" for the user.
+In FCFS processes end in a sequential fashion despite alternations between
+IO and CPU bursts.
+
+Workload 5:
+
+Description:
+
+Experiment with all processes executing I/O bursts mixed with CPU bursts,
+the first one executing a higher workload.
+
+Results:
+
+  RR:
+
+  Time of the processes is equally distributed amongst user and ready time.
+  
+  The idle process time is equally distributed amongst user and ready time,
+  being approximately the same as the other processes.
+  
+  FCFS:
+
+  Total time is incrementally distributed among the processes.
+  The processes have constant user time in comparison to
+  blocked time, being the latter responsible for the total time
+  incrementing.
+  
+  The idle process has low total time, being it user time.
+
+Conclussions:
+
+We can observe that in RR processes end "at the same time" for the user.
+Starvation is somewhat eliminated because of the alternations between
+I/O and CPU bursts.

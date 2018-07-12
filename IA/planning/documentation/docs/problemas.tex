@@ -1,0 +1,118 @@
+\section{Descripción del modelado de los problemas}
+
+\subsection{Objetos}
+Los objetos que declaramos al inicio de un problema son, en función de su
+tipo:
+\begin{description}
+  \item[Tipo \texttt{primero}:] 
+    Todos los objetos que 
+    son primer plato
+    como por ejemplo, \texttt{paella}.
+  \item[Tipo \texttt{segundo}:] 
+    Todos los objetos que 
+    son segundo plato
+    como por ejemplo, \texttt{entrecot}.
+  \item[Tipo \texttt{dia}:] 
+    Todos los objetos que 
+    son un dia de la semana
+    como por ejemplo, \texttt{lunes}.
+\end{description}
+
+\subsection{Estado inicial}
+
+El estado inicial se compone de una serie de inicializaciones de
+predicados y funciones.
+
+\paragraph{Inicialización de predicados}
+
+En la inicialización, se inicializa un subconjunto de los
+predicados del dominio. Enunciados a continuación, para cada
+uno de ellos se declara lo siguiente:
+
+\begin{itemize}
+  \item 
+    Los dias que son consecutivos a otros 
+    mediante el predicado \texttt{consecutivo}.
+    Todos los dias deben tener un consecutivo excepto el último día.
+  \item 
+    Cuál es el ultimo dia de la semana
+    mediante el predicado \texttt{ultimo\_dia}.
+    Es necesario que como mínimo uno de los dias de la semana sea el último.
+  \item 
+    Los platos que son incompatibles entre ellos
+    mediante el predicado \texttt{incompatible}.
+    No es necesario inicializar este predicado para que el programa se
+    ejecute correctamente.
+  \item 
+    De que tipo es cada plato
+    mediante el predicado \texttt{es\_de\_tipo}.
+    Es necesario que todos los platos tengan un tipo.
+  \item
+    Si se quiere fijar un primer plato a un dia de la semana, es necesario
+    instanciar los siguientes predicados para el dia deseado \texttt{dia},
+    el plato deseado \texttt{plato} y el tipo del plato deseado
+    \texttt{tipo}.
+
+    \begin{itemize}
+      \item \texttt{(servido\_primero dia)}
+      \item \texttt{(menu\_primero dia plato)}
+      \item \texttt{(tipo\_dia\_primero dia tipo)}
+      \item \texttt{(preparado plato)}
+    \end{itemize}
+
+    Análogamente, para fijar un segundo:
+
+    \begin{itemize}
+      \item \texttt{(servido\_segundo dia)}
+      \item \texttt{(menu\_segundo dia plato)}
+      \item \texttt{(tipo\_dia\_segundo dia tipo)}
+      \item \texttt{(preparado plato)}
+    \end{itemize}
+
+\end{itemize}
+
+\paragraph{Inicialización de funciones}
+
+De forma similar, se inicializan algunas funciones del dominio en las cuales
+se declara lo siguiente:
+\begin{itemize}
+  \item 
+    El numero de calorias que tiene un plato con la función 
+    \texttt{calorias}.
+    Es necesario que todos los platos tengan un numero de calorias asociado.
+  \item 
+    El precio de un plato con la función
+    \texttt{precio\_plato}.
+    Es necesario que todos los platos tengan un precio asociado.
+  \item 
+    El precio total del menú semanal con la función
+    \texttt{precio\_total}.
+    Esta funcion se debe inicializar a 0 para evitar un comportamiento 
+    inesperado.
+\end{itemize}
+
+\subsection{Estado final}
+
+El estado final del problema es definido por el goal:
+
+\begin{verbatim}
+(:goal (forall (?d - dia)
+               (and (servido_primero ?d)
+                    (servido_segundo ?d)
+                    )
+               )
+       )
+\end{verbatim}
+
+lo que indica que el problema se dará por resuelto una vez todos los dias
+de la semana tengan servidos tanto su primero como segundo plato.
+
+Adicionalmente, usando \texttt{metric}, indicamos que
+queremos minimizar la suma 
+total de los precios de los menues de la semana:
+
+\begin{verbatim}
+(:metric 
+  minimize (precio_total)
+  )
+\end{verbatim}

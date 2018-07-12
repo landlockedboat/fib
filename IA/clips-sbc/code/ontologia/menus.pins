@@ -1,0 +1,3771 @@
+; Sat May 20 14:45:34 CEST 2017
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+([Agua] of  Refresco
+
+	(nombre_bebida "Agua")
+	(precio 2.0))
+
+([Alitas_de_pollo] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Carne])
+	(infantil TRUE)
+	(nombre_plato "Alitas_de_pollo")
+	(plato_plato
+		[Coctel_de_gambas]
+		[Bistec_con_boletus]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tempura_de_verduras]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_carne]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Pinxos_variados]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Nuggets_de_pollo]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Cuajada]
+		[Coulant_de_chocolate])
+	(plato_vino [Vino_Rosado])
+	(precio 2.0)
+	(racion S)
+	(textura Carne)
+	(tipo Primero Segundo)
+	(tradicional FALSE))
+
+([Bistec_con_boletus] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Carne]
+		[Verdura]
+		[Setas])
+	(dificil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Bistec_con_boletus")
+	(plato_plato
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Brandada_de_bacalla]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tempura_de_verduras]
+		[Tarta]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Rabo_de_toro]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Tinto])
+	(precio 13.0)
+	(racion M)
+	(textura Carne)
+	(tipo Segundo)
+	(tradicional TRUE))
+
+([Brandada_de_bacalla] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Pescado])
+	(moderno TRUE)
+	(nombre_plato "Brandada_de_bacalla")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tempura_de_verduras]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Callos]
+		[Sopa_de_carne]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Mel_i_mato]
+		[Lionesas]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Blanco])
+	(precio 7.0)
+	(racion M)
+	(textura Carne)
+	(tipico_de [Espana])
+	(tipo Primero Segundo)
+	(tradicional TRUE))
+
+([Brazo_de_gitano] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Lacticos])
+	(infantil TRUE)
+	(nombre_plato "Brazo_de_gitano")
+	(plato_plato
+		[Brandada_de_bacalla]
+		[Caracoles_con_ajo_y_perejil]
+		[Coctel_de_gambas]
+		[Shawarma_con_salsa_de_berengena]
+		[Variado_de_canapes]
+		[Tempura_de_verduras]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Callos]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Melon_con_jamon]
+		[Manitas_de_ministro]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Conejo_al_ajillo])
+	(plato_vino [Cava])
+	(precio 3.0)
+	(racion S)
+	(textura Pasta)
+	(tipico_de [Espana])
+	(tipo Postre)
+	(tradicional TRUE))
+
+([Callos] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Carne])
+	(dificil TRUE)
+	(nombre_plato "Callos")
+	(pesado TRUE)
+	(plato_plato
+		[Variado_de_helado]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Turron]
+		[Tiramisu]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_carne]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_de_pollo]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Gulash]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Tinto])
+	(precio 5.0)
+	(racion L)
+	(textura Estofado)
+	(tipico_de [Espana])
+	(tipo Segundo)
+	(tradicional TRUE))
+
+([Caracoles] of  Ingrediente
+
+	(animal TRUE)
+	(compone
+		[Caracoles_con_ajo_y_perejil]
+		[Variado_de_canapes])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Caracoles"))
+
+([Caracoles_con_ajo_y_perejil] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Caracoles])
+	(dificil TRUE)
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Caracoles_con_ajo_y_perejil")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_miso]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_de_pollo]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 7.0)
+	(racion M)
+	(textura Carne)
+	(tipico_de [Espana])
+	(tipo Primero Segundo)
+	(tradicional TRUE))
+
+([Carne] of  Ingrediente
+
+	(animal TRUE)
+	(compone
+		[Alitas_de_pollo]
+		[Bistec_con_boletus]
+		[Callos]
+		[Carpaccio_de_vacuno]
+		[Conejo_al_ajillo]
+		[Manitas_de_ministro]
+		[Nuggets_de_pollo]
+		[Orejas_de_cerdo]
+		[Paella_de_pollo]
+		[Pinxos_de_pollo]
+		[Pinxos_variados]
+		[Rabo_de_toro]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Shawarma_con_salsa_de_berengena]
+		[Sopa_de_carne]
+		[Tacos_con_carne]
+		[Parrilla_variada])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Carne"))
+
+([Carpaccio_de_calabacin_con_salmon_ahumado] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Verdura]
+		[Salmon])
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Carpaccio_de_calabacin_con_salmon_ahumado")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Variado_de_helado]
+		[Turron]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Sorbete_de_limon]
+		[Sopa_de_miso]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_de_pollo]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 10.0)
+	(racion S)
+	(textura Legumbres)
+	(tipo Primero Segundo)
+	(tradicional FALSE))
+
+([Carpaccio_de_calabacin_con_trufa] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Trufa]
+		[Verdura])
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Carpaccio_de_calabacin_con_trufa")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Variado_de_helado]
+		[Turron]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Sorbete_de_limon]
+		[Sopa_de_miso]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_de_pollo]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 13.0)
+	(racion S)
+	(textura Legumbres)
+	(tipo Primero Segundo)
+	(tradicional FALSE))
+
+([Carpaccio_de_vacuno] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Carne])
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Carpaccio_de_vacuno")
+	(plato_plato
+		[Brandada_de_bacalla]
+		[Variado_de_helado]
+		[Turron]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Sorbete_de_limon]
+		[Sopa_de_miso]
+		[Sabanita_con_carne]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_de_pollo]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Rosado]
+		[Vino_Rosado])
+	(precio 13.0)
+	(racion S)
+	(textura Carne)
+	(tipo Primero Segundo)
+	(tradicional FALSE))
+
+([Cava] of  Vino
+
+	(nombre_bebida "Cava")
+	(precio 5.0)
+	(vino_plato
+		[Brazo_de_gitano]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Gulash]
+		[Lionesas]
+		[Mel_i_mato]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Sorbete_de_limon]
+		[Tarta]
+		[Turron]
+		[Variado_de_helado]))
+
+([Caviar] of  Ingrediente
+
+	(animal TRUE)
+	(compone
+		[Sushi_marisco]
+		[Tentempies_de_caviar]
+		[Variado_de_canapes])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Caviar"))
+
+([Chocolate] of  Ingrediente
+
+	(animal FALSE)
+	(compone
+		[Coulant_de_chocolate]
+		[Lionesas]
+		[Mouse_de_chocolate]
+		[Tarta]
+		[Tiramisu])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Chocolate"))
+
+([Coctel_de_gambas] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Marisco]
+		[Verdura])
+	(exclusivo TRUE)
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Coctel_de_gambas")
+	(plato_plato
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Alitas_de_pollo]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Pinxos_variados]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_de_pollo]
+		[Ostras]
+		[Nuggets_de_pollo]
+		[Musico]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 5.0)
+	(racion S)
+	(textura Carne)
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Cola] of  Refresco
+
+	(nombre_bebida "Cola")
+	(precio 6.0))
+
+([Conejo_al_ajillo] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Carne])
+	(nombre_plato "Conejo_al_ajillo")
+	(pesado TRUE)
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_carne]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Brandada_de_bacalla]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno])
+	(plato_vino [Vino_Tinto])
+	(precio 5.0)
+	(racion M)
+	(textura Carne)
+	(tipico_de [Espana])
+	(tipo Segundo)
+	(tradicional TRUE))
+
+([Coulant_de_chocolate] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Chocolate])
+	(dificil TRUE)
+	(exclusivo TRUE)
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Coulant_de_chocolate")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Variado_de_canapes]
+		[Tentempies_de_caviar]
+		[Tacos_con_carne]
+		[Sopa_de_verduras]
+		[Sopa_de_miso]
+		[Alitas_de_pollo]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Melon_con_jamon]
+		[Manitas_de_ministro]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Alitas_de_pollo]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Cava]
+		[Moscatell]
+		[Vino_Rosado])
+	(precio 3.0)
+	(racion S)
+	(textura Pasta)
+	(tipo Postre)
+	(tradicional FALSE))
+
+([Cuajada] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Lacticos])
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Cuajada")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Variado_de_canapes]
+		[Tentempies_de_caviar]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Sopa_de_carne]
+		[Shawarma_con_salsa_de_berengena]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Melon_con_jamon]
+		[Manitas_de_ministro]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Alitas_de_pollo]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Cava]
+		[Moscatell]
+		[Vino_Rosado])
+	(precio 2.0)
+	(racion M)
+	(textura Pasta)
+	(tipico_de [Espana])
+	(tipo Postre)
+	(tradicional TRUE))
+
+([Ensalada_de_arroz_con_quinoa] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Legumbres]
+		[Verdura])
+	(infantil TRUE)
+	(nombre_plato "Ensalada_de_atun_con_pasta")
+	(plato_plato
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Brandada_de_bacalla]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Coctel_de_gambas]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 2.0)
+	(racion M)
+	(textura Ensalada)
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Ensalada_de_atun_con_pasta] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Pescado]
+		[Verdura])
+	(infantil TRUE)
+	(nombre_plato "Ensalada_de_atun_con_pasta")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Alitas_de_pollo]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Gulash]
+		[Brandada_de_bacalla]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Coctel_de_gambas]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 3.0)
+	(racion M)
+	(textura Ensalada)
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Ensalada_de_rulo_de_cabra] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Lacticos]
+		[Verdura])
+	(exclusivo FALSE)
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Ensalada_de_rulo_de_cabra")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Alitas_de_pollo]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Brandada_de_bacalla]
+		[Callos]
+		[Coctel_de_gambas]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 5.0)
+	(racion S)
+	(textura Ensalada)
+	(tipico_de [Espana])
+	(tipo Primero)
+	(tradicional TRUE))
+
+([Ensalada_de_salmon_ahumado] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Verdura]
+		[Salmon])
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Ensalada_de_salmon_ahumado")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_miso]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Pinxos_variados]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Blanco])
+	(precio 5.0)
+	(racion M)
+	(textura Ensalada)
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Ensalada_de_trufa] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Trufa]
+		[Verdura])
+	(exclusivo TRUE)
+	(nombre_plato "Ensalada_de_trufa")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_miso]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 10.0)
+	(racion M)
+	(textura Ensalada)
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Ensalada_del_tiempo] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Fruta]
+		[Lacticos]
+		[Legumbres]
+		[Verdura])
+	(infantil TRUE)
+	(nombre_plato "Ensalada_del_tiempo")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Sopa_de_carne]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Brandada_de_bacalla]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Rosado])
+	(precio 2.0)
+	(racion L)
+	(textura Ensalada)
+	(tipico_de [Espana])
+	(tipo Primero)
+	(tradicional TRUE))
+
+([Espana] of  Pais
+
+	(nombre_pais "Espana")
+	(pais_plato
+		[Variado_de_canapes]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_rulo_de_cabra]
+		[Melon_con_jamon]
+		[Brandada_de_bacalla]
+		[Sopa_de_verduras]
+		[Sopa_de_carne]
+		[Sopa_de_pescado]
+		[Pinxos_de_pollo]
+		[Pinxos_de_verdura]
+		[Pinxos_variados]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Conejo_al_ajillo]
+		[Paella_de_pescado]
+		[Paella_de_pollo]
+		[Paella_verduras]
+		[Parrilla_variada]
+		[Rabo_de_toro]
+		[Manitas_de_ministro]
+		[Callos]
+		[Orejas_de_cerdo]
+		[Caracoles_con_ajo_y_perejil]
+		[Sorbete_de_limon]
+		[Musico]
+		[Cuajada]
+		[Mel_i_mato]
+		[Mochi_frito_con_sesamo]
+		[Turron]
+		[Tiramisu]
+		[Brazo_de_gitano]))
+
+([Estofado_de_salmon_con_trufa] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Legumbres]
+		[Trufa]
+		[Verdura]
+		[Salmon])
+	(dificil TRUE)
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Estofado_de_salmon_con_trufa")
+	(pesado TRUE)
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_miso]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Alitas_de_pollo]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Blanco])
+	(precio 15.0)
+	(racion M)
+	(textura Estofado)
+	(tipo Segundo)
+	(tradicional FALSE))
+
+([Fruta] of  Ingrediente
+
+	(animal FALSE)
+	(compone
+		[Ensalada_del_tiempo]
+		[Melon_con_jamon]
+		[Musico]
+		[Sushi_vegetal]
+		[Tarta]
+		[Variado_de_canapes])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Fruta"))
+
+([Gaseosa] of  Refresco
+
+	(nombre_bebida "Gaseosa")
+	(precio 5.0))
+
+([Gulash] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Pasta])
+	(infantil TRUE)
+	(nombre_plato "Gulash")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Tentempies_de_caviar]
+		[Tacos_con_carne]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Melon_con_jamon]
+		[Hummus_con_verduras]
+		[Alitas_de_pollo]
+		[Callos]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Cava]
+		[Vino_Blanco]
+		[Moscatell])
+	(precio 2.0)
+	(racion M)
+	(textura Pasta)
+	(tipico_de [Libano])
+	(tipo Postre)
+	(tradicional TRUE))
+
+([Helado] of  Ingrediente
+
+	(animal FALSE)
+	(compone
+		[Sorbete_de_limon]
+		[Variado_de_helado])
+	(disponibilidad Primavera Verano)
+	(nombre_ingrediente "Helado"))
+
+([Hummus_con_verduras] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Legumbres]
+		[Verdura])
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Hummus_con_verduras")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Alitas_de_pollo]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mel_i_mato]
+		[Lionesas]
+		[Brazo_de_gitano]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Blanco])
+	(precio 2.0)
+	(racion M)
+	(textura Estofado)
+	(tipico_de [Libano])
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Jamon] of  Ingrediente
+
+	(animal TRUE)
+	(compone
+		[Melon_con_jamon]
+		[Variado_de_canapes])
+	(disponibilidad Otonio Invierno)
+	(nombre_ingrediente "Jamon"))
+
+([Japon] of  Pais
+
+	(nombre_pais "Japon")
+	(pais_plato
+		[Mochi]
+		[Sopa_de_miso]
+		[Sushi_marisco]
+		[Tempura_de_verduras]
+		[Sushi_vegetal]))
+
+([Lacticos] of  Ingrediente
+
+	(animal FALSE)
+	(compone
+		[Brazo_de_gitano]
+		[Cuajada]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_del_tiempo]
+		[Lionesas]
+		[Mel_i_mato]
+		[Sabanita_con_carne]
+		[Sabanita_con_verdura]
+		[Sushi_vegetal]
+		[Tarta]
+		[Tiramisu])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Lacticos"))
+
+([Legumbres] of  Ingrediente
+
+	(animal FALSE)
+	(compone
+		[Ensalada_de_arroz_con_quinoa]
+		[Ensalada_del_tiempo]
+		[Estofado_de_salmon_con_trufa]
+		[Hummus_con_verduras]
+		[Mochi_frito_con_sesamo]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Sopa_de_verduras]
+		[Sushi_marisco]
+		[Sushi_vegetal]
+		[Tacos_con_carne]
+		[Mochi])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Legumbres"))
+
+([Libano] of  Pais
+
+	(nombre_pais "Libano")
+	(pais_plato
+		[Gulash]
+		[Hummus_con_verduras]
+		[Shawarma_con_salsa_de_berengena]))
+
+([Lionesas] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Chocolate]
+		[Lacticos])
+	(dificil TRUE)
+	(exclusivo FALSE)
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Lionesas")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Variado_de_canapes]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tentempies_de_caviar]
+		[Tacos_con_carne]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Alitas_de_pollo]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Melon_con_jamon]
+		[Manitas_de_ministro]
+		[Brandada_de_bacalla]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Cava]
+		[Moscatell]
+		[Vino_Rosado])
+	(precio 5.0)
+	(racion M)
+	(textura Pasta)
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Manitas_de_ministro] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Carne])
+	(dificil TRUE)
+	(nombre_plato "Manitas_de_ministro")
+	(pesado TRUE)
+	(plato_plato
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tiramisu]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_carne]
+		[Rabo_de_toro]
+		[Pinxos_de_verdura]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Nuggets_de_pollo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Callos]
+		[Lionesas]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Tinto])
+	(precio 5.0)
+	(racion L)
+	(textura Carne)
+	(tipico_de [Espana])
+	(tipo Segundo)
+	(tradicional TRUE))
+
+([Marisco] of  Ingrediente
+
+	(animal TRUE)
+	(compone
+		[Coctel_de_gambas]
+		[Ostras]
+		[Paella_de_pescado]
+		[Sushi_marisco]
+		[Variado_de_canapes]
+		[Sopa_de_miso])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Marisco"))
+
+([Mejico] of  Pais
+
+	(nombre_pais "Mejico")
+	(pais_plato
+		[Sabanita_con_carne]
+		[Sabanita_con_verdura]
+		[Salchipapas]
+		[Tacos_con_carne]))
+
+([Mel_i_mato] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Lacticos])
+	(infantil TRUE)
+	(nombre_plato "Mel_i_mato")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Variado_de_canapes]
+		[Tentempies_de_caviar]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Sopa_de_carne]
+		[Sabanita_con_verdura]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Melon_con_jamon]
+		[Brandada_de_bacalla]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Manitas_de_ministro]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Cava]
+		[Moscatell])
+	(precio 2.0)
+	(racion S)
+	(textura Pasta)
+	(tipico_de [Espana])
+	(tipo Postre)
+	(tradicional TRUE))
+
+([Melon_con_jamon] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Jamon]
+		[Fruta])
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Melon_con_jamon")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Gulash]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 5.0)
+	(racion M)
+	(textura Ensalada)
+	(tipico_de [Espana])
+	(tipo Primero)
+	(tradicional TRUE))
+
+([Mochi] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Pasta]
+		[Legumbres])
+	(dificil FALSE)
+	(exclusivo TRUE)
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Mochi")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Variado_de_canapes]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tentempies_de_caviar]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Ostras]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Sopa_de_miso]
+		[Sopa_de_pescado]
+		[Sopa_de_verduras]
+		[Melon_con_jamon]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa])
+	(plato_vino
+		[Cava]
+		[Moscatell])
+	(precio 5.0)
+	(racion S)
+	(textura Pasta)
+	(tipico_de [Japon])
+	(tipo Postre)
+	(tradicional FALSE))
+
+([Mochi_frito_con_sesamo] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Legumbres]
+		[Pasta])
+	(exclusivo TRUE)
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Mochi_frito_con_sesamo")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Variado_de_canapes]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tentempies_de_caviar]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Ostras]
+		[Alitas_de_pollo]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Sopa_de_miso]
+		[Sopa_de_pescado]
+		[Sopa_de_verduras]
+		[Melon_con_jamon]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa])
+	(plato_vino
+		[Cava]
+		[Moscatell])
+	(precio 8.0)
+	(racion S)
+	(textura Pasta)
+	(tipico_de [Espana])
+	(tipo Postre)
+	(tradicional FALSE))
+
+([Moscatell] of  Vino
+
+	(nombre_bebida "Moscatell")
+	(precio 3.0)
+	(vino_plato
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Gulash]
+		[Lionesas]
+		[Mel_i_mato]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mouse_de_chocolate]
+		[Musico]
+		[Sorbete_de_limon]
+		[Tarta]
+		[Tiramisu]
+		[Turron]
+		[Variado_de_helado]))
+
+([Mouse_de_chocolate] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Chocolate])
+	(dificil FALSE)
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Mouse_de_chocolate")
+	(pesado TRUE)
+	(plato_plato
+		[Bistec_con_boletus]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tentempies_de_caviar]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Melon_con_jamon]
+		[Manitas_de_ministro]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa])
+	(plato_vino [Moscatell])
+	(precio 5.0)
+	(racion L)
+	(textura Sopa)
+	(tipo Postre)
+	(tradicional TRUE))
+
+([Musico] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Fruta])
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Musico")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Variado_de_canapes]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tentempies_de_caviar]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Sopa_de_carne]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Melon_con_jamon]
+		[Manitas_de_ministro]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Conejo_al_ajillo])
+	(plato_vino [Moscatell])
+	(precio 8.0)
+	(racion M)
+	(textura Ensalada)
+	(tipico_de [Espana])
+	(tipo Postre)
+	(tradicional TRUE))
+
+([Nuggets_de_pollo] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Carne])
+	(infantil TRUE)
+	(nombre_plato "Nuggets_de_pollo")
+	(plato_plato
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Alitas_de_pollo]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Pinxos_de_verdura]
+		[Coctel_de_gambas]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Ensalada_del_tiempo]
+		[Cuajada])
+	(plato_vino [Vino_Rosado])
+	(precio 3.0)
+	(racion M)
+	(textura Carne)
+	(tipo Primero Segundo)
+	(tradicional FALSE))
+
+([Orejas_de_cerdo] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Carne])
+	(dificil TRUE)
+	(moderno FALSE)
+	(nombre_plato "Orejas_de_cerdo")
+	(pesado TRUE)
+	(plato_plato
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_carne]
+		[Rabo_de_toro]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Tinto])
+	(precio 13.0)
+	(racion L)
+	(textura Carne)
+	(tipico_de [Espana])
+	(tipo Segundo)
+	(tradicional TRUE))
+
+([Ostras] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Marisco])
+	(dificil TRUE)
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Ostras")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Paella_de_pescado]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Estofado_de_salmon_con_trufa]
+		[Cuajada]
+		[Coulant_de_chocolate])
+	(plato_vino [Vino_Blanco])
+	(precio 25.0)
+	(racion S)
+	(textura Carne)
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Paella_de_pescado] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Legumbres]
+		[Marisco]
+		[Pescado]
+		[Sucedaneo_de_caviar])
+	(infantil TRUE)
+	(nombre_plato "Paella_de_pescado")
+	(pesado TRUE)
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_pescado]
+		[Alitas_de_pollo]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Tinto])
+	(precio 8.0)
+	(racion M)
+	(textura Carne)
+	(tipico_de [Espana])
+	(tipo Segundo)
+	(tradicional TRUE))
+
+([Paella_de_pollo] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Carne]
+		[Legumbres])
+	(infantil TRUE)
+	(nombre_plato "Paella_de_pollo")
+	(pesado TRUE)
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_pescado]
+		[Alitas_de_pollo]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Alitas_de_pollo]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Tinto])
+	(precio 7.5)
+	(racion M)
+	(textura Carne)
+	(tipico_de [Espana])
+	(tipo Segundo)
+	(tradicional TRUE))
+
+([Paella_verduras] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Legumbres]
+		[Verdura])
+	(infantil TRUE)
+	(nombre_plato "Paella_verduras")
+	(pesado FALSE)
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_pescado]
+		[Alitas_de_pollo]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Alitas_de_pollo]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Tinto])
+	(precio 7.0)
+	(racion M)
+	(textura Legumbres)
+	(tipico_de [Espana])
+	(tipo Segundo)
+	(tradicional TRUE))
+
+([Parrilla_variada] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Carne])
+	(dificil FALSE)
+	(exclusivo FALSE)
+	(infantil TRUE)
+	(moderno FALSE)
+	(nombre_plato "Parrilla_variada")
+	(pesado TRUE)
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_pescado]
+		[Alitas_de_pollo]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_de_verdura]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(precio 13.0)
+	(racion M)
+	(textura Carne)
+	(tipico_de [Espana])
+	(tipo Segundo)
+	(tradicional TRUE))
+
+([Pasta] of  Ingrediente
+
+	(animal FALSE)
+	(compone
+		[Gulash]
+		[Mochi_frito_con_sesamo]
+		[Variado_de_canapes]
+		[Mochi])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Pasta"))
+
+([Pescado] of  Ingrediente
+
+	(animal TRUE)
+	(compone
+		[Brandada_de_bacalla]
+		[Ensalada_de_atun_con_pasta]
+		[Paella_de_pescado]
+		[Sopa_de_pescado]
+		[Sushi_marisco]
+		[Variado_de_canapes]
+		[Sopa_de_miso])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Pescado"))
+
+([Pinxos_de_pollo] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Carne])
+	(infantil TRUE)
+	(nombre_plato "Pinxos_de_verdura")
+	(plato_plato
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Alitas_de_pollo]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Blanco])
+	(precio 3.0)
+	(racion M)
+	(textura Carne)
+	(tipico_de [Espana])
+	(tipo Primero Segundo)
+	(tradicional FALSE))
+
+([Pinxos_de_verdura] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Verdura])
+	(infantil TRUE)
+	(nombre_plato "Pinxos_de_verdura")
+	(plato_plato
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 3.0)
+	(racion M)
+	(textura Ensalada)
+	(tipico_de [Espana])
+	(tipo Primero)
+	(tradicional TRUE))
+
+([Pinxos_variados] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Carne]
+		[Verdura])
+	(infantil TRUE)
+	(nombre_plato "Pinxos_variados")
+	(plato_plato
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Alitas_de_pollo]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Coctel_de_gambas]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 5.0)
+	(racion M)
+	(textura Carne)
+	(tipico_de [Espana])
+	(tipo Primero Segundo)
+	(tradicional TRUE))
+
+([Rabo_de_toro] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Carne])
+	(dificil TRUE)
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Rabo_de_toro")
+	(pesado TRUE)
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_carne]
+		[Callos]
+		[Caracoles_con_ajo_y_perejil]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Gulash]
+		[Ensalada_del_tiempo]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Tinto])
+	(precio 15.0)
+	(racion M)
+	(textura Carne)
+	(tipico_de [Espana])
+	(tipo Segundo)
+	(tradicional TRUE))
+
+([Sabanita_con_carne] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Carne]
+		[Lacticos])
+	(dificil TRUE)
+	(exclusivo FALSE)
+	(moderno TRUE)
+	(nombre_plato "Sabanita_con_verdura")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Nuggets_de_pollo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Coulant_de_chocolate])
+	(plato_vino [Vino_Tinto])
+	(precio 10.5)
+	(racion L)
+	(textura Carne)
+	(tipico_de [Mejico])
+	(tipo Segundo)
+	(tradicional FALSE))
+
+([Sabanita_con_verdura] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Lacticos]
+		[Verdura])
+	(dificil TRUE)
+	(exclusivo FALSE)
+	(moderno TRUE)
+	(nombre_plato "Sabanita_con_verdura")
+	(pesado TRUE)
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Pinxos_de_verdura]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Coulant_de_chocolate])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado]
+		[Vino_Tinto])
+	(precio 9.0)
+	(racion L)
+	(textura Legumbres)
+	(tipico_de [Mejico])
+	(tipo Segundo)
+	(tradicional FALSE))
+
+([Sake] of  Vino
+
+	(nombre_bebida "Sake")
+	(precio 10.0)
+	(vino_plato
+		[Sopa_de_miso]
+		[Sushi_marisco]
+		[Sushi_vegetal]
+		[Sopa_de_pescado]
+		[Sopa_de_verduras]
+		[Sorbete_de_limon]
+		[Tempura_de_verduras]
+		[Tentempies_de_caviar]
+		[Variado_de_helado]))
+
+([Salchipapas] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Carne]
+		[Verdura])
+	(infantil TRUE)
+	(nombre_plato "Salchipapas")
+	(pesado TRUE)
+	(plato_plato
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_pescado]
+		[Alitas_de_pollo]
+		[Coctel_de_gambas]
+		[Ensalada_de_arroz_con_quinoa]
+		[Ensalada_de_atun_con_pasta]
+		[Lionesas]
+		[Mel_i_mato]
+		[Nuggets_de_pollo]
+		[Parrilla_variada]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Gulash]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_rulo_de_cabra]
+		[Cuajada]
+		[Coulant_de_chocolate])
+	(plato_vino [Vino_Blanco])
+	(precio 3.0)
+	(racion M)
+	(textura Carne)
+	(tipico_de [Mejico])
+	(tipo Segundo Primero)
+	(tradicional FALSE))
+
+([Salmon] of  Ingrediente
+
+	(animal TRUE)
+	(compone
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Ensalada_de_salmon_ahumado]
+		[Estofado_de_salmon_con_trufa]
+		[Sushi_marisco])
+	(disponibilidad Primavera Verano)
+	(nombre_ingrediente "Salmon"))
+
+([Setas] of  Ingrediente
+
+	(animal FALSE)
+	(compone [Bistec_con_boletus])
+	(disponibilidad Otonio Invierno)
+	(nombre_ingrediente "Setas"))
+
+([Shawarma_con_salsa_de_berengena] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Carne]
+		[Verdura])
+	(nombre_plato "Shawarma_con_salsa_de_berengena")
+	(pesado TRUE)
+	(plato_plato
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tiramisu]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Sopa_de_pescado]
+		[Sopa_de_carne]
+		[Coctel_de_gambas]
+		[Pinxos_de_verdura]
+		[Mouse_de_chocolate]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada])
+	(plato_vino [Vino_Tinto])
+	(precio 8.0)
+	(racion M)
+	(textura Ensalada)
+	(tipico_de [Libano])
+	(tipo Segundo)
+	(tradicional FALSE))
+
+([Sopa_de_carne] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Carne])
+	(infantil TRUE)
+	(nombre_plato "Sopa_de_carne")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sorbete_de_limon]
+		[Alitas_de_pollo]
+		[Callos]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Rabo_de_toro]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Ensalada_del_tiempo]
+		[Cuajada]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Blanco])
+	(precio 5.0)
+	(racion M)
+	(textura Sopa)
+	(tipico_de [Espana])
+	(tipo Primero)
+	(tradicional TRUE))
+
+([Sopa_de_miso] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Marisco]
+		[Pescado])
+	(dificil TRUE)
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Sopa_de_miso")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Variado_de_helado]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tentempies_de_caviar]
+		[Tarta]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Tempura_de_verduras]
+		[Musico]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate])
+	(plato_vino [Sake])
+	(precio 8.5)
+	(racion L)
+	(textura Sopa)
+	(tipico_de [Japon])
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Sopa_de_pescado] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Pescado])
+	(nombre_plato "Sopa_de_pescado")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Alitas_de_pollo]
+		[Shawarma_con_salsa_de_berengena]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada])
+	(plato_vino
+		[Sake]
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 6.5)
+	(racion M)
+	(textura Sopa)
+	(tipico_de [Espana])
+	(tipo Primero)
+	(tradicional TRUE))
+
+([Sopa_de_verduras] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Verdura]
+		[Legumbres])
+	(nombre_plato "Sopa_de_verduras")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tiramisu]
+		[Tarta]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Coctel_de_gambas]
+		[Callos]
+		[Alitas_de_pollo]
+		[Sabanita_con_carne]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Sake]
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 4.0)
+	(racion M)
+	(textura Sopa)
+	(tipico_de [Espana])
+	(tipo Primero)
+	(tradicional TRUE))
+
+([Sorbete_de_limon] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Helado])
+	(dificil TRUE)
+	(exclusivo TRUE)
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Sorbete_de_limon")
+	(pesado FALSE)
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Variado_de_canapes]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tentempies_de_caviar]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Callos]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Melon_con_jamon]
+		[Manitas_de_ministro]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Cava]
+		[Moscatell]
+		[Sake])
+	(precio 4.0)
+	(racion M)
+	(textura Pasta)
+	(tipico_de [Espana])
+	(tipo Postre)
+	(tradicional TRUE))
+
+([Sucedaneo_de_caviar] of  Ingrediente
+
+	(animal TRUE)
+	(compone [Paella_de_pescado])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Sucedaneo_de_caviar"))
+
+([Sushi_marisco] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Caviar]
+		[Legumbres]
+		[Marisco]
+		[Pescado]
+		[Salmon])
+	(dificil TRUE)
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Sushi_marisco")
+	(plato_plato
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tentempies_de_caviar]
+		[Sushi_vegetal]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada])
+	(plato_vino [Sake])
+	(precio 15.0)
+	(racion M)
+	(textura Ensalada)
+	(tipico_de [Japon])
+	(tipo Primero Segundo)
+	(tradicional FALSE))
+
+([Sushi_vegetal] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Fruta]
+		[Lacticos]
+		[Legumbres]
+		[Verdura])
+	(dificil TRUE)
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Sushi_vegetal")
+	(plato_plato
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tentempies_de_caviar]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada])
+	(plato_vino [Sake])
+	(precio 9.8)
+	(racion M)
+	(textura Ensalada)
+	(tipico_de [Japon])
+	(tipo Primero Segundo)
+	(tradicional FALSE))
+
+([Tacos_con_carne] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Carne]
+		[Legumbres])
+	(infantil TRUE)
+	(nombre_plato "Tacos_con_carne")
+	(plato_plato
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Turron]
+		[Tarta]
+		[Caracoles_con_ajo_y_perejil]
+		[Coctel_de_gambas]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Callos]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado]
+		[Vino_Tinto])
+	(precio 8.0)
+	(racion M)
+	(textura Carne)
+	(tipico_de [Mejico])
+	(tipo Segundo Primero)
+	(tradicional FALSE))
+
+([Tarta] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Chocolate]
+		[Fruta]
+		[Lacticos])
+	(dificil TRUE)
+	(infantil TRUE)
+	(nombre_plato "Tarta")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Tacos_con_carne]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Callos]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Melon_con_jamon]
+		[Manitas_de_ministro]
+		[Hummus_con_verduras]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Cava]
+		[Moscatell])
+	(precio 3.0)
+	(racion M)
+	(textura Pasta)
+	(tipo Postre)
+	(tradicional TRUE))
+
+([Tempura_de_verduras] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por [Verdura])
+	(exclusivo TRUE)
+	(infantil TRUE)
+	(moderno TRUE)
+	(nombre_plato "Tempura_de_verduras")
+	(pesado TRUE)
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Variado_de_canapes]
+		[Turron]
+		[Sopa_de_miso]
+		[Alitas_de_pollo])
+	(plato_vino
+		[Sake]
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 4.0)
+	(racion M)
+	(textura Legumbres)
+	(tipico_de [Japon])
+	(tipo Primero Segundo)
+	(tradicional FALSE))
+
+([Tentempies_de_caviar] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Caviar])
+	(dificil FALSE)
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Tentempies_de_caviar")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Variado_de_helado]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_miso]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Rabo_de_toro]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Melon_con_jamon]
+		[Mel_i_mato]
+		[Lionesas]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Sake]
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 18.0)
+	(racion S)
+	(textura Ensalada)
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Tiramisu] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Chocolate]
+		[Lacticos])
+	(infantil TRUE)
+	(nombre_plato "Tiramisu")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Callos]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Melon_con_jamon]
+		[Manitas_de_ministro]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Moscatell]
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 3.0)
+	(racion M)
+	(textura Pasta)
+	(tipico_de [Espana])
+	(tipo Postre)
+	(tradicional TRUE))
+
+([Tortilla_de_trufa_con_cebolla_caramelizada] of  Plato
+
+	(caliente TRUE)
+	(compuesto_por
+		[Trufa]
+		[Verdura])
+	(dificil TRUE)
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Tortilla_de_trufa_con_cebolla_caramelizada")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Variado_de_helado]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Tiramisu]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Musico]
+		[Mouse_de_chocolate]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Lionesas]
+		[Estofado_de_salmon_con_trufa]
+		[Conejo_al_ajillo])
+	(plato_vino [Vino_Blanco])
+	(precio 12.0)
+	(racion M)
+	(textura Legumbres)
+	(tipico_de [Espana])
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Trufa] of  Ingrediente
+
+	(animal FALSE)
+	(compone
+		[Carpaccio_de_calabacin_con_trufa]
+		[Ensalada_de_trufa]
+		[Estofado_de_salmon_con_trufa]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Variado_de_canapes])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Trufa"))
+
+([Turron] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Turron_ingrediente])
+	(infantil TRUE)
+	(nombre_plato "Turron")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Tempura_de_verduras]
+		[Tacos_con_carne]
+		[Callos]
+		[Alitas_de_pollo]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Melon_con_jamon]
+		[Manitas_de_ministro]
+		[Hummus_con_verduras]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Cava]
+		[Moscatell]
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 4.0)
+	(racion M)
+	(textura Pasta)
+	(tipico_de [Espana])
+	(tipo Postre)
+	(tradicional TRUE))
+
+([Turron_ingrediente] of  Ingrediente
+
+	(animal FALSE)
+	(compone [Turron])
+	(disponibilidad Invierno)
+	(nombre_ingrediente "Turron_ingrediente"))
+
+([Variado_de_canapes] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por
+		[Caracoles]
+		[Caviar]
+		[Fruta]
+		[Jamon]
+		[Marisco]
+		[Pescado]
+		[Trufa]
+		[Verdura]
+		[Pasta])
+	(dificil FALSE)
+	(exclusivo TRUE)
+	(moderno TRUE)
+	(nombre_plato "Variado_de_canapes")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brazo_de_gitano]
+		[Variado_de_helado]
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Caracoles_con_ajo_y_perejil]
+		[Tempura_de_verduras]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sorbete_de_limon]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Rabo_de_toro]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Orejas_de_cerdo]
+		[Musico]
+		[Mochi]
+		[Mochi_frito_con_sesamo]
+		[Mel_i_mato]
+		[Manitas_de_ministro]
+		[Lionesas]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Cuajada]
+		[Coulant_de_chocolate]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 16.0)
+	(racion M)
+	(textura Ensalada)
+	(tipico_de [Espana])
+	(tipo Primero)
+	(tradicional FALSE))
+
+([Variado_de_helado] of  Plato
+
+	(caliente FALSE)
+	(compuesto_por [Helado])
+	(infantil TRUE)
+	(nombre_plato "Variado_de_helado")
+	(plato_plato
+		[Bistec_con_boletus]
+		[Brandada_de_bacalla]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Variado_de_canapes]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Tentempies_de_caviar]
+		[Tempura_de_verduras]
+		[Tacos_con_carne]
+		[Sushi_vegetal]
+		[Sushi_marisco]
+		[Sopa_de_verduras]
+		[Sopa_de_pescado]
+		[Sopa_de_miso]
+		[Callos]
+		[Alitas_de_pollo]
+		[Sopa_de_carne]
+		[Shawarma_con_salsa_de_berengena]
+		[Sabanita_con_verdura]
+		[Sabanita_con_carne]
+		[Salchipapas]
+		[Rabo_de_toro]
+		[Pinxos_variados]
+		[Pinxos_de_verdura]
+		[Pinxos_de_pollo]
+		[Parrilla_variada]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Paella_de_pescado]
+		[Ostras]
+		[Orejas_de_cerdo]
+		[Nuggets_de_pollo]
+		[Melon_con_jamon]
+		[Manitas_de_ministro]
+		[Hummus_con_verduras]
+		[Gulash]
+		[Estofado_de_salmon_con_trufa]
+		[Ensalada_del_tiempo]
+		[Ensalada_de_trufa]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_arroz_con_quinoa]
+		[Conejo_al_ajillo])
+	(plato_vino
+		[Sake]
+		[Cava]
+		[Moscatell]
+		[Vino_Blanco]
+		[Vino_Rosado])
+	(precio 5.0)
+	(racion M)
+	(textura Sopa)
+	(tipo Postre)
+	(tradicional FALSE))
+
+([Verdura] of  Ingrediente
+
+	(animal FALSE)
+	(compone
+		[Bistec_con_boletus]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Coctel_de_gambas]
+		[Ensalada_de_arroz_con_quinoa]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_trufa]
+		[Ensalada_del_tiempo]
+		[Estofado_de_salmon_con_trufa]
+		[Hummus_con_verduras]
+		[Paella_verduras]
+		[Pinxos_de_verdura]
+		[Pinxos_variados]
+		[Sabanita_con_verdura]
+		[Salchipapas]
+		[Shawarma_con_salsa_de_berengena]
+		[Sopa_de_verduras]
+		[Sushi_vegetal]
+		[Tempura_de_verduras]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Variado_de_canapes])
+	(disponibilidad Primavera Verano Otonio Invierno)
+	(nombre_ingrediente "Verdura"))
+
+([Vino_Blanco] of  Vino
+
+	(nombre_bebida "Vino_Blanco")
+	(precio 5.0)
+	(vino_plato
+		[Brandada_de_bacalla]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Coctel_de_gambas]
+		[Ensalada_de_arroz_con_quinoa]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_salmon_ahumado]
+		[Ensalada_de_trufa]
+		[Estofado_de_salmon_con_trufa]
+		[Gulash]
+		[Hummus_con_verduras]
+		[Melon_con_jamon]
+		[Ostras]
+		[Paella_de_pescado]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Pinxos_de_pollo]
+		[Pinxos_de_verdura]
+		[Pinxos_variados]
+		[Sabanita_con_verdura]
+		[Salchipapas]
+		[Sopa_de_carne]
+		[Sopa_de_pescado]
+		[Sopa_de_verduras]
+		[Tacos_con_carne]
+		[Tempura_de_verduras]
+		[Tentempies_de_caviar]
+		[Tiramisu]
+		[Tortilla_de_trufa_con_cebolla_caramelizada]
+		[Turron]
+		[Variado_de_helado]
+		[Variado_de_canapes]))
+
+([Vino_Rosado] of  Vino
+
+	(nombre_bebida "Vino_Rosado")
+	(precio 5.5)
+	(vino_plato
+		[Alitas_de_pollo]
+		[Cuajada]
+		[Caracoles_con_ajo_y_perejil]
+		[Carpaccio_de_calabacin_con_salmon_ahumado]
+		[Carpaccio_de_calabacin_con_trufa]
+		[Carpaccio_de_vacuno]
+		[Coctel_de_gambas]
+		[Coulant_de_chocolate]
+		[Ensalada_de_arroz_con_quinoa]
+		[Ensalada_de_atun_con_pasta]
+		[Ensalada_de_rulo_de_cabra]
+		[Ensalada_de_trufa]
+		[Ensalada_del_tiempo]
+		[Lionesas]
+		[Melon_con_jamon]
+		[Nuggets_de_pollo]
+		[Pinxos_de_verdura]
+		[Pinxos_variados]
+		[Sabanita_con_verdura]
+		[Sopa_de_pescado]
+		[Sopa_de_verduras]
+		[Tacos_con_carne]
+		[Tempura_de_verduras]
+		[Tentempies_de_caviar]
+		[Tiramisu]
+		[Turron]
+		[Variado_de_helado]
+		[Variado_de_canapes]))
+
+([Vino_Tinto] of  Vino
+
+	(nombre_bebida "Vino_Tinto")
+	(precio 7.0)
+	(vino_plato
+		[Bistec_con_boletus]
+		[Callos]
+		[Conejo_al_ajillo]
+		[Manitas_de_ministro]
+		[Orejas_de_cerdo]
+		[Paella_de_pescado]
+		[Paella_verduras]
+		[Paella_de_pollo]
+		[Rabo_de_toro]
+		[Sabanita_con_carne]
+		[Sabanita_con_verdura]
+		[Shawarma_con_salsa_de_berengena]
+		[Tacos_con_carne]))

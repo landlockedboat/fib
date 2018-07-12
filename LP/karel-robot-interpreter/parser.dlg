@@ -1,0 +1,224 @@
+<<
+/* parser.dlg -- DLG Description of scanner
+ *
+ * Generated from: karel.g
+ *
+ * Terence Parr, Will Cohen, and Hank Dietz: 1989-2001
+ * Purdue University Electrical Engineering
+ * With AHPCRC, University of Minnesota
+ * ANTLR Version 1.33MR33
+ */
+
+#define ANTLR_VERSION	13333
+#include "pcctscfg.h"
+#include "pccts_stdio.h"
+
+#include <string>
+#include <iostream>
+#include <map>
+using namespace std;
+
+typedef struct {
+  string kind;
+  string text;
+} Attrib;
+
+void zzcr_attr(Attrib *attr, int type, char *text);
+#define AST_FIELDS string kind; string text;
+#include "ast.h"
+#define zzcr_ast(as,attr,ttype,textt) as=createASTnode(attr,ttype,textt)
+AST* createASTnode(Attrib* attr,int ttype, char *textt);
+#include "antlr.h"
+#include "ast.h"
+#include "tokens.h"
+#include "dlgdef.h"
+LOOKAHEAD
+
+void
+#ifdef __USE_PROTOS
+zzerraction(void)
+#else
+zzerraction()
+#endif
+{
+	(*zzerr)("invalid token");
+	zzadvance();
+	zzskip();
+}
+>>
+
+
+%%START
+
+@
+	<<
+		NLA = 1;
+	>>
+
+world
+	<<
+		NLA = WORLD;
+	>>
+
+robot
+	<<
+		NLA = ROBOT;
+	>>
+
+walls
+	<<
+		NLA = WALLS;
+	>>
+
+beepers
+	<<
+		NLA = BEEPERS;
+	>>
+
+isClear
+	<<
+		NLA = ISCLEAR;
+	>>
+
+anyBeepersInBag
+	<<
+		NLA = ANYBEEPERS;
+	>>
+
+turnleft
+	<<
+		NLA = TURNLEFT;
+	>>
+
+move
+	<<
+		NLA = MOVE;
+	>>
+
+putbeeper
+	<<
+		NLA = PUTBEEPER;
+	>>
+
+pickbeeper
+	<<
+		NLA = PICKBEEPER;
+	>>
+
+foundbeeper
+	<<
+		NLA = FOUNDBEEPER;
+	>>
+
+iterate
+	<<
+		NLA = ITERATE;
+	>>
+
+define
+	<<
+		NLA = DEFINE;
+	>>
+
+begin
+	<<
+		NLA = BEGIN;
+	>>
+
+end
+	<<
+		NLA = END;
+	>>
+
+turnoff
+	<<
+		NLA = TURNOFF;
+	>>
+
+if
+	<<
+		NLA = IF;
+	>>
+
+and
+	<<
+		NLA = AND;
+	>>
+
+or
+	<<
+		NLA = OR;
+	>>
+
+not
+	<<
+		NLA = NOT;
+	>>
+
+right
+	<<
+		NLA = RIGHT;
+	>>
+
+left
+	<<
+		NLA = LEFT;
+	>>
+
+up
+	<<
+		NLA = UP;
+	>>
+
+down
+	<<
+		NLA = DOWN;
+	>>
+
+[A-Z]+[0-9]*
+	<<
+		NLA = ID;
+	>>
+
+[0-9]+
+	<<
+		NLA = NUM;
+	>>
+
+\[
+	<<
+		NLA = LCLA;
+	>>
+
+\]
+	<<
+		NLA = RCLA;
+	>>
+
+\{
+	<<
+		NLA = LBRA;
+	>>
+
+\}
+	<<
+		NLA = RBRA;
+	>>
+
+\,
+	<<
+		NLA = COMMA;
+	>>
+
+\;
+	<<
+		NLA = SEMI;
+	>>
+
+[\ \n]
+	<<
+		NLA = SPACE;
+    zzskip();  
+	>>
+
+%%

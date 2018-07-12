@@ -1,0 +1,17 @@
+main {
+  // If a graph G has a clique of size k then the complement of G has
+  // a vertex cover of size n - k, where n is the number of vertices
+  // http://cs.stackexchange.com/questions/37527/reduce-clique-to-vertex-cover
+  
+  // We build the complementary graph
+  for (i = 1; i < in.adjacencymatrix.size; i++) {
+    out.nodes.push = i;
+    for (j = 1; j < in.adjacencymatrix[i].size; j++) {
+      if(in.adjacencymatrix[i][j] == 0 and i != j){
+        out.edges.push = i,j;
+      } 
+    }
+  }
+  // k is now n - k
+  out.k = in.numnodes - in.k;
+}

@@ -1,0 +1,36 @@
+
+ff: parsing domain file
+domain 'MENUS' defined
+ ... done.
+ff: parsing problem file
+problem 'MENUS-1' defined
+ ... done.
+
+
+
+no optimization required. skipping criterion.
+
+
+no metric specified. plan length assumed.
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
+    metric is  plan length
+
+Enforced Hill-climbing failed !
+switching to Best-first Search now.
+
+
+best first search space empty! problem proven unsolvable.
+
+
+
+time spent:    0.05 seconds instantiating 80300 easy, 0 hard action templates
+               0.02 seconds reachability analysis, yielding 627 facts and 3920 actions
+               0.03 seconds creating final representation with 619 relevant facts, 1 relevant fluents
+               0.02 seconds computing LNF
+               0.01 seconds building connectivity graph
+               0.00 seconds searching, evaluating 2 states, to a max depth of 0
+               0.13 seconds total time
+

@@ -1,0 +1,32 @@
+Com es pot comprovar que el compte ha quedat desactivat?
+
+$ su aso27
+$ su aso28
+$ ...
+
+I comprovar que cadascun executa el tail script adequat.
+
+Quins permisos posaríeu a aquesta aplicació perquè no pugui ser executat per
+cap usuari directament?
+
+$ sudo chown root /usr/local/bin/asosh
+$ sudo chmod +S /usr/local/bin/asosh
+$ sudo chgrp asosh /usr/local/bin/asosh
+$ sudo chmod g+x /usr/local/bin/asosh
+
+$ sudo chsh -s /usr/local/bin/asosh asosh
+
+Com queda finalment l'entrada de la base de dades d'usuaris per a l'usuari
+asosh?
+
+asosh:x:1010:1010:,,,:/home/asosh:/usr/local/bin/asosh
+
+Quins canvis heu fet al fitxer /etc/sudoers per activar els controls anteriors?
+
+He afegir la linea:
+
+%admin	ALL=(ALL:ALL) ALL
+
+Com es pot desactivar l'accés de login per a l'usuari root?
+
+$ sudo chsh -s /usr/local/lib/no-login root

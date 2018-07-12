@@ -1,0 +1,5 @@
+
+ff: parsing domain file
+domain 'MENUS' defined
+ ... done.
+ff: parsing problem file

@@ -1,0 +1,235 @@
+\section{Descripción del dominio}
+
+\subsection{Tipos}
+
+Los tipos con los que contamos en el dominio son:
+
+\begin{description}
+  \item[\texttt{dia - object}:] Tipo dia, sus instancias representan 
+    dias de la semana, por ejemplo \texttt{lunes}.
+  \item[\texttt{plato - object}:] Tipo plato, sus instancias representan 
+    platos de comida, por ejemplo \texttt{paella}.
+  \item[\texttt{primero - plato}:] Tipo primero, hereda de plato. Sus 
+    instancias representan platos que se consideran primeros, 
+    por ejemplo \texttt{ensalada}.
+  \item[\texttt{segundo - plato}:] Tipo segundo, hereda de plato. Sus 
+    instancias representan platos que se consideran segundos, 
+    por ejemplo \texttt{entrecot}.
+  \item[\texttt{tipo\_plato - object}:] Tipo tipo de plato, sus instancias
+    representan tipos de los que un plato puede ser,
+    por ejemplo \texttt{pescado}.
+\end{description}
+
+\subsection{Predicados}
+
+Los predicados con los que contamos en el dominio son:
+
+\begin{description}
+  \item[\texttt{(incompatible ?p - primero ?s - segundo)}:]
+
+    Expresa que el primer plato \texttt{p} es incompatible con 
+    el segundo \texttt{s}.
+    Por ejemplo, \texttt{(incompatible paella lubina)} indica que
+    \texttt{paella} y \texttt{lubina} no pueden ser servidas en el mismo dia
+    \texttt{d} como primero y segundo respectivamente.
+
+  \item[\texttt{(preparado ?p - plato)}:]
+
+    Expresa que el plato \texttt{p} ya ha sido preparado en esta semana.
+    Por ejemplo, \texttt{(preparado paella)} indica que
+    \texttt{paella} ya ha sido preparado esta semana.
+
+  \item[\texttt{(consecutivo ?d1 - dia  ?d2 - dia)}:]
+
+    Expresa que el dia \texttt{d1} precede al dia \texttt{d2}.
+    Por ejemplo, \texttt{(consecutivo lunes martes)} indica que
+    \texttt{martes} es consecutivo a \texttt{lunes}.
+
+  \item[\texttt{(ultimo\_dia ?d - dia)}:]
+
+    Expresa que el dia \texttt{d} es el último dia de la semana.
+    Por ejemplo, \texttt{(ultimo\_dia viernes)} indica que
+    \texttt{viernes} es el último dia de la semana.
+
+  \item[\texttt{(es\_de\_tipo ?p - plato ?t - tipo\_plato)}:]
+
+    Expresa que 
+    el plato \texttt{p} es de tipo \texttt{t}.
+    Por ejemplo, \texttt{(es\_de\_tipo paella pescado)} indica que
+    el plato \texttt{paella} es de tipo \texttt{pescado}.
+
+  \item[\texttt{(tipo\_dia\_primero ?d - dia ?t - tipo\_plato)}:]
+
+    Expresa que 
+    en el dia \texttt{d} se ha servido un primer plato de tipo \texttt{t}.
+    Por ejemplo, \texttt{(tipo\_dia\_primero jueves pescado)} indica que
+    en el dia \texttt{jueves} se ha servido un primer plato
+    de tipo \texttt{pescado}.
+
+  \item[\texttt{(tipo\_dia\_segundo ?d - dia ?t - tipo\_plato)}:]
+
+    Expresa que 
+    en el dia \texttt{d} se ha servido un segundo plato de tipo \texttt{t}.
+    Por ejemplo, \texttt{(tipo\_dia\_segundo martes sopa)} indica que
+    en el dia \texttt{martes} se ha servido un segundo plato
+    de tipo \texttt{sopa}.
+
+  \item[\texttt{(servido\_primero ?d - dia)}:]
+
+    Expresa que 
+    se ha servido un primer plato el dia \texttt{d}.
+    Por ejemplo, \texttt{(servido\_primero jueves)} indica que
+    se ha servido un primer plato el dia \texttt{jueves}.
+
+  \item[\texttt{(servido\_segundo ?d - dia)}:]
+
+    Expresa que 
+    se ha servido un segundo plato el dia \texttt{d}.
+    Por ejemplo, \texttt{(servido\_segundo martes)} indica que
+    se ha servido un segundo plato el dia \texttt{martes}.
+
+  \item[\texttt{(menu\_primero ?d - dia ?p - primero)}:]
+
+    Expresa que 
+    se ha servido un primer plato \texttt{p} el dia \texttt{d}.
+    Por ejemplo, \texttt{(menu\_primero jueves paella)} indica que
+    se ha servido un primer plato \texttt{paella} el dia \texttt{jueves}.
+
+  \item[\texttt{(menu\_segundo ?d - dia ?s - segundo)}:]
+
+    Expresa que 
+    se ha servido un segundo plato \texttt{p} el dia \texttt{d}.
+    Por ejemplo, \texttt{(menu\_segundo martes fabada)} indica que
+    se ha servido un segundo plato \texttt{fabada} el dia \texttt{martes}.
+
+\end{description}
+
+\subsection{Funciones}
+
+\begin{description}
+  \item[\texttt{(calorias ?p - plato)}:]
+    Función que guarda el valor calórico del plato \texttt{p}.
+  \item[\texttt{(precio\_total)}:]
+    Función que guarda el precio total del menú semanal.
+  \item[\texttt{(precio\_plato ?p - plato)}:]
+    Función que guarda el precio de un plato \texttt{p}.
+\end{description}
+
+\subsection{Acciones}
+
+\begin{description}
+
+  \item[\texttt{servir\_ultimo\_dia\_primero}:]
+
+    De manera resumida, esta accion
+    sirve el primer plato del último dia de la semana.
+    \\
+
+    Esta accion se puede ejecutar
+    bajo la condicion de que
+    \begin{itemize}
+      \item El primer plato del último dia de la semana no haya sido servido
+    \end{itemize}
+    provocando que
+    \begin{itemize}
+      \item El primer plato del último dia de la semana sea servido
+      \item El precio total del menu semanal se vea incrementado por el precio 
+        del plato a servir
+    \end{itemize}
+
+  \item[\texttt{servir\_ultimo\_dia\_segundo}:]
+
+    De manera resumida, esta accion
+    sirve el segundo plato del último dia de la semana.
+    \\
+
+    Esta accion se puede ejecutar
+    bajo la condicion de que
+    \begin{itemize}
+      \item El segundo plato del último dia de la semana no haya sido servido
+    \end{itemize}
+    provocando que
+    \begin{itemize}
+      \item El segundo plato del último dia de la semana sea servido
+      \item El precio total del menu semanal se vea incrementado por el precio 
+        del plato a servir
+    \end{itemize}
+
+  \item[\texttt{servir\_primero\_solo}:]
+
+    De manera resumida, esta accion
+    sirve el primer plato de un dia de la semana cuando su segundo
+    ya ha sido servido.
+    \\
+    
+    Esta accion se puede ejecutar
+    bajo la condicion de que
+    \begin{itemize}
+      \item Ni el primer ni el segundo plato del dia a servir hayan sido
+        servidos
+      \item El plato a servir no haya sido servido en la semana actual
+      \item El primer plato servido el dia consecutivo al dia a servir sea de
+        un tipo distinto del del plato a servir
+    \end{itemize}
+    provocando que
+    \begin{itemize}
+      \item El primer plato del dia a servir sea servido
+      \item El precio total del menu semanal se vea incrementado por el precio 
+        del plato a servir
+    \end{itemize}
+
+  \item[\texttt{servir\_primero}:]
+
+    De manera resumida, esta accion
+    sirve el primer plato de un dia de la semana cuando su segundo
+    aún no ha sido servido.
+    \\
+
+    Esta accion se puede ejecutar
+    bajo las condiciones de que:
+    \begin{itemize}
+      \item El primer plato del dia a servir no haya sido servido
+      \item El segundo plato del dia a servir haya sido servido
+      \item El plato a servir no haya sido servido en la semana actual
+      \item El primer plato servido el dia consecutivo al dia a servir sea de
+        un tipo distinto del del plato a servir
+      \item El plato a servir y el segundo plato del dia a servir no sean
+        incompatibles
+      \item La suma de las calorias del plato a servir y del segundo plato
+        del dia a servir no debe ser menor a 1000 ni mayor a 1500
+    \end{itemize}
+    provocando que:
+    \begin{itemize}
+      \item El primer plato del dia a servir sea servido
+      \item El precio total del menu semanal se vea incrementado por el precio 
+        del plato a servir
+    \end{itemize}
+
+  \item[\texttt{servir\_segundo}:]
+
+    De manera resumida, esta accion
+    sirve el segundo plato de un dia de la semana cuando su primero
+    aún no ha sido servido.
+    \\
+
+    Esta accion se puede ejecutar
+    bajo las condiciones de que:
+    \begin{itemize}
+      \item El segundo plato del dia a servir no haya sido servido
+      \item El primer plato del dia a servir haya sido servido
+      \item El plato a servir no haya sido servido en la semana actual
+      \item El segundo plato servido el dia consecutivo al dia a servir sea de
+        un tipo distinto del del plato a servir
+      \item El plato a servir y el primer plato del dia a servir no sean
+        incompatibles
+      \item La suma de las calorias del plato a servir y del primer plato
+        del dia a servir no debe ser menor a 1000 ni mayor a 1500
+    \end{itemize}
+    provocando que:
+    \begin{itemize}
+      \item El segundo plato del dia a servir sea servido
+      \item El precio total del menu semanal se vea incrementado por el precio 
+        del plato a servir
+    \end{itemize}
+
+\end{description}

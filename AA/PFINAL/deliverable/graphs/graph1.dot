@@ -1,0 +1,11 @@
+graph {
+
+rankdir=LR;
+ranksep=0;
+edge[style=invis];
+node[shape=none, width=0.3, height=0, margin=0.02];
+4->7->5->1->8->3->6->2;
+
+edge[style=solid, constraint=false];
+1:s->2:s->3:s->4:s->5:s->6:s->7:s->8:s
+}

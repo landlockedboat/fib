@@ -1,0 +1,9 @@
+Data Loss Factor = 32
+
+Connection cost
+
+411412.0
+431999.0
+324215.0
+346492.0
+342742.0

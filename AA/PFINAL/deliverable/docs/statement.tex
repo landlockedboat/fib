@@ -1,0 +1,23 @@
+\section{Statement} \label{sec:statement}
+
+We've been given the following problem to talk about.
+
+\paragraph{}
+
+\textsc{Minimum cut linear arrangement}
+
+Given a graph $G = (V, E)$, compute a one-to-one function 
+$f : V \rightarrow [1..|V |]$ so that the maximum number of cut edges 
+in any integer point is minimised, i.e.
+
+\[
+\max_{i \in 1..|V|}
+  |
+  \left \{
+    \left \{
+      u, v
+    \right \} 
+    \in E : f (u) \leq i < f (v)
+  \right \}
+  | 
+\]

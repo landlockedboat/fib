@@ -1,0 +1,27 @@
+\select@language {catalan}
+\contentsline {chapter}{\numberline {1}Descripci\IeC {\'o} de la pr\IeC {\`a}ctica}{2}{chapter.1}
+\contentsline {paragraph}{Aclariment}{2}{section*.2}
+\contentsline {section}{\numberline {1.1}Representaci\IeC {\'o} de les dades}{2}{section.1.1}
+\contentsline {subsubsection}{Conjunt de k-shingles}{3}{section*.3}
+\contentsline {subsubsection}{Bossa de k-shingles}{3}{section*.4}
+\contentsline {subsubsection}{Matriu de representaci\IeC {\'o} de conjunts de k-shingles}{3}{section*.5}
+\contentsline {subsubsection}{Signatura de minhash}{3}{section*.6}
+\contentsline {subsubsection}{Matriu caracter\IeC {\'\i }stica de signatures de minhash}{3}{section*.7}
+\contentsline {subsubsection}{Signature Matrix}{4}{section*.8}
+\contentsline {chapter}{\numberline {2}Descripci\IeC {\'o} de la implementaci\IeC {\'o}}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Similitud de Jaccard}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Aproximaci\IeC {\'o} de similitud de Jaccard amb signatures minhash}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Locality-Sensitive Hashing (LSH)}{6}{section.2.3}
+\contentsline {section}{\numberline {2.4}Com executar els programes}{6}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Qu\IeC {\`e} cont\IeC {\`e} cada directori}{7}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Qu\IeC {\`e} fa cada programa}{7}{subsection.2.4.2}
+\contentsline {subsubsection}{filter.out}{7}{section*.9}
+\contentsline {subsubsection}{permgen.out}{7}{section*.10}
+\contentsline {subsubsection}{jaccard\textunderscore pairs.out}{8}{section*.11}
+\contentsline {subsubsection}{jaccard.out}{8}{section*.12}
+\contentsline {subsubsection}{lsh.out}{8}{section*.13}
+\contentsline {subsubsection}{minhash.out}{8}{section*.14}
+\contentsline {chapter}{\numberline {3}Experimentaci\IeC {\'o}}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Resultats de la similitud}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Temps de c\IeC {\`a}lcul}{9}{section.3.2}
+\contentsline {chapter}{\numberline {4}Conclusi\IeC {\'o}}{10}{chapter.4}

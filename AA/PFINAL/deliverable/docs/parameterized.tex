@@ -1,0 +1,35 @@
+\section{Parametrized Problems}
+
+Using this problem, and combining it with a computable function $ \kappa : \Sigma^* \rightarrow N $ we can formulate a Parametrized version of this problem. 
+
+
+An example:
+
+\begin{center}
+    \begin{tabular}{| l | p{5cm} |}
+    \hline
+    Input & Graph G and tw = treewidth(G)\\ \hline
+    Paremeters & tw  \\ \hline
+    Question & What is the Min-Cut Linear Arrangement of G?\\ \hline
+    \end{tabular}
+\end{center}
+
+Given that we find an expression Monadic Second Order Logic, the above can be solved in $O(n*f(tw))$ \cite{trans}. 
+
+
+Obviously, one parametrization that makes our problem FPT, is the following:
+
+
+
+\begin{center}
+    \begin{tabular}{| l | p{5cm} |}
+    \hline
+    Input & Graph G \\ \hline
+    Paremeters & V(G)  \\ \hline
+    Question & What is the Min-Cut Linear Arrangement of G?\\ \hline
+    \end{tabular}
+\end{center}
+
+Here we can use our bruteforce algorithm on the possible linear arrangements of G, which runs in $V(G)!*(V(G)*E(G)$ time, 
+where $V(G)!$ is to create every possible linear arrangement and $(V(G)*E(G)$ is to compute a cutwidth of a given arrangement.
+So in this case we have $f(\kappa)*E(G)$ time. 
