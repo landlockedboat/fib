@@ -1,0 +1,156 @@
+\section{Introduction}
+
+The thesis for the final game is about animal agriculture and its impact
+on planet earth. Animal agriculture is one of the biggest contributors
+to \gls{GHG} emissions and climate change \cite{gerber2013tackling}.
+
+Because this issue is widespread and easy to mitigate (consume more plant
+based options that replace meat in some meals, replacing dairy with
+plant based drinks, etc.) it was decided to be the main focus of the final
+game and the project.
+\subsection{Idea}
+
+\subsubsection{Summary}
+
+The final game is about managing a small islander town by building
+the right structures in the right spots. It is a game about minimizing
+commute times as much as optimizing space for letting the industries
+operating in the community the space they will need.
+
+Specifically, the final game will simulate two industries: the meat
+industry and the tofu industry. The player will be able to assest
+which one of them is more space-intensive and which one is not.
+
+The meat industry will yield lower ammounts of food for the same
+space needed for the tofu industry to yield more. Because of
+this design decision it is hoped that the player will understand the
+ecological benefits of reducing and/or replacing meat in meals.
+
+\subsubsection{In depth}
+
+The game is a town management simulator, with inspiration from other
+games like Dwarf Fortress 
+\footnote{\texttt{http://www.bay12games.com/dwarves/}},
+Oxygen Not Included
+\footnote{\texttt{https://www.klei.com/games/oxygen-not-included}},
+and Rimworld
+\footnote{\texttt{https://rimworldgame.com/}},
+.
+
+\paragraph{Story}
+
+The main objective of the game is to finish all missions. The missions
+involve building new buildings, surviving a certain ammount of days, etc.
+
+The first missions revolve around setting up the basic town structure:
+building homes, farms and ovens to produce bread, the first and most
+basic edible in the game. The villagers will hold onto this diet until
+the villagers start eating meat.
+
+The missions become increasingly challenging as time goes on, up
+until the player gets to the point where the players gets a special
+mission, in which they are notified that their villagers no longer eat meat.
+
+When the game reaches this point, the players will find out that it is 
+actually easier for them to feed their villagers a plant based diet, as
+it's more space efficient.
+
+Some days after the last diet shift, the game will end and the player
+will be prompted with a survey to fill up.
+
+\paragraph{Gameplay}
+
+The players does not interfere directly in the islanders life (the
+town's inhabittants), they engage by placing orders for the villagers
+to execute. The orders are set by building new buildings that the villagers
+will engage with.
+
+\paragraph{Buildings}
+
+Each building, depending on its nature, creates certain orders that effect
+the town and its villagers differently.
+
+Buildings have also a price for each of them. Money is obtained
+from the villagers each 3 days. Each villager adds between 25 and 45
+resources to the resource pool.
+
+Below there can be found a description of the buildings
+and its prices.
+
+\begin{itemize}
+	\item \textbf{House} - A building where villagers can sleep.
+		It costs 50 resources to build.
+	\item \textbf{Warehouse} - Building that enables villager to store resources
+		into. It costs 100 resources to build.
+	\item \textbf{Dock} - Special building that makes possible new villagers
+		coming to the town. It cannot be built.
+	\item \textbf{Wheat farm} - A building that produces 1 wheat after a seed has been
+		planted on it by a villager. It costs 25 resources to build.
+	\item \textbf{Oven} - Building that transforms 1 wheat into 2 bread. It costs
+		75 resources to build.
+	\item \textbf{Pig pen} - Building that transforms 50 wheat into 1 pig.
+		It costs 100 resources to build.
+	\item \textbf{Slaughterhouse} - Building that transforms 1 pig into 25 meat.
+		It costs 120 resources to build.
+	\item \textbf{Soy farm} - A building that produces 1 soybean after a seed has been
+		planted on it by a villager. It costs 25 resources to build.
+	\item \textbf{Tofu fermenter} - Building that transforms 1 soybean into 1 tofu. It costs
+		75 resources to build.
+\end{itemize}
+
+\paragraph{Art}
+
+The art for the final game has been freely obtained from kenney's assets
+\footnote{https://kenney.nl/}. They belong to the roguelike/RPG pack
+\footnote{https://kenney.nl/assets/roguelike-rpg-pack} and to the UI
+RPG expansion pack\footnote{https://kenney.nl/assets/ui-pack-rpg-expansion}.
+
+\subsection{Mechanics}
+
+Players engage with the game by placing buildings. They can buy
+buildings (Figure \ref{fig:building-shop}), choose where to place
+them (Figures \ref{fig:tap-to-build} and \ref{fig:place-building}) and
+finally, placing them down (Figure \ref{fig:building-built}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.25\textwidth]{figures/final-game/shop}
+    \caption{The shop window}
+    \label{fig:building-shop}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.25\textwidth]{figures/final-game/tap-to-build}
+    \caption{The player has to tap a part of the screen for the building to
+		appear in}
+    \label{fig:tap-to-build}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.25\textwidth]{figures/final-game/place-building}
+    \caption{The player can choose where to build the building. In green,
+		a "blueprint" is being shown to the player for them to know
+		where it will end up in. Also, buttons have been added
+		to move the building more precisely}
+    \label{fig:place-building}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.25\textwidth]{figures/final-game/building-built}
+    \caption{After the player chooses the location, the building can be seen
+		placed in the desired position}
+    \label{fig:building-built}
+\end{figure}
+
+\subsection{Teaching goals}
+
+The final game's aim is to teach the player the correlation between a
+community's eating behaviours and its impact on its sustainability.
+
+As the game goes on, it becomes increasingly harder to feed all
+the communitie's population off their initial meat based diet. As
+the diet changes, the player will hopefully see the correlation between
+their community's diet change and the change in farmland demand.

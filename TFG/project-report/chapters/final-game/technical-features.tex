@@ -1,0 +1,253 @@
+\section{Technical features}
+
+In this section, the tecnical features implemented for the final
+game will be explained in detail.
+
+\subsection{Notification system}
+
+Notifications are sent between C\# classes using a notification
+system. Classes can subscribe to an event and, when the event is
+triggered, all subscribed functions are called. This notification
+sistem is implemented with function pointers.
+
+\subsection{Town}
+
+The town is an entity that controls all the occurrences in the village.
+It holds references to each villager and building, aswell as to every
+resource that's on the ground.
+
+\subsubsection{Orders}
+
+The town manages all Orders that the villagers have to perform.
+
+An order is composed of a location and a type, aswell as an auxiliary
+number to help keep track of resource ammounts the order manages.
+
+Orders are stored on a \texttt{Queue} data structure.
+
+As for references to other objects, they are stored in a generic 
+\texttt{List} structure.
+
+\subsubsection{Time management}
+
+As to process the events as ingame days go on, a notification system is used.
+
+A manager \gls{singleton}
+class keeps track of time, and triggers a day change whenever the time for
+it is adequate.
+
+When the class triggers a day change, all callbacks subscribed to this
+action type are triggered. This allows several classes to execute portions
+of their code whenever a day change is triggered although the time manager
+class does not "know" of their existance.
+
+\subsection{Map and Pathfinding}
+
+
+The Map is a simple Unity \gls{tilemap}.
+
+The tiles in this map are programmed in a way that change their aspect
+according to the number of neighbours of the same type as theirs have.
+
+Pathfinding is done with the A* algorithm, and it operates over the tilmap.
+
+The tilemap in of itself consists of various abstractions
+and to fully integrate it with the game and the pathfinding, several transformations
+have been executed.
+
+The Unity Tilemap component is read by a \texttt{TilemapController} class,
+that provides a useful API for the \texttt{NodeMap} class to read from. The
+NodeMap is then encapsulated into a more useful \texttt{CellMapController}
+that contains \texttt{Cell}s, that in turn encapsulate the \texttt{Node}s
+of the previous class.
+
+This layered approximation is done in order to not add overhead to the
+pathfinding algorithm (the algorithm works with \texttt{Node}s, more
+lean than its counterpart, the \texttt{Cell}) and helps the developers
+build on top the already existing Tilemap component by using the
+\texttt{TilemapController} class as a wrapper.
+
+\subsubsection{Pathfinding}
+
+\paragraph{The algorithm}
+
+A* is a quite simple but relatively accurate and efficient way to find
+paths in a connected graph.
+
+The connected graph, in this case, is our \texttt{NodeMap}, and its connectedness
+with neighbouring tiles depends on their \glspl{collider}. If a tile in the \texttt{NodeMap}
+has a collider, its neighbouring tiles that do \emph{not}
+hold a collider will be connected to it. 
+
+On the contrary, if a tile does not have a collider, all its neighbours that,
+like the previous one, do not have a collider, will be connected to it.
+
+It could be useful for the reader to consider the presence or abscence of
+colliders as a sign about wether the tile that has or does not have the
+collider is walkable (does not have a collider) or it is not (it does have
+a collider).
+
+Considering a tile to be walkable means that it will be navigable by our
+agent in this explanation of the A* algorithm.
+
+The function for invoking the A* algorithm is given the starting
+node and the destination node.
+
+An open set of nodes $O$ is defined, containing the initial node.
+
+At each iteration of tis main loop, the algorithm determines which of its
+initial paths to expand. It picks the node $O$ that minimizes the $f$
+function, that function being
+\\
+$f(n) = g(n) + h(n)$
+\\
+With $n$ being the node the calculation is being executed upon 
+and $h$ being the heuristic function that calculates
+the distance between $n$ and the target node.
+
+In this implementation of the algorithm, the distance between two adjacent
+non-diagonal nodes is 10, and the distance from a node to and adjacent
+one that lies diagonally adjacent to it is 14. 
+
+This approach is used in order
+to approximate the value of $\sqrt{2}$ by multiplying it by 10 and rounding
+it up. As the reader may already have intuited, the reason why $\sqrt{2}$ is
+used to calculate distances between two diagonal nodes is because if
+we interpret the nodes to be all 1 distance away from each other and to be
+squares of 1 unit times 1 unit for its sides, a distance of $\sqrt{2}$ is,
+effectively, the distance separating two adjacent diagonal nodes.
+
+With this cleared up, we can continue on discussing the algorithm's
+implementation.
+
+If the chosen node $n$ happens to be the destination node, we simply report
+the path and end the algorithm.
+
+If this is not the case, we add $n$ to the closed set $C$ and start iterating
+over its neighbours, i.e. the nodes adjacent to it.
+
+If a neighbour $m$ happens to not be in $C$, we add it to $O$.
+
+If $m$ happened to belong to $O$, we update its $g$ and $h$ cost and
+not add it to $O$ again.
+
+The new $g$ cost will be the distance from $n$ to $m$ (the addition of
+all the nodes distances from the start to $n$ plus the distance from $n$
+to $m$.
+
+The new $h$ cost will be the distance from $m$ to the target node.
+
+We delete $n$ from $O$. If no more nodes exist in $O$, the algorithm
+has finished: no path has been found. On the contrary, the algorithm
+loops again.
+
+\subsection{Villager}
+
+Villagers operate following a set of rules stablished by their AI.
+
+Villagers ask for orders to the Town as long as they don't have any unattended
+needs that need to be fullfilled.
+
+Villagers break down those orders into several other phases, and then they
+approach each one of them differenty according to its type.
+
+An other has three phases: Initialisation, Transportation, Completition.
+
+More complex orders are actually given to villagers by joining several orders.
+
+For example, for a villager to put a piece of wheat in the oven, the villager
+needs to first go to the warehouse and then to the oven. This is achieved
+by enqueuing the order to feed the oven at the completition phase of its
+predecessor.
+
+Villagers use the pathfinding algorithm explained above to navigate the
+island through the tilemap.
+
+\subsection{Resources}
+
+In the final game are several resources. Resources are every object that can
+be dropped on the ground and picked up.
+
+The town keep track of how many resources are stored in the warehouses at any
+given time.
+
+\subsection{Buildings and Factories}
+
+Buildings are all objects that are static and cannot be picked.
+
+Factories are special buildings that, given a resource and enough time,
+they can transform it into another one.
+
+\subsection{Level Configuration}
+
+For tweaking each game's variables such as the seconds a day lasts
+or the villager's walking speed,
+a \gls{singleton} class has been used. Its values can be controlled
+through Unity's Inspector, which makes it very easy to tweak.
+
+\subsection{Serialization}
+
+\Gls{serialization}
+is done in order to keep player's progress stored across several play sessions.
+
+Various data is being serialized in the game.
+
+The map has to be serialized in order to not rebake the whole navigation
+on top of it each time the game is loaded.
+
+All the buildings, factories and villagers's positions and types are
+serialized.
+
+The ammount of resources stored in the town's warehouses is serialized 
+aswell, as the number of days passed and several other metrics.
+
+\subsection{Translations}
+
+The final game con currently be played in two languages: Spanish and English.
+
+The translations are stored in a .cvs file, and the games pick the text
+to be shown to the player according to the language the player selected.
+
+\subsection{Day/Night cycle}
+
+The game operates in daily cycles. Because of that, a system to help emulate
+a day and night cycle was developed to help the player get a better
+grasp of the passing of days with a visual feedback.
+
+The way this is done is by altering the values of the PostProcessingStack's
+shaders that alter the final color composition of the image, turning it into
+a blue color when the night is upon the village, and reverting
+the image back to its inaltered state once daylight is again restored.
+
+\subsection{UI components}
+
+Several UI components have been developed for the game, the majority of
+them being simple UI elements found in Unity by default such as the
+Button or the ScrollField.
+
+\subsection{ReWild console}
+
+A language and a console to interpret it were developed to help on the
+game's prototyping phase.
+
+The language is a very simple one, cansisting of natural language phrases
+to indicate a certain act to be performed in the game.
+
+For example, a valid sentence in the ReWildConsole language would be:
+\\
+\texttt{build house 1 1}
+\\
+
+That means that a house must be built at the tile x = 1; y = 1.
+
+\section{Cut out features}
+
+\subsubsection{Logger}
+
+The Logger was an utility that reported important happenings in the game world.
+
+It worked in a way that text was shown on the bottom half of the screen,
+a line for each happening.
+
+It was cut out of the final game because it occupied a lot of screen space
+and made having on-screen buttons very difficult.

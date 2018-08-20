@@ -1,0 +1,183 @@
+\section{Second prototype}
+
+The idea begind the second prototype was one of cooperation and social
+dynamics behind product consumption and natural resource management. It
+consisted of controlling several stakeholders inside the videogame to learn
+about how each one's decisions impacted the entire chain of relations they
+had one to another.
+
+It was inspired by KARKONOSZE \cite{Krolikowska2007} because
+of its approach to understand natural resource management
+as a multi-process endeavour, and by MAE SALAEP \cite{Barnaud2007},
+as the prototype also relied on findings brought up during a previous
+gaming session to reconsider its players approach to the problem.
+
+\subsection{Idea}
+
+The main idea for this prototype was to explore the production chain through the lenses of various stakeholders in a fantasy setting. This fantasy setting
+would be an island with a serious \gls{goblin} infestation.
+
+The players would need to take action upon this problem by providing solutions to it.
+Players would take the role of various stakeholders during the process
+of ending the plage, finding the links between their actions and the repercusions
+of them on the production chain.
+
+Two forms of gameplay would have been drawn depending on their long term environmental sustainability. 
+
+The unsustainable one would have been offered to the player as a first contact with the game,
+the sustainable one being unlocked once the unsustainable one is completed,
+as a way of providing the player with a contrasted version of what actions
+have they used on their first run as opposed as to the second one.
+
+There would have been three stakeholders the player could control
+in this game:
+
+\paragraph{Adventurer}
+The Adventurer helps control the population of goblins in the area.
+
+\paragraph{Shopkeeper}
+The Shopkeeper buys and sells various items to and from the Adventurer and the Farmer. It also produces refined items.
+
+\paragraph{Farmer}
+Sows and harvests the land. Produces raw items from it.
+
+Each one of them would perform different actions wether the game is trying
+to make the player choose the unsustanable path or the sustanable one.
+
+\paragraph{Game objectives: Unsustainable path}
+The adventurer has to eliminate all goblins on the island because they attack the population. Once the goblin population dies out, the island would be safe, but the
+ecosystem would suffer greatly.
+
+\paragraph{Game objectives: Sustainable path}
+The adventurer has to plant plenty of trees to help the forest grow again and keep goblins from attacking the village.
+This means that the goblins get to live in peace, and the island retains
+its ecosystem health.
+
+\subsection{Mechanics}
+
+The game flow and the mechanics vary greatly depending if the player is
+playing through the sustainable path or the unsustainable one.
+
+\subsubsection{Game loop: Unsustainable path}
+
+The main focus of this path, as said previously, is for the Adventurer
+to kill goblins. Each battle depletes the Adventurer's health,
+so she has to fill it up with Health potions.
+
+Health potions are made from Salamandertail, a ficticious ingredient
+harvested from Salamanders. Each time an adventurer buys a health
+potion, then, the whole process of obtaining it is reinforced.
+
+Salamanders need to be fed Palmroot, a ficticious plant.
+
+In this path, though, the names of the stakeholders are changed.
+The Shopkeeper, given that she produces magical potions,
+is the Magician. The Farmer, given that she gathers
+resources from animals, is the Rancher.
+
+\paragraph{Adventurer}
+\begin{enumerate}
+	\item The Adventurer kills Goblins.
+	\item The Adventurer levels up if experience is enough.
+	\item Goblins drop Gold.
+	\item The Adventurer buys Health Potions from the Magician.
+	\item The Adventurer uses Health Potions to tend his wounds.
+	\item Go to 1 if the number of killed Goblins is < 100.
+	\item The Adventurer has exterminated all goblins, the game is over.
+\end{enumerate}
+
+\paragraph{Magician}
+\begin{enumerate}
+	\item Buys Salamandertail from Rancher.
+	\item Brews Health Potion from Salamandertail.
+	\item Sells Health Potion to the Adventurer.
+\end{enumerate}
+
+\paragraph{Rancher}
+\begin{enumerate}
+	\item Plants Palmroot.
+	\item Buys Salamander Eggs.
+	\item Waits for the eggs to hatch.
+	\item Waits for Palmroot to grow.
+	\item Harvests Palmroot.
+	\item Feeds Palmroot to Salamanders.
+	\item Harvests Salamandertail from Salamanders.
+	\item Sells Salamandertail to Shopkeeper.
+\end{enumerate}
+
+This path accelerates the deforestation of the island, and drives the goblins
+further into the town, fact that causes the Adventurer to be increasingly
+more brutal taking them down. goblins, in turn, get angrier at humans.
+
+The path culminates with the destruction of the island's ecosystem,
+then, the game asks its players if they are interested in other kind of
+approach to the problem.
+
+\subsubsection{Game loop: Sustainable path}
+
+The main objective of this path is to control the goblin population using
+non-violent tactics while rebuilding their natural ecosystem.
+
+As a ways of controlling the population, the Adventurer must feed
+Goblincake, a ficticious meal, to captured goblins before
+releasing them back to nature. Goblins who are fed will take longer to
+attack the town again.
+
+Goblincake is baked from Goblinfruit, a fictitious fruit the Farmer produces.
+
+It is the job of the Farmer to win the game this time, as it's her duty
+to plant trees in her lot of land.
+
+In this path, the Adventurer, given that her job is one of a more pacifist
+kind, is dubbed the Ranger, and the Shopkeeper becomes the humble Cleric,
+now selling hand-crafted pies to the Ranger.
+
+\paragraph{Ranger}
+\begin{enumerate}
+	\item Buys Goblincake from Cleric
+	\item Captures Goblins.
+	\item Feeds captive Goblins with Goblincake.
+	\item Releases Goblins to the wild again.
+	\item Goblins drop Gold.
+\end{enumerate}
+
+\paragraph{Cleric}
+\begin{enumerate}
+	\item Buys Goblinfruit from Farmer.
+	\item Bakes Goblincake from Goblinfruit.
+	\item Sells Goblincake to the Ranger.
+	\item Buys Treeseed from Farmer.
+	\item Makes Treesprout from Treeseed.
+	\item Sells Treesprout to the Ranger.
+\end{enumerate}
+
+\paragraph{Farmer}
+\begin{enumerate}
+	\item Plants Goblinfruit.
+	\item Collects Goblinfruit.
+	\item Sells Goblinfruit to Shopkeeper.
+	\item Collects Treeseed from trees.
+	\item Sells Treeseed to Shopkeeper.
+	\item Buys Treesprout from Shopkeeper.
+	\item Plants more trees.
+	\item Go to 1 if the number of planted trees is < 100.
+	\item Game won, Goblins will stop attacking the village because the forest is restored.
+\end{enumerate}
+
+This approach helps reduce the conflict and harm between humans and goblins,
+an also helps convey the idea that wild animal "infestations" are a man-made
+problem that calls for a efficient solution that attacks the root of the
+problem.
+
+The path finishes when enough trees are planted back, and the goblins
+now have enough land to roam free.
+
+\subsection{Teaching methods}
+The game would teach players about social dynamics and consumer responsibility through its mechanics. The metaphor of this prototype calls for taking a deep
+look onto society's already established loops and reflect upon how, as consumers,
+interact with them.
+
+\subsection{Conclusions}
+The prototype was considered unadequate at the end of the designing phase,
+considered too complicated and its design too rigid to organically convey
+this project's objectives.
